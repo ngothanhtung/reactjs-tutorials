@@ -29,12 +29,12 @@ ReactDOM.render(
 */
 
 // 2. React-Router
-/*
+
 ReactDOM.render(
   <Routes/>,
   document.getElementById('root')
 );
-*/
+
 
 // 3. Material Design
 /*
@@ -131,10 +131,11 @@ setTimeout(() => {
 */
 
  //14. Form Example
+ /*
  ReactDOM.render(
    <FormExample />,
    document.getElementById('root')
  );
-
+*/
 
 registerServiceWorker();
