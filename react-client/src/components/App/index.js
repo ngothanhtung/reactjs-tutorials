@@ -1,7 +1,6 @@
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './style.css';
-import classnames from 'classnames';
 
 class App extends Component {
     state = {users: []}
