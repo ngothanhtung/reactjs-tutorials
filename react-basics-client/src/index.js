@@ -5,8 +5,8 @@ import './index.css';
 import App from './App.jsx';
 import Routes from './routes';
 
-import ThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MaterialDesign from './components/MaterialDesign/index';
+//import ThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//import MaterialDesign from './components/MaterialDesign/index';
 import UpdateElements from './components/UpdateElements/index';
 import StateExample from './components/StateExamples/index';
 import PropsExample from './components/PropertyExamples/index';
@@ -29,12 +29,12 @@ ReactDOM.render(
 */
 
 // 2. React-Router
-
+/*
 ReactDOM.render(
   <Routes/>,
   document.getElementById('root')
 );
-
+*/
 
 // 3. Material Design
 /*
@@ -45,6 +45,18 @@ ReactDOM.render(
   document.getElementById('root')
 );
 */
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css';
+const ButtonExampleButton = () => (
+    <Button primary>
+        Click Here
+    </Button>
+)
+
+ReactDOM.render(
+    <ButtonExampleButton />,
+    document.getElementById('root')
+);
 
 // 4. Update Elements
 /*
