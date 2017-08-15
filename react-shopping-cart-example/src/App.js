@@ -1,53 +1,70 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ProductList from './ProductList';
+import ShoppingCart from './ShoppingCart';
 //import logo from './logo.svg';
 import './App.css';
 
-const PRODUCTS = [
-  {
-    id: 1,
-    name: 'iphone 8',
-    price: 1200
-  },
-  {
-    id: 2,
-    name: 'iphone 7',
-    price: 1000
-  },
-   {
-    id: 3,
-    name: 'iphone 6',
-    price: 700
-  }
-];
-
 
 class App extends Component {
-  constructor() {
-    super();
+    constructor(props) {
+        super(props);
+        // Dummy data
+        var products = [];
+        for (var i = 1; i <= 100; i++) {
+            products.push({
+                id: i,
+                name: 'PRODUCT ' + i,
+                price: 1000 + i
+            });
+        }
 
-    for (var i = 4; i <= 100; i++){
-      PRODUCTS.push({
-        id: i,
-        name: 'PRODUCT ' + i,
-        price: 1000
-      });
+        this.state = {
+            ShoppingCartItems: [],
+            Products: products
+        };
     }
-  }
 
-  onAddToCart(id) {
-    // this.state.CartItems.push(p);
-    // this.setState(this.state);
-    console.log("Add to cart from App", id.target);
-  }
 
-  render() {
-    return (
-      <div className="App">
-        <ProductList onAddToCart={function(id){this.onAddToCart(id)}.bind(this)} data={PRODUCTS} />
-      </div>
-    );
-  }
+
+    onAddToCart(product) {
+        var cartItem = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1
+        };
+
+        var isExist = false;
+        for (var i = 0; i < this.state.ShoppingCartItems.length; i++) {
+            if (this.state.ShoppingCartItems[i].id === cartItem.id) {
+                this.state.ShoppingCartItems[i].quantity++;
+                this.setState(this.state);
+                return false;
+            }
+        }
+
+        if (isExist === false) {
+            this.state.ShoppingCartItems.push(cartItem);
+            this.setState(this.state);
+        }
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <div className="row">
+                    <div className="col-md-8">
+                        <ProductList onAddToCart={function (product) {
+                            this.onAddToCart(product)
+                        }.bind(this)} data={this.state.Products}/>
+                    </div>
+                    <div className="col-md-4">
+                        <ShoppingCart shoppingCartItems = {this.state.ShoppingCartItems}/>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
