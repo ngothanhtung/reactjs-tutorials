@@ -29,12 +29,11 @@ ReactDOM.render(
 */
 
 // 2. React-Router
-/*
+
 ReactDOM.render(
   <Routes/>,
   document.getElementById('root')
 );
-*/
 
 // 3. Material Design
 /*
@@ -45,6 +44,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 */
+
+/*
 import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 const ButtonExampleButton = () => (
@@ -57,6 +58,7 @@ ReactDOM.render(
     <ButtonExampleButton />,
     document.getElementById('root')
 );
+*/
 
 // 4. Update Elements
 /*
