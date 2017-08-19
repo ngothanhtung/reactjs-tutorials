@@ -24,8 +24,6 @@ class App extends Component {
         };
     }
 
-
-
     onAddToCart(product) {
         var cartItem = {
             id: product.id,

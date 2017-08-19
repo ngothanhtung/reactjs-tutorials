@@ -54,6 +54,40 @@ class App extends Component {
      this.setState({customer: object});
    }
 
+   //DELETE
+   handleDelete(customerId, event) {
+
+     var component = this;
+
+      // url (required), options (optional)
+      fetch('http://localhost:27636/api/CustomerApi/' + customerId, {
+      	method: 'DELETE',
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      }).then(function(response) {
+      	 //return response.json()
+      }).then(function(data) {
+
+        var customers = component.state.customers;
+        for (var i = 0; i < customers.length; i++) {
+            if (customers[i].id === customerId) {
+                console.log(customerId);
+                customers.splice(i, 1);
+                component.setState({customers: customers});
+                return false;
+            }
+        }
+        //var customers = component.state.customers;
+        //customers.push(data);
+        //component.setState({ customers: customers});
+      }).catch(function(err) {
+      	// Error :(
+       console.log(err);
+      });
+
+   }
+
     componentDidMount() {
         fetch('http://localhost:27636/api/CustomerApi')
             .then(res => res.json())
@@ -79,6 +113,7 @@ class App extends Component {
                       <th>Address</th>
                       <th>Birthday</th>
                       <th>Gender</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -92,6 +127,9 @@ class App extends Component {
                       <td>{customer.address}</td>
                       <td>{customer.birthday}</td>
                       <td>{customer.gender}</td>
+                      <td>
+                        <button className="btn btn-danger" onClick={this.handleDelete.bind(this, customer.id)}>Delete</button>
+                      </td>
                     </tr>
                   )}
                   </tbody>
