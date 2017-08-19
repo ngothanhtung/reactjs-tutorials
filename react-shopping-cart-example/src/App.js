@@ -35,6 +35,29 @@ class App extends Component {
         }
     }
 
+    onIncreaseQuantity(item) {
+        var items = this.state.ShoppingCartItems;
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].id === item.id) {
+                items[i].quantity++;
+                this.setState({ShoppingCartItems: items});
+                return false;
+            }
+        }
+    }
+
+    onDecreaseQuatity(item) {
+        if (item.quantity === 1) return;
+        var items = this.state.ShoppingCartItems;
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].id === item.id) {
+                items[i].quantity--;
+                this.setState({ShoppingCartItems: items});
+                return false;
+            }
+        }
+    }
+
     onAddToCart(product) {
         var cartItem = {
             id: product.id,
@@ -72,9 +95,18 @@ class App extends Component {
                     </div>
                     <div className="col-md-12">
                         <ShoppingCart 
+                            onIncreaseQuantity={function(item) { 
+                                this.onIncreaseQuantity(item)
+                            }.bind(this)} 
+
+                            onDecreaseQuantity={function(item) { 
+                                this.onDecreaseQuatity(item)
+                            }.bind(this)} 
+
                             onRemoveCart={function(item) { 
                                 this.onRemoveCart(item)
                             }.bind(this)} 
+
                             shoppingCartItems = {this.state.ShoppingCartItems}
                         />
                     </div>
