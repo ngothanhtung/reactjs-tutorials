@@ -21,7 +21,7 @@ class ShoppingCart extends Component {
         return (
             <div>
                 <h1>SHOPPING CART</h1>
-                <table className="table table-bordered">
+                <table className="table table-hover">
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -29,6 +29,9 @@ class ShoppingCart extends Component {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th>
+                           
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,6 +43,9 @@ class ShoppingCart extends Component {
                                 <td className="text-right">{this.formatCurrency(item.price)}</td>
                                 <td className="text-right">{item.quantity}</td>
                                 <td className="text-right">{this.formatCurrency(item.price * item.quantity)}</td>
+                                <td className="text-right">
+                                     <button onClick={this.props.onRemoveCart.bind(this, item)} className="btn btn-danger">Remove</button>
+                                </td>
                             </tr>
                         )
                     }

@@ -11,8 +11,8 @@ class Product extends Component {
     // }
     render() {
         return (
-            <div className='col-md-4 ProductBlock'>
-                <img alt="" src='http://via.placeholder.com/220x160'/>
+            <div className='ProductBlock'>
+                <img alt="" src='http://via.placeholder.com/250x160'/>
                 <h3>{this.props.product.name}</h3>
                 <p>{this.props.product.price}</p>
                 <p>

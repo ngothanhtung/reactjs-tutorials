@@ -10,7 +10,7 @@ class App extends Component {
         super(props);
         // Dummy data
         var products = [];
-        for (var i = 1; i <= 100; i++) {
+        for (var i = 1; i <= 12; i++) {
             products.push({
                 id: i,
                 name: 'PRODUCT ' + i,
@@ -22,6 +22,17 @@ class App extends Component {
             ShoppingCartItems: [],
             Products: products
         };
+    }
+
+    onRemoveCart(item) {        
+        var items = this.state.ShoppingCartItems;
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].id === item.id) {
+                items.splice(i, 1);
+                this.setState({ShoppingCartItems: items});
+                return false;
+            }
+        }
     }
 
     onAddToCart(product) {
@@ -51,13 +62,21 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="row">
-                    <div className="col-md-8">
-                        <ProductList onAddToCart={function (product) {
-                            this.onAddToCart(product)
-                        }.bind(this)} data={this.state.Products}/>
+                    <div className="col-md-12">
+                        <ProductList 
+                            onAddToCart={function (product) {
+                                this.onAddToCart(product)
+                            }.bind(this)} 
+                            data={this.state.Products}
+                        />
                     </div>
-                    <div className="col-md-4">
-                        <ShoppingCart shoppingCartItems = {this.state.ShoppingCartItems}/>
+                    <div className="col-md-12">
+                        <ShoppingCart 
+                            onRemoveCart={function(item) { 
+                                this.onRemoveCart(item)
+                            }.bind(this)} 
+                            shoppingCartItems = {this.state.ShoppingCartItems}
+                        />
                     </div>
                 </div>
             </div>
