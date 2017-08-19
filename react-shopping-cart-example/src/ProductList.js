@@ -4,10 +4,12 @@ import Product from './Product';
 class ProductList extends Component {
     render() {
         return (
-            <div className='row'>
-                {this.props.data.map(p => <Product onAddToCart={function (e) {
-                    this.props.onAddToCart(e)
-                }.bind(this)} key={p.id} product={p}/>)}
+            <div>
+                {
+                  this.props.data.map((p) =>
+                    <Product onAddToCart={this.props.onAddToCart.bind(this, p)} key={p.id} product={p}/>
+                  )
+                }
             </div>
         );
     }
