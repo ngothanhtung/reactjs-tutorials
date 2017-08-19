@@ -30,7 +30,7 @@ class App extends Component {
     var component = this;
 
      // url (required), options (optional)
-     fetch('http://localhost:27636/api/CustomerApi/', {
+     fetch('http://172.104.49.4/api/CustomerApi/', {
      	 method: 'POST',
        body: data,
        headers: new Headers({
@@ -60,7 +60,7 @@ class App extends Component {
      var component = this;
 
       // url (required), options (optional)
-      fetch('http://localhost:27636/api/CustomerApi/' + customerId, {
+      fetch('http://172.104.49.4/api/CustomerApi/' + customerId, {
       	method: 'DELETE',
         headers: new Headers({
           'Content-Type': 'application/json'
