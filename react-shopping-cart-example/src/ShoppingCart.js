@@ -42,20 +42,20 @@ class ShoppingCart extends Component {
                                 <td className="text-left">{item.name}</td>
                                 <td className="text-right">{this.formatCurrency(item.price)}</td>
                                 <td className="text-right">
-                                    <button onClick={this.props.onDecreaseQuantity.bind(this, item)} className="btn btn-sm">-</button>
-                                    {item.quantity}                                   
-                                    <button onClick={this.props.onIncreaseQuantity.bind(this, item)} className="btn btn-sm">+</button>
+                                    <button onClick={this.props.onDecreaseQuantity.bind(this, item)} className="btn btn-xs btn-warning">-</button>
+                                    &nbsp;{item.quantity}&nbsp;
+                                    <button onClick={this.props.onIncreaseQuantity.bind(this, item)} className="btn btn-xs btn-warning">+</button>
                                 </td>
                                 <td className="text-right">{this.formatCurrency(item.price * item.quantity)}</td>
                                 <td className="text-right">
-                                     <button onClick={this.props.onRemoveCart.bind(this, item)} className="btn btn-danger">Remove</button>
+                                     <button onClick={this.props.onRemoveCart.bind(this, item)} className="btn btn-xs btn-danger">Remove</button>
                                 </td>
                             </tr>
                         )
                     }
                     </tbody>
                 </table>
-                <div>
+                <div className="text-right">
                   <h3>TOTAL: { this.getTotal() }</h3>
                 </div>
             </div>

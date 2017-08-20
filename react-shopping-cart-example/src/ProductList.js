@@ -7,15 +7,14 @@ class ProductList extends Component {
             <div className="row">
               {
                 this.props.data.map((p) =>
-                  <div className="col-md-3" key={p.id}>
+                  <div className="col-md-6" key={p.id}>
                     <Product onAddToCart={this.props.onAddToCart.bind(this, p)} product={p}/>
                   </div>
                 )
-              }                
+              }
             </div>
         );
     }
-
 }
 
 export default ProductList;

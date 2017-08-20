@@ -1,22 +1,15 @@
 import React, {Component} from 'react';
 
 class Product extends Component {
-    constructor(props) {
-        super(props);
-        //this.onAddToCart = this.onAddToCart.bind(this);
-    }
-
-    // onAddToCart() {
-    //   console.log(this.props.product.id);
-    // }
     render() {
         return (
             <div className='ProductBlock'>
-                <img alt="" src='http://via.placeholder.com/250x160'/>
-                <h3>{this.props.product.name}</h3>
-                <p>{this.props.product.price}</p>
+                <img alt="" src='http://via.placeholder.com/260x120'/>
+                <h4>{this.props.product.name}</h4>
+                <p>Price: {this.props.product.price}</p>
                 <p>
-                    <button className="btn btn-sm btn-danger" onClick={this.props.onAddToCart.bind(this, this.props.product)}>Add to cart
+                    <button className="btn btn-sm btn-primary" onClick={this.props.onAddToCart.bind(this, this.props.product)}>
+                      <span className="glyphicon glyphicon-shopping-cart"></span> Add to cart
                     </button>
                 </p>
             </div>

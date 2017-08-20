@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
+import Header from './Header';
 import ProductList from './ProductList';
 import ShoppingCart from './ShoppingCart';
-//import logo from './logo.svg';
+import Footer from './Footer';
 import './App.css';
-
 
 class App extends Component {
     constructor(props) {
         super(props);
         // Dummy data
         var products = [];
-        for (var i = 1; i <= 12; i++) {
+        for (var i = 1; i <= 6; i++) {
             products.push({
                 id: i,
                 name: 'PRODUCT ' + i,
-                price: 1000 + i
+                price: 1000 + i * 100
             });
         }
 
@@ -24,7 +24,7 @@ class App extends Component {
         };
     }
 
-    onRemoveCart(item) {        
+    onRemoveCart(item) {
         var items = this.state.ShoppingCartItems;
         for (var i = 0; i < items.length; i++) {
             if (items[i].id === item.id) {
@@ -84,33 +84,35 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <Header />
                 <div className="row">
-                    <div className="col-md-12">
-                        <ProductList 
+                    <div className="col-md-6">
+                        <ProductList
                             onAddToCart={function (product) {
                                 this.onAddToCart(product)
-                            }.bind(this)} 
+                            }.bind(this)}
                             data={this.state.Products}
                         />
                     </div>
-                    <div className="col-md-12">
-                        <ShoppingCart 
-                            onIncreaseQuantity={function(item) { 
+                    <div className="col-md-6">
+                        <ShoppingCart
+                            onIncreaseQuantity={function(item) {
                                 this.onIncreaseQuantity(item)
-                            }.bind(this)} 
+                            }.bind(this)}
 
-                            onDecreaseQuantity={function(item) { 
+                            onDecreaseQuantity={function(item) {
                                 this.onDecreaseQuatity(item)
-                            }.bind(this)} 
+                            }.bind(this)}
 
-                            onRemoveCart={function(item) { 
+                            onRemoveCart={function(item) {
                                 this.onRemoveCart(item)
-                            }.bind(this)} 
+                            }.bind(this)}
 
                             shoppingCartItems = {this.state.ShoppingCartItems}
                         />
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
