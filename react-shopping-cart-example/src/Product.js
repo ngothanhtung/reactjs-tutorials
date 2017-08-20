@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
-
+const styles = {
+  ImageBlock: {
+    width: '100%'
+  }
+};
 class Product extends Component {
     render() {
         return (
             <div className='ProductBlock'>
-                <img alt="" src='http://via.placeholder.com/260x120'/>
+                <img style={styles.ImageBlock} alt="" src='http://via.placeholder.com/260x120'/>
                 <h4>{this.props.product.name}</h4>
                 <p>Price: {this.props.product.price}</p>
                 <p>

@@ -86,7 +86,7 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-sm-6">
                         <ProductList
                             onAddToCart={function (product) {
                                 this.onAddToCart(product)
@@ -94,7 +94,7 @@ class App extends Component {
                             data={this.state.Products}
                         />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-sm-6">
                         <ShoppingCart
                             onIncreaseQuantity={function(item) {
                                 this.onIncreaseQuantity(item)
