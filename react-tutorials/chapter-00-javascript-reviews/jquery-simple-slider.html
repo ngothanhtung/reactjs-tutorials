@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 01</title>
+    <style>
+        #slideshow {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slide {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="slideshow">
+    <div class="slide" style="background-color: red"></div>
+    <div class="slide" style="background-color: blue"></div>
+    <div class="slide" style="background-color: green"></div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+
+    var counter = 0, i, j;
+    var slides = $("#slideshow .slide");
+    var slidesLen = slides.length - 1;
+
+    for (i = 0, j = 9999; i < slides.length; i += 1, j -= 1) {
+        $(slides[i]).css("z-index", j);
+    }
+
+    window.setInterval(function () {
+        if (counter === 0) {
+            slides.eq(counter).fadeOut();
+            counter += 1;
+        } else if (counter === slidesLen) {
+            counter = 0;
+            slides.eq(counter).fadeIn(function () {
+                slides.fadeIn();
+            });
+        } else {
+            slides.eq(counter).fadeOut();
+            counter += 1;
+        }
+    }, 2000);
+
+</script>
+</body>
+</html>

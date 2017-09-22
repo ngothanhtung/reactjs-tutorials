@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - JSON</title>
+</head>
+<body>
+
+<span id="person">
+
+</span>
+
+<script>
+    var person = {
+        id: 1,
+        name: "John",
+        age: 30
+    };
+
+    // Serialize JavaScript objects into JSON
+    var json = JSON.stringify(person);
+    console.log("Serialize JavaScript objects into JSON", json);
+
+    //Parsing JSON into JavaScript objects.
+    var newperson = JSON.parse(json);
+    console.log("New Person", newperson);
+</script>
+</body>
+</html>

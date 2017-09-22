@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - Array</title>
+</head>
+<body>
+<script>
+    // The concat() method is used to join two or more arrays.
+    var male = ["Tom", "Peter"];
+    var female = ["Mary", "Daisy"];
+    var all = male.concat(female);
+    console.log("all", all);
+
+    // Calls a function for each array element
+    console.log("Calls a function for each array element:");
+    all.forEach(function(item, index) {
+        console.log("person[" + index + "]", item);
+    });
+
+    // Search the array for an element and returns its position
+    console.log("Search the array for an element and returns its position:");
+    var index = all.indexOf("Mary");
+    console.log("indexOf 'Mary'", index);
+
+    // Joins all elements of an array into a string
+    var stringAll = all.join();
+    console.log("stringAll", stringAll);
+
+    // Push & Splice
+    all.push("David");
+    console.log("all after push David", all);
+
+    all.splice(0, 1);
+    console.log("all after splice(0, 1)", all);
+</script>
+</body>
+</html>

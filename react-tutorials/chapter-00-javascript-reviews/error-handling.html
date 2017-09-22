@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Handling</title>
+</head>
+<body>
+
+<script>
+    try {
+        var x = 9 / 0; // result = infinity => not error;
+        console.log(y);
+        alert("This is code inside the try clause");
+        alert("No Errors so catch code will not execute");
+    } catch (exception) {
+        alert("The error is " + exception.message);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - OOP</title>
+</head>
+<body>
+<script>
+    // define a class
+    function Employee(fn, ln) {
+        // define properties
+        this.firstName = fn;
+        this.lastName = ln;
+        this.age = 0;
+        // define a method
+        this.getFullName = function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // add more method
+    Employee.prototype.display = function () {
+        console.log("Fullname: ", tom.getFullName());
+        console.log("Age: ", tom.age);
+    };
+
+    // encapsulation
+    Employee.prototype.setAge = function (value) {
+        this.age = value;
+    };
+
+    // create instance of class
+    var tom = new Employee("Tom", "Cruise");
+    tom.setAge(50);
+    tom.display();
+
+    // We have a simple person object​
+    var person = {
+        name: "Peter",
+        age: 20
+    };
+
+    // inheritance
+    var student = Object.create(person);
+    student.mark = 10;
+    console.log("Student: ", student);
+</script>
+</body>
+</html>

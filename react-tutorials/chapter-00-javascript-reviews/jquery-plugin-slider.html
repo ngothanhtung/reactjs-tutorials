@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 02</title>
+    <style>
+        #slideshow {
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="slideshow">
+    <div class="slide">
+        <img src="../images/slides/1.jpg" style="width: 100%" />
+    </div>
+    <div class="slide">
+        <img src="../images/slides/2.jpg" style="width: 100%" />
+    </div>
+    <div class="slide">
+        <img src="../images/slides/3.jpg" style="width: 100%" />
+    </div>
+    <div class="slide">
+        <img src="../images/slides/4.jpg" style="width: 100%" />
+    </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+
+    // Ref: https://learn.jquery.com/plugins/basic-plugin-creation/
+    (function ($) {
+        $.fn.slide = function (options) {
+
+            // This is the easiest way to have default options.
+            var settings = $.extend({
+                // These are the defaults.
+                width: "1600px",
+                height: "900px",
+                speed: 1000,
+                duration: 3000
+            }, options );
+
+            $(this).css("width", settings.width);
+            $(this).css("height", settings.height);
+
+            var counter = 0, i, j;
+            var slides = $(this).find(".slide");
+            var slidesLen = slides.length - 1;
+
+            for (i = 0, j = 9999; i < slides.length; i += 1, j -= 1) {
+                $(slides[i]).css("z-index", j);
+            }
+            (function () {
+                window.setInterval(function () {
+                    if (counter === 0) {
+                        slides.eq(counter).fadeOut(settings.speed);
+                        counter += 1;
+                    } else if (counter === slidesLen) {
+                        counter = 0;
+                        slides.eq(counter).fadeIn(function () {
+                            slides.fadeIn();
+                        });
+                    } else {
+                        slides.eq(counter).fadeOut(settings.speed);
+                        counter += 1;
+                    }
+                }, settings.duration);
+            }(jQuery));
+
+            return this;
+        };
+
+    }(jQuery));
+
+    $("#slideshow").slide({
+        speed: 3000,
+        width: "1280px",
+        height: "720px",
+        duration: 8000
+    });
+</script>
+</body>
+</html>

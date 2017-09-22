@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery - Traversing</title>
+</head>
+<body>
+<section id="ancestors" style="padding: 30px; border: 1px solid orange; width: 500px;">
+    <div style="padding: 30px; border: 1px solid red;">
+        <h3 style="padding: 10px">
+            <span id="span-ancestors">Hello Ancestors</span>
+        </h3>
+    </div>
+</section>
+
+
+<br><br><br>
+<section id="descendants" style="padding: 30px; border: 1px solid aqua; width: 500px;">
+    <div style="padding: 30px; border: 1px solid red;">
+        Only text
+        <h3 style="padding: 10px; color: blue">
+            <span>Hello Descendants 1</span>
+        </h3>
+        <h3 style="padding: 10px; color: blue">
+            <span>Hello Descendants 2</span>
+        </h3>
+    </div>
+</section>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+
+
+    $(document).ready(function () {
+        // jQuery Traversing - Ancestors
+        // An ancestor is a parent, grandparent, great-grandparent, and so on.
+
+        // returns the direct parent element of the selected element
+        $("#span-ancestors").parent().css({"background-color": "yellow"});
+
+        // returns all ancestor elements of the selected element
+        $("#span-ancestors").parents().css({"background-color": "green"});
+        //$("#span-ancestors").parents("div").css({"background-color": "green"});
+
+        // returns all ancestor elements between two given arguments.
+        $("#span-ancestors").parentsUntil("#ancestors").css({"background-color": "violet"});
+
+        /* ----------------------------------------------------------------- */
+
+        //jQuery Traversing - Descendants
+
+        // only traverse a single level down the DOM tree.
+        $("#descendants").children().css("color", "red");
+
+        $("#descendants").find("h3").css("color", "brown");
+        //$("#descendants").find("*").css("color", "yellow");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Objects</title>
+</head>
+<body>
+
+<span id="person">
+
+</span>
+
+<script>
+    var people = [];
+    // create a simple object
+    var person = {
+        id: 1,
+        name: "John",
+        age: 30
+    };
+
+    people.push(person);
+    people.push({
+        id: 2,
+        name: "Peter",
+        age: 28
+    });
+
+    // remove a specific element from an array
+    //people.splice(0, 1);
+
+    people.forEach(function (item, index) {
+        console.log("Student[" + index + "]", item);
+    });
+</script>
+</body>
+</html>

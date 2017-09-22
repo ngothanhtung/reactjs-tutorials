@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery - Ajax</title>
+</head>
+<body>
+<input id="username">
+<button type="button" id="btnSubmit">
+    Submit
+</button>
+<div style="margin-bottom: 20px; padding: 30px; background-color: yellow" id="main"></div>
+
+<div style="margin-bottom: 20px; padding: 30px; background-color: orange" id="php"></div>
+
+<div style="margin-bottom: 20px; padding: 30px; background-color: red" id="ajax"></div>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+    // ref: https://api.jquery.com/jquery.get/
+
+    $.get("jquery-ajax-content.html", function (result) {
+        $("#main").append(result);
+    }).fail(function () {
+        $("#main").append("<h1>Failed</h1>");
+    });
+    //$("#main").append("<h1>Hello jQuery</h1>");
+
+    // GET JSON
+    $.getJSON("http://php.aptech-vietnam.net/api.php?callback=?", {name: "Peter"}, function (result) {
+        $("#php").append(result.message);
+    }).fail(function () {
+        $("#php").append("<h1>Failed</h1>");
+    });
+
+    // AJAX
+    // ref: https://api.jquery.com/jquery.ajax/
+    $.ajax({
+        method: "GET",
+        url: "jquery-ajax-content.html",
+        data: {name: "John"}
+    }).done(function (result) {
+        $("#ajax").append(result);
+    });
+
+
+    $("#btnSubmit").click(function () {
+        var name = $("#username").val();
+        // GET JSON
+        $.getJSON("http://php.aptech-vietnam.net/api.php?callback=?", {name: name}, function (result) {
+            $("#php").html(result.message);
+        }).fail(function () {
+            $("#php").append("<h1>Failed</h1>");
+        });
+    });
+</script>
+</body>
+</html>

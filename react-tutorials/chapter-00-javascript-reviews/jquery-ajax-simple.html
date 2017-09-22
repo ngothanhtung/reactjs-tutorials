@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main" style="padding: 30px; background-color: green">
+</div>
+<script src="../js/jquery.min.js"></script>
+<script>
+    $.get("jquery-ajax-content.html", function (result) {
+        $("#main").append(result);
+        $("#main").append("<h1>LOCAL MESSAGE</h1>");
+    }).fail(function () {
+        $("#main").append("<h1>Failed</h1>");
+    });
+
+
+</script>
+</body>
+</html>
