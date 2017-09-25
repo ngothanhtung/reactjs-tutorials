@@ -21,20 +21,6 @@ exports.default = function (_ref) {
   };
 };
 
-/**
- * This adds a __self={this} JSX attribute to all JSX elements, which React will use
- * to generate some runtime warnings.
- *
- *
- * == JSX Literals ==
- *
- * <sometag />
- *
- * becomes:
- *
- * <sometag __self={this} />
- */
-
 var TRACE_ID = "__self";
 
 module.exports = exports["default"];

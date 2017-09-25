@@ -4,10 +4,9 @@ import Header from "./Header";
 export default class Layout extends React.Component {
 	constructor() {
 		super();
-		this.name = "Will";
+		this.name = "William11";
 	}
-	render() {
-		const name = "Will";
+	render() {		
 		return (
 			<h1>It's {this.name}!</h1>
 		);

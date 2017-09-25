@@ -4,6 +4,7 @@ var types = require("./types");
 var getFieldValue = types.getFieldValue;
 var Printable = types.namedTypes.Printable;
 var Expression = types.namedTypes.Expression;
+var ReturnStatement = types.namedTypes.ReturnStatement;
 var SourceLocation = types.namedTypes.SourceLocation;
 var util = require("./util");
 var comparePos = util.comparePos;
@@ -496,10 +497,21 @@ function findChildReprints(newPath, oldPath, reprints) {
         return false;
     }
 
-    for (var k in util.getUnionOfKeys(newNode, oldNode)) {
-        if (k === "loc")
-            continue;
+    var keys = util.getUnionOfKeys(oldNode, newNode);
 
+    if (oldNode.type === "File" ||
+        newNode.type === "File") {
+        // Don't bother traversing file.tokens, an often very large array
+        // returned by Babylon, and useless for our purposes.
+        delete keys.tokens;
+    }
+
+    // Don't bother traversing .loc objects looking for reprintable nodes.
+    delete keys.loc;
+
+    var originalReprintCount = reprints.length;
+
+    for (var k in keys) {
         newPath.stack.push(k, types.getFieldValue(newNode, k));
         oldPath.stack.push(k, types.getFieldValue(oldNode, k));
         var canReprint = findAnyReprints(newPath, oldPath, reprints);
@@ -509,6 +521,14 @@ function findChildReprints(newPath, oldPath, reprints) {
         if (!canReprint) {
             return false;
         }
+    }
+
+    // Return statements might end up running into ASI issues due to comments
+    // inserted deep within the tree, so reprint them if anything changed
+    // within them.
+    if (ReturnStatement.check(newPath.getNode()) &&
+        reprints.length > originalReprintCount) {
+        return false;
     }
 
     return true;

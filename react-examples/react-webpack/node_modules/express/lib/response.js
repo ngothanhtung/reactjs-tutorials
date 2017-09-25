@@ -20,12 +20,12 @@ var http = require('http');
 var isAbsolute = require('./utils').isAbsolute;
 var onFinished = require('on-finished');
 var path = require('path');
+var statuses = require('statuses')
 var merge = require('utils-merge');
 var sign = require('cookie-signature').sign;
 var normalizeType = require('./utils').normalizeType;
 var normalizeTypes = require('./utils').normalizeTypes;
 var setCharset = require('./utils').setCharset;
-var statusCodes = http.STATUS_CODES;
 var cookie = require('cookie');
 var send = require('send');
 var extname = path.extname;
@@ -35,11 +35,17 @@ var vary = require('vary');
 
 /**
  * Response prototype.
+ * @public
  */
 
-var res = module.exports = {
-  __proto__: http.ServerResponse.prototype
-};
+var res = Object.create(http.ServerResponse.prototype)
+
+/**
+ * Module exports.
+ * @public
+ */
+
+module.exports = res
 
 /**
  * Module variables.
@@ -129,7 +135,7 @@ res.send = function send(body) {
 
     deprecate('res.send(status): Use res.sendStatus(status) instead');
     this.statusCode = chunk;
-    chunk = statusCodes[chunk];
+    chunk = statuses[chunk]
   }
 
   switch (typeof chunk) {
@@ -334,7 +340,7 @@ res.jsonp = function jsonp(obj) {
  */
 
 res.sendStatus = function sendStatus(statusCode) {
-  var body = statusCodes[statusCode] || String(statusCode);
+  var body = statuses[statusCode] || String(statusCode)
 
   this.statusCode = statusCode;
   this.type('txt');
@@ -711,9 +717,14 @@ res.header = function header(field, val) {
       : String(val);
 
     // add charset to content-type
-    if (field.toLowerCase() === 'content-type' && !charsetRegExp.test(value)) {
-      var charset = mime.charsets.lookup(value.split(';')[0]);
-      if (charset) value += '; charset=' + charset.toLowerCase();
+    if (field.toLowerCase() === 'content-type') {
+      if (Array.isArray(value)) {
+        throw new TypeError('Content-Type cannot be set to an Array');
+      }
+      if (!charsetRegExp.test(value)) {
+        var charset = mime.charsets.lookup(value.split(';')[0]);
+        if (charset) value += '; charset=' + charset.toLowerCase();
+      }
     }
 
     this.setHeader(field, value);
@@ -771,7 +782,7 @@ res.clearCookie = function clearCookie(name, options) {
  *
  * @param {String} name
  * @param {String|Object} value
- * @param {Options} options
+ * @param {Object} [options]
  * @return {ServerResponse} for chaining
  * @public
  */
@@ -876,12 +887,12 @@ res.redirect = function redirect(url) {
   // Support text/{plain,html} by default
   this.format({
     text: function(){
-      body = statusCodes[status] + '. Redirecting to ' + address;
+      body = statuses[status] + '. Redirecting to ' + address
     },
 
     html: function(){
       var u = escapeHtml(address);
-      body = '<p>' + statusCodes[status] + '. Redirecting to <a href="' + u + '">' + u + '</a></p>';
+      body = '<p>' + statuses[status] + '. Redirecting to <a href="' + u + '">' + u + '</a></p>'
     },
 
     default: function(){

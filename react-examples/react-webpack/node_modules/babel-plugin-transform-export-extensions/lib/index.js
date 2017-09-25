@@ -1,9 +1,9 @@
-/*istanbul ignore next*/"use strict";
+"use strict";
 
 exports.__esModule = true;
 
-exports.default = function ( /*istanbul ignore next*/_ref) {
-  /*istanbul ignore next*/var t = _ref.types;
+exports.default = function (_ref) {
+  var t = _ref.types;
 
   function build(node, nodes, scope) {
     var first = node.specifiers[0];
@@ -12,7 +12,7 @@ exports.default = function ( /*istanbul ignore next*/_ref) {
     var specifier = node.specifiers.shift();
     var uid = scope.generateUidIdentifier(specifier.exported.name);
 
-    var newSpecifier = /*istanbul ignore next*/void 0;
+    var newSpecifier = void 0;
     if (t.isExportNamespaceSpecifier(specifier)) {
       newSpecifier = t.importNamespaceSpecifier(uid);
     } else {
@@ -28,10 +28,10 @@ exports.default = function ( /*istanbul ignore next*/_ref) {
   return {
     inherits: require("babel-plugin-syntax-export-extensions"),
 
-    visitor: { /*istanbul ignore next*/
+    visitor: {
       ExportNamedDeclaration: function ExportNamedDeclaration(path) {
-        /*istanbul ignore next*/var node = path.node;
-        /*istanbul ignore next*/var scope = path.scope;
+        var node = path.node,
+            scope = path.scope;
 
         var nodes = [];
         build(node, nodes, scope);
@@ -46,4 +46,4 @@ exports.default = function ( /*istanbul ignore next*/_ref) {
   };
 };
 
-/*istanbul ignore next*/module.exports = exports["default"];
+module.exports = exports["default"];
