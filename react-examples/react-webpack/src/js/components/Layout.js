@@ -4,7 +4,7 @@ import Header from "./Header";
 export default class Layout extends React.Component {
 	constructor() {
 		super();
-		this.name = "William11";
+		this.name = "William";
 	}
 	render() {		
 		return (
