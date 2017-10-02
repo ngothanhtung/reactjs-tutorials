@@ -10,7 +10,7 @@ class App extends Component {
         super(props);
         // Dummy data
         var products = [];
-        for (var i = 1; i <= 6; i++) {
+        for (var i = 1; i <= 60; i++) {
             products.push({
                 id: i,
                 name: 'PRODUCT ' + i,
@@ -91,7 +91,7 @@ class App extends Component {
                             onAddToCart={function (product) {
                                 this.onAddToCart(product)
                             }.bind(this)}
-                            data={this.state.Products}
+                            products={this.state.Products}
                         />
                     </div>
                     <div className="col-sm-6">

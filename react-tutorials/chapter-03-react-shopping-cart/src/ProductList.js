@@ -6,9 +6,9 @@ class ProductList extends Component {
         return (
             <div className="row">
               {
-                this.props.data.map((p) =>
+                this.props.products.map((p) =>
                   <div className="col-xs-6 " key={p.id}>
-                    <Product onAddToCart={this.props.onAddToCart.bind(this, p)} product={p}/>
+                    <Product onAddToCart={this.props.onAddToCart.bind(this, p)} sanpham={p}/>
                   </div>
                 )
               }
