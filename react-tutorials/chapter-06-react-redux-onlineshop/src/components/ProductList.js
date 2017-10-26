@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 const ProductList = ({ products, onProductClick }) => (
   <div>
     <h2>Manage Products</h2>
+    <button>Click me</button>
     <ul>
       {products.map(p => (
-        <li key={p.id}>{p.name}</li>
+        <li
+          key={p.id}
+          onClick={() => onProductClick(p.id)}>{p.name}</li>
       ))}
     </ul>
   </div>

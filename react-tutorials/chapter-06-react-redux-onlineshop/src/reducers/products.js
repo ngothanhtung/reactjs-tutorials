@@ -35,6 +35,7 @@ const products = (state = [], action) => {
 				});
 			return state;
 		case types.GET_PRODUCTS:
+		console.log(types.GET_PRODUCTS);
 			fetch(baseUrl + '/all')
 			.then(res => res.json())
 			.then((data) => {
