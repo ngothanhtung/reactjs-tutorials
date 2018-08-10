@@ -1,6 +1,6 @@
 var Application = React.createClass({
-  render: function() {
-    return(
+  render: function () {
+    return (
       <div>
         <h1>Hello React</h1>
         <Player />
@@ -12,7 +12,12 @@ var Application = React.createClass({
 function Player(props) {
   return (
     <div className="player">
-      PLAYERS
+      <button onClick={() => {
+        alert('Hello');
+      }}>
+        PLAYERS
+    </button>
+
     </div>
   );
 }
