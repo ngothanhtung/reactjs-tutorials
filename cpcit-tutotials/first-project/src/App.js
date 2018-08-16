@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
-
+import Login from './Login';
 class Button extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       color: 'red'
     };
   }
@@ -38,6 +37,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedSubject: 2,
+      checked: false,
       username: '',
       password: '',
       invalidUsername: false
@@ -47,6 +48,17 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <select value={this.state.selectedSubject} className="form-control" onChange={(e) => { this.setState({ selectedSubject: e.target.value }) }}>
+          <option value="1">C#</option>
+          <option value="2">Java</option>
+        </select>
+
+        <div class="form-group form-check">
+          <input defaultChecked={this.state.checked} type="checkbox" class="form-check-input" onChange={(e) => { console.log(e.target.checked) }} id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <h2>{this.state.selectedSubject}</h2>
+        <Login buttonLabel="Open" />
         <Header />
         <div>
           <input className="form-control" type="text" onChange={(e) => {
@@ -56,7 +68,6 @@ class App extends Component {
             this.state.invalidUsername &&
             <span style={{ color: 'red' }}>X</span>
           }
-
           <input className="form-control" type="text" onChange={(e) => {
             this.setState({ password: e.target.value })
           }} />
