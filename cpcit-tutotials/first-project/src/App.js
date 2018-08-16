@@ -17,6 +17,7 @@ class Button extends Component {
         style={{ backgroundColor: this.state.color }}
         onClick={() => {
           this.setState({ color: 'green' });
+          console.log(this.state);
         }}
       >
         {this.props.title}
