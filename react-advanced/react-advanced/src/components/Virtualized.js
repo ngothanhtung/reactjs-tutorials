@@ -10,7 +10,7 @@ export default class componentName extends Component {
     this.state = {
     };
 
-    for (var i = 0; i < 1000; i++) {
+    for (var i = 0; i < 100000; i++) {
       list.push('Product Name ' + i);
     }
   }
@@ -37,7 +37,7 @@ export default class componentName extends Component {
       <div>
         {/* {
           list.map((item, index) => (
-            <div key={index}>
+            <div style={{ backgroundColor: 'green', padding: 4, textAlign: 'left', borderBottom: '1px solid white' }} key={index}>
               {list[index]}
             </div>
           ))
@@ -45,7 +45,7 @@ export default class componentName extends Component {
         <List
           style={{ width: '100%', padding: 2, }}
           width={1024}
-          height={300}
+          height={400}
           rowCount={list.length}
           rowHeight={30}
           rowRenderer={this.rowRenderer}
