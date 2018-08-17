@@ -8,43 +8,43 @@ There are some syntactic differences:
 import React, { Component } from 'react';
 
 class EventExample extends Component {
-  constructor(props) {
-     super(props);
+	constructor(props) {
+		super(props);
 
-     this.state = {
-        count: 0
-     }
+		this.state = {
+			count: 0
+		}
 
-     this.updateState = this.updateState.bind(this);
+		this.updateState = this.updateState.bind(this);
 
-  };
+	};
 
-  updateState() {
-    // setState() method is used for updating the state of the component. 
-    // This method will not replace the state but only add changes to original state.
-    this.setState({count: this.state.count + 1})
-  }
+	updateState() {
+		// setState() method is used for updating the state of the component. 
+		// This method will not replace the state but only add changes to original state.
+		this.setState({ count: this.state.count + 1 })
+	}
 
-  render() {
-     return (
-        <div>
-           <button onClick = { this.updateState }>CLICK ME</button>
-           <h4>{this.state.count}</h4>
-           <Content myDataProp = {this.state.count} updateStateProp = {this.updateState}></Content>
-        </div>
-     );
-  }
+	render() {
+		return (
+			<div>
+				<button onClick={this.updateState}>CLICK ME</button>
+				<h4>{this.state.count}</h4>
+				<Content myDataProp={this.state.count} updateStateProp={this.updateState}></Content>
+			</div>
+		);
+	}
 }
 
 class Content extends React.Component {
-   render() {
-      return (
-         <div>
-            <button onClick = {this.props.updateStateProp}>CLICK ME (CHILD)</button>
-            <h3>{this.props.myDataProp}</h3>
-         </div>
-      );
-   }
+	render() {
+		return (
+			<div>
+				<button onClick={this.props.updateStateProp}>CLICK ME (CHILD)</button>
+				<h3>{this.props.myDataProp}</h3>
+			</div>
+		);
+	}
 }
 
 

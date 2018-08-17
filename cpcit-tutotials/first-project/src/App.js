@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
 import Login from './Login';
+import CpcButton from 'cpcit';
+
 class Button extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,7 @@ class Button extends Component {
         onClick={() => {
           this.setState({ color: 'green' });
           console.log(this.state);
+
         }}
       >
         {this.props.title}
