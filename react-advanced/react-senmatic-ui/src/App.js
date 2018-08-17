@@ -84,6 +84,10 @@ class App extends Component {
           <Button secondary>Secondary</Button> <Button primary>Primary</Button>
           <Button secondary>Secondary</Button> <Button primary>Primary</Button>
           <Button secondary>Secondary</Button>
+          <Button animated='fade'>
+            <Button.Content visible>Sign-up for a Pro account Sign-up for a Pro account</Button.Content>
+            <Button.Content hidden>$12.99 a month</Button.Content>
+          </Button>
         </Container>
       </div >
     );
