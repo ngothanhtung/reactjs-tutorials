@@ -12,7 +12,10 @@ class InputUsing extends Component {
   render() {
     return (
       <div>
-        <Input value={this.state.inputValue} onChangeText={(text) => { this.setState({ inputValue: text }); }} />
+        <Input
+          value={this.state.inputValue}
+          onChangeText={(text) => { this.setState({ inputValue: text }); }}
+        />
         <h2>
           {this.state.inputValue}
         </h2>

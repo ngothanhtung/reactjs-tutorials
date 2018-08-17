@@ -6,6 +6,6 @@ import InputUsing from './InputUsing';
 import 'bootstrap/dist/css/bootstrap.css';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<InputUsing />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
 

@@ -3,6 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
 import Login from './Login';
+import StateExample from './StateExample';
+
+class Banner extends Component {
+  render() {
+    return (
+      <h1>{this.props.websitename}</h1>
+    );
+  }
+}
 
 class Button extends Component {
   constructor(props) {
@@ -50,6 +59,9 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <StateExample />
+        <Banner websitename="CPCIT" />
+        <Banner websitename="VIETNAM" />
         <select value={this.state.selectedSubject} className="form-control" onChange={(e) => { this.setState({ selectedSubject: e.target.value }) }}>
           <option value="1">C#</option>
           <option value="2">Java</option>
