@@ -13,10 +13,11 @@ class LifecycleExample extends Component {
     super(props);
 
     this.state = {
+      showComponent: true,
       data: 0
     }
-
-    this.setNewNumber = this.setNewNumber.bind(this)
+    // register event
+    this.setNewNumber = this.setNewNumber.bind(this);
   };
 
   setNewNumber() {
@@ -27,13 +28,22 @@ class LifecycleExample extends Component {
     return (
       <div>
         <button onClick={this.setNewNumber}>INCREMENT</button>
-        <Content myNumber={this.state.data}></Content>
+        <button onClick={() => { this.setState({ showComponent: false }) }}>HIDE</button>
+        {
+          this.state.showComponent &&
+          <Content myNumber={this.state.data}></Content>
+        }
+
       </div>
     );
   }
 }
 
 class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('constructor');
+  }
   // componentWillMount is executed before rendering, on both server and client side.
   componentWillMount() {
     console.log('Component WILL MOUNT!')
@@ -50,6 +60,7 @@ class Content extends React.Component {
   // We triggered it from setNewNumber when we updated the state.
   componentWillReceiveProps(newProps) {
     console.log('Component WILL RECIEVE PROPS!')
+    console.log('--- newProps', newProps);
   }
 
   // shouldComponentUpdate should return true or false value.
@@ -60,12 +71,14 @@ class Content extends React.Component {
     return true;
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps) {
     console.log('Component WILL UPDATE!');
+    console.log('--- nextProps', nextProps);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('Component DID UPDATE!')
+  componentDidUpdate(prevProps) {
+    console.log('Component DID UPDATE!');
+    console.log('--- prevProps', prevProps);
   }
 
   componentWillUnmount() {
