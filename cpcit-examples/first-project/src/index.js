@@ -7,6 +7,6 @@ import LoginForm from './LoginForm';
 import 'bootstrap/dist/css/bootstrap.css';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<LoginForm />, document.getElementById('root'));
+ReactDOM.render(<InputUsing />, document.getElementById('root'));
 registerServiceWorker();
 

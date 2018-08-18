@@ -35,8 +35,9 @@ class KeysExample extends Component {
 		return (
 			<div>
 				<div>
-					{this.state.data.map((dynamicComponent, i) =>
-						<Content key={i} componentData={dynamicComponent} />)
+					{
+						this.state.data.map((item, index) =>
+							<Content key={index} componentData={item} />)
 					}
 				</div>
 			</div>

@@ -14,9 +14,9 @@ import Routes from './routes';
 // import ValidatingPropsExample from './components/PropertyExamples/validating_props';
 // import EventExample from './components/EventExamples/index';
 // import ComponentAPIExample from './components/ComponentAPIExamples/index';
-import LifecycleExample from './components/LifecycleExamples/index';
+// import LifecycleExample from './components/LifecycleExamples/index';
 // import RefsExample from './components/RefsExamples/index';
-// import KeysExample from './components/KeysExamples/index';
+import ListsAndKeysExamples from './components/ListsAndKeysExamples';
 // import FormExample from './components/FormExamples/index';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -119,13 +119,13 @@ ReactDOM.render(
 */
 
 // 11. ComponentAPIExample
-
+/*
 ReactDOM.render(<LifecycleExample />, document.getElementById('root'));
 
 setTimeout(() => {
   ReactDOM.unmountComponentAtNode(document.getElementById('root'));
 }, 10000);
-
+*/
 
 //12. Refs Example
 /*
@@ -136,12 +136,12 @@ ReactDOM.render(
 */
 
 //13. Keys Example
-/*
+
 ReactDOM.render(
-  <KeysExample />,
+  <ListsAndKeysExamples />,
   document.getElementById('root')
 );
-*/
+
 
 //14. Form Example
 /*
