@@ -9,7 +9,7 @@
 ### Form:
 1. Login form (Email TextInput component, Password TextInput component, Login Button with Icon)
 
-### Asysc
+### Async
 1. POSTMAN tools
 2. Login form with async (https://slacklivechat.com/users/login)
    - POST
