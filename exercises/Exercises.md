@@ -17,6 +17,11 @@
    - Data: {username, password}
    - Response: admin / 123456789 => 'Login OK' / 'Login failed'
 3. Get json from remote host (https://github.com/typicode/jsonplaceholder#how-to)
+4. Translation tools (https://slacklivechat.com/translate/translate)
+  - POST
+  - JSON
+  - Data : {"text": "mouse"}
+  - Response: text
 
 ### Async Quiz:
 1. Data: https://slacklivechat.com/question
