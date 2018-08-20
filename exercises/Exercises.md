@@ -10,5 +10,11 @@
 1. Login form (Email TextInput component, Password TextInput component, Login Button with Icon)
 
 ### Asysn
-1. Login form with async (https://github.com/typicode/jsonplaceholder#how-to)
+1. POSTMAN tools
+2. Login form with async (https://slacklivechat.com/users/login)
+   - POST
+   - JSON
+   - Data: {username, password}
+   - Response: 'Login OK' / 'Login failed'
+3. Get json from remote host (https://github.com/typicode/jsonplaceholder#how-to)
 
