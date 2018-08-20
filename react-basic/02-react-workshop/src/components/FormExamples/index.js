@@ -21,7 +21,7 @@ export default class FormExample extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<TextInput value={this.state.text} onChange={(text) => this.setState({ text: text })} />
+				<TextInput placeholderText="Username" value={this.state.text} onChange={(text) => this.setState({ text: text })} />
 				<CheckBox checked={this.state.checked} label="Check me out" onChange={(checked) => this.setState({ checked: checked })} />
 				<input type="submit" value="Submit" />
 			</form>

@@ -15,7 +15,7 @@ export default class TextInput extends Component {
       <input
         style={this.state.invalid ? { border: '1px solid red' } : { border: '1px solid black' }}
         className="form-control"
-        placeholder="Enter you text"
+        placeholder={this.props.placeholderText}
         value={this.state.value}
         type="text"
         onChange={(e) => {
