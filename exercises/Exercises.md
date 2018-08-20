@@ -15,7 +15,7 @@
    - POST
    - JSON
    - Data: {username, password}
-   - Response: 'Login OK' / 'Login failed'
+   - Response: admin / 123456789 => 'Login OK' / 'Login failed'
 3. Get json from remote host (https://github.com/typicode/jsonplaceholder#how-to)
 
 ### Async Quiz:
