@@ -16,8 +16,8 @@ import Routes from './routes';
 // import ComponentAPIExample from './components/ComponentAPIExamples/index';
 // import LifecycleExample from './components/LifecycleExamples/index';
 // import RefsExample from './components/RefsExamples/index';
-import ListsAndKeysExamples from './components/ListsAndKeysExamples';
-// import FormExample from './components/FormExamples/index';
+// import ListsAndKeysExamples from './components/ListsAndKeysExamples';
+import FormExample from './components/FormExamples/index';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -136,19 +136,19 @@ ReactDOM.render(
 */
 
 //13. Keys Example
-
+/*
 ReactDOM.render(
   <ListsAndKeysExamples />,
   document.getElementById('root')
 );
-
+*/
 
 //14. Form Example
-/*
+
 ReactDOM.render(
   <FormExample />,
   document.getElementById('root')
 );
-*/
+
 
 registerServiceWorker();

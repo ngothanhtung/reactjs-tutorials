@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import CheckBox from './CheckBox';
+import TextInput from './TextInput';
 
-class FormExample extends Component {
+export default class FormExample extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
-			data: 'Initial data...'
+			text: '',
+			checked: true,
 		}
 
-		this.updateState = this.updateState.bind(this);
-
-	};
-
-	updateState(e) {
-		this.setState({ data: e.target.value });
+		// binding handle
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	handleSubmit(e) {
+		console.log('Data was submitted', this.state);
+		e.preventDefault();
 	}
 
 	render() {
 		return (
-			<div>
-				<Content myDataProp={this.state.data}
-					updateStateProp={this.updateState}></Content>
-			</div>
+			<form onSubmit={this.handleSubmit}>
+				<TextInput value={this.state.text} onChange={(text) => this.setState({ text: text })} />
+				<CheckBox checked={this.state.checked} label="Check me out" onChange={(checked) => this.setState({ checked: checked })} />
+				<input type="submit" value="Submit" />
+			</form>
 		);
 	}
 }
-
-class Content extends React.Component {
-	render() {
-		return (
-			<div>
-				<input type="text" value={this.props.myDataProp}
-					onChange={this.props.updateStateProp} />
-				<h3>{this.props.myDataProp}</h3>
-			</div>
-		);
-	};
-}
-
-export default FormExample;
