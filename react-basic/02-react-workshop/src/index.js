@@ -18,6 +18,7 @@ import Routes from './routes';
 // import RefsExample from './components/RefsExamples/index';
 // import ListsAndKeysExamples from './components/ListsAndKeysExamples';
 import FormExample from './components/FormExamples/index';
+import TranslationExamples from './components/TranslationExamples';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -145,10 +146,15 @@ ReactDOM.render(
 
 //14. Form Example
 
+// ReactDOM.render(
+//   <FormExample />,
+//   document.getElementById('root')
+// );
+
+
 ReactDOM.render(
-  <FormExample />,
+  <TranslationExamples />,
   document.getElementById('root')
 );
-
 
 registerServiceWorker();
