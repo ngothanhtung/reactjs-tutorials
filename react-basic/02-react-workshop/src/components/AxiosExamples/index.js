@@ -15,6 +15,7 @@ class AxiosExamples extends Component {
       error: false,
       mode: 'insert',
       users: [],
+      editId: '',
       user: {
         userName: '',
         password: '123456789',
@@ -44,25 +45,34 @@ class AxiosExamples extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const component = this;
+    if (this.state.mode === 'insert') {
+      axios.post(apiUrl, { user: this.state.user })
+        .then(response => {
+          console.log(response);
+          var users = component.state.users;
+          users.push(response.data);
+          component.setState({ users: users });
+        })
+        .catch(error => console.log(error));
+    } else if (this.state.mode === 'edit') {
+      axios.put(apiUrl + '/' + this.state.editId, { user: this.state.user })
+        .then(response => {
+          console.log(response);
+          var users = component.state.users;
+          for (var i = 0; i < users.length; i++) {
+            if (users[i]._id === this.state.editId) {
+              users[i] = response.data;
+              component.setState({ users: users });
+              return false;
+            }
+          }
+        })
+        .catch(error => console.log(error));
+    }
 
-    if (this.state.mode !== 'insert') return;
-    var component = this;
-
-    axios.post(apiUrl, { user: this.state.user })
-      .then(response => {
-        console.log(response);
-        var users = component.state.users;
-        users.push(response.data);
-        component.setState({ users: users });
-      })
-      .catch(error => console.log(error));
   }
 
-  handleChange(field, event) {
-    var object = this.state.user;
-    object[field] = event.target.value;
-    this.setState({ user: object });
-  }
 
   //DELETE
   handleDelete(id, event) {
@@ -88,11 +98,27 @@ class AxiosExamples extends Component {
     var users = this.state.users;
     for (var i = 0; i < users.length; i++) {
       if (users[i]._id === id) {
-        this.setState({ user: users[i] });
+        this.setState({
+          user: {
+            // Not include _id
+            userName: users[i].userName,
+            fullName: users[i].fullName,
+            password: users[i].password,
+            email: users[i].email,
+            phoneNumber: users[i].phoneNumber,
+          }
+        });
         this.setState({ mode: 'edit' });
+        this.setState({ editId: id });
         return false;
       }
     }
+  }
+
+  handleChange(field, event) {
+    var object = this.state.user;
+    object[field] = event.target.value;
+    this.setState({ user: object });
   }
 
   componentDidMount() {
