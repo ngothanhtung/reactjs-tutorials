@@ -15,7 +15,7 @@ import ListsAndKeysExamples from './components/ListsAndKeysExamples';
 import FormExample from './components/FormExamples';
 import TranslationExamples from './components/TranslationExamples';
 import AxiosExamples from './components/AxiosExamples';
-// import Routes from './routes';
+import Routes from './routes';
 // import MaterialDesign from './components/MaterialDesign';
 
 let component = <AxiosExamples />;

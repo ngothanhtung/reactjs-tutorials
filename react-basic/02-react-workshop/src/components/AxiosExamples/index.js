@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import './style.css';
 
 const apiUrl = 'https://slacklivechat.com/users';
+// POST, GET, PUT, DELETE
 
 class AxiosExamples extends Component {
   constructor(props) {
@@ -101,7 +102,7 @@ class AxiosExamples extends Component {
   render() {
     if (this.state.loading === false) {
       return (
-        <div className="container">
+        <div>
           <h1>Users</h1>
           <table className="table table-bordered table-hover">
             <thead>
@@ -115,20 +116,21 @@ class AxiosExamples extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.users.map((item, index) =>
-                <tr key={item._id}>
-                  <td>
-                    <button className="btn btn-sm btn-danger" onClick={this.handleSelect.bind(this, item._id)}>Select</button>
-                  </td>
-                  <td>{item._id}</td>
-                  <td>{item.fullName}</td>
-                  <td>{item.email}</td>
-                  <td>{item.phoneNumber}</td>
-                  <td style={{ width: '1%' }}>
-                    <button className="btn btn-sm btn-danger" onClick={this.handleDelete.bind(this, item._id)}>Delete</button>
-                  </td>
-                </tr>
-              )}
+              {
+                this.state.users.map((item, index) =>
+                  <tr key={item._id}>
+                    <td>
+                      <button className="btn btn-sm btn-danger" onClick={this.handleSelect.bind(this, item._id)}>Select</button>
+                    </td>
+                    <td>{item._id}</td>
+                    <td>{item.fullName}</td>
+                    <td>{item.email}</td>
+                    <td>{item.phoneNumber}</td>
+                    <td style={{ width: '1%' }}>
+                      <button className="btn btn-sm btn-danger" onClick={this.handleDelete.bind(this, item._id)}>Delete</button>
+                    </td>
+                  </tr>
+                )}
             </tbody>
           </table>
 
