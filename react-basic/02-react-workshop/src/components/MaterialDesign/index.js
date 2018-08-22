@@ -1,6 +1,5 @@
-import React, {
-  Component
-} from 'react';
+import React, { Component } from 'react';
+import ThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './style.css';
 import MyButton from './MyButton';
 import MyCard from './MyCard';
@@ -21,21 +20,24 @@ class MaterialDesign extends Component {
   componentDidMount() {
     fetch('/users')
       .then(res => res.json())
-      .then(users => this.setState({
-        users
-      }));
+      .then(users => this.setState({ users }))
+      .catch(error => {
+        this.setState({ user: [] });
+      });
   }
 
   render() {
     return (
-      <div style={{display: 'block'}}>
+      <ThemeProvider>
+        <div style={{ display: 'block' }}>
           <MyButton />
           <MyList />
           <MyTable />
           <MyCard />
           <MySimpleDialog />
           <MyModalDialog />
-      </div>
+        </div>
+      </ThemeProvider>
     );
   }
 }

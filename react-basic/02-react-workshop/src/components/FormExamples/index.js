@@ -23,6 +23,7 @@ export default class FormExample extends Component {
 			<form onSubmit={this.handleSubmit}>
 				<TextInput placeholderText="Username" value={this.state.text} onChange={(text) => this.setState({ text: text })} />
 				<CheckBox checked={this.state.checked} label="Check me out" onChange={(checked) => this.setState({ checked: checked })} />
+				<hr />
 				<input type="submit" value="Submit" />
 			</form>
 		);

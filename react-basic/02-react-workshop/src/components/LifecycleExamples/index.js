@@ -31,7 +31,7 @@ class LifecycleExample extends Component {
         <button onClick={() => { this.setState({ showComponent: false }) }}>HIDE</button>
         {
           this.state.showComponent &&
-          <Content myNumber={this.state.data}></Content>
+          <ChildComponent myNumber={this.state.data}></ChildComponent>
         }
 
       </div>
@@ -39,7 +39,7 @@ class LifecycleExample extends Component {
   }
 }
 
-class Content extends React.Component {
+class ChildComponent extends React.Component {
   constructor(props) {
     super(props);
     console.log('constructor');

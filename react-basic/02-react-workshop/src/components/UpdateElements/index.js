@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class UpdateElements extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentCount: 100 }
+    this.state = { currentCount: 5 }
+
+    this.timer = this.timer.bind(this);
   }
   timer() {
     this.setState({
@@ -14,7 +16,7 @@ class UpdateElements extends Component {
     }
   }
   componentDidMount() {
-    this.intervalId = setInterval(this.timer.bind(this), 1000);
+    this.intervalId = setInterval(this.timer, 1000);
   }
   componentWillUnmount() {
     clearInterval(this.intervalId);

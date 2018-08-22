@@ -1,134 +1,111 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import './style.css';
+
+const apiUrl = 'https://slacklivechat.com/users';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true,
-      customers: [],
-      customer: {
-        id: '',
-        firstName: '',
-        lastName: '',
+      error: false,
+      users: [],
+      user: {
+        userName: '',
+        password: '123456789',
+        fullName: '',
         email: '',
-        address: '',
         phoneNumber: '',
-        birthday: '',
-        gender: ''
       }
     }
 
+    this.getData = this.getData.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+
+  getData() {
+    axios.get(apiUrl)
+      .then(response => {
+        console.log(response);
+        this.setState({ users: response.data });
+        this.setState({ loading: false });
+      })
+      .catch(error => {
+        this.setState({ loading: false, error: error });
+        console.log(error);
+      });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
-    var data = JSON.stringify(this.state.customer);
-
     var component = this;
 
-    // url (required), options (optional)
-    fetch('http://172.104.49.4/api/CustomerApi/', {
-      method: 'POST',
-      body: data,
-      headers: new Headers({
-        'Content-Type': 'application/json'
+    axios.post(apiUrl, { user: this.state.user })
+      .then(response => {
+        console.log(response);
+        var users = component.state.users;
+        users.push(response.data);
+        component.setState({ users: users });
       })
-    }).then(function (response) {
-      return response.json()
-    }).then(function (data) {
-      var customers = component.state.customers;
-      customers.push(data);
-      component.setState({ customers: customers });
-    }).catch(function (err) {
-      // Error :(
-      console.log(err);
-    });
+      .catch(error => console.log(error));
   }
 
   handleChange(field, event) {
-    var object = this.state.customer;
+    var object = this.state.user;
     object[field] = event.target.value;
-    this.setState({ customer: object });
+    this.setState({ user: object });
   }
 
   //DELETE
-  handleDelete(customerId, event) {
-
+  handleDelete(id, event) {
     var component = this;
-
-    // url (required), options (optional)
-    fetch('http://172.104.49.4/api/CustomerApi/' + customerId, {
-      method: 'DELETE',
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
-    }).then(function (response) {
-      //return response.json()
-    }).then(function (data) {
-
-      var customers = component.state.customers;
-      for (var i = 0; i < customers.length; i++) {
-        if (customers[i].id === customerId) {
-          console.log(customerId);
-          customers.splice(i, 1);
-          component.setState({ customers: customers });
-          return false;
+    axios.delete(apiUrl + '/' + id)
+      .then(response => {
+        console.log(response);
+        var users = component.state.users;
+        for (var i = 0; i < users.length; i++) {
+          if (users[i]._id === id) {
+            users.splice(i, 1);
+            component.setState({ users: users });
+            return false;
+          }
         }
-      }
-      //var customers = component.state.customers;
-      //customers.push(data);
-      //component.setState({ customers: customers});
-    }).catch(function (err) {
-      // Error :(
-      console.log(err);
-    });
-
+      }).catch(error => {
+        console.log(error);
+      });
   }
 
   componentDidMount() {
-    fetch('http://localhost:27636/api/CustomerApi')
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({ customers: data });
-        this.setState({ loading: false });
-      });
+    this.getData();
   }
 
   render() {
     if (this.state.loading === false) {
       return (
-        <div className="App">
-          <h1>Customers</h1>
-          <table className="table table-hover">
+        <div className="container">
+          <h1>Users</h1>
+          <table className="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Address</th>
-                <th>Birthday</th>
-                <th>Gender</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {this.state.customers.map(customer =>
-                <tr key={customer.id}>
-                  <td>{customer.id}</td>
-                  <td>{customer.firstName}</td>
-                  <td>{customer.lastName}</td>
-                  <td>{customer.email}</td>
-                  <td>{customer.phoneNumber}</td>
-                  <td>{customer.address}</td>
-                  <td>{customer.birthday}</td>
-                  <td>{customer.gender}</td>
-                  <td>
-                    <button className="btn btn-danger" onClick={this.handleDelete.bind(this, customer.id)}>Delete</button>
+              {this.state.users.map((item, index) =>
+                <tr key={item._id}>
+                  <td>{item._id}</td>
+                  <td>{item.fullName}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phoneNumber}</td>
+                  <td style={{ width: '1%' }}>
+                    <button className="btn btn-sm btn-danger" onClick={this.handleDelete.bind(this, item._id)}>Delete</button>
                   </td>
                 </tr>
               )}
@@ -138,36 +115,20 @@ class App extends Component {
           <hr />
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
-              <label>Id:</label>
-              <input type="text" className="input form-control" value={this.state.customer.id} onChange={this.handleChange.bind(this, 'id')} />
+              <label>Full Name:</label>
+              <input type="text" className="input form-control" value={this.state.user.fullName} onChange={this.handleChange.bind(this, 'fullName')} />
             </div>
             <div className="form-group">
-              <label>First Name:</label>
-              <input type="text" className="input form-control" value={this.state.customer.firstName} onChange={this.handleChange.bind(this, 'firstName')} />
-            </div>
-            <div className="form-group">
-              <label>Last Name:</label>
-              <input type="text" className="input form-control" value={this.state.customer.lastName} onChange={this.handleChange.bind(this, 'lastName')} />
+              <label>Username:</label>
+              <input type="text" className="input form-control" value={this.state.user.userName} onChange={this.handleChange.bind(this, 'userName')} />
             </div>
             <div className="form-group">
               <label>Email:</label>
-              <input type="text" className="input form-control" value={this.state.customer.email} onChange={this.handleChange.bind(this, 'email')} />
+              <input type="text" className="input form-control" value={this.state.user.email} onChange={this.handleChange.bind(this, 'email')} />
             </div>
             <div className="form-group">
               <label>Phone Number:</label>
-              <input type="text" className="input form-control" value={this.state.customer.phoneNumber} onChange={this.handleChange.bind(this, 'phoneNumber')} />
-            </div>
-            <div className="form-group">
-              <label>Address:</label>
-              <input type="text" className="input form-control" value={this.state.customer.address} onChange={this.handleChange.bind(this, 'address')} />
-            </div>
-            <div className="form-group">
-              <label>Birthday:</label>
-              <input type="text" className="input form-control" value={this.state.customer.birthday} onChange={this.handleChange.bind(this, 'birthday')} />
-            </div>
-            <div className="form-group">
-              <label>Gender:</label>
-              <input type="text" className="input form-control" value={this.state.customer.gender} onChange={this.handleChange.bind(this, 'gender')} />
+              <input type="text" className="input form-control" value={this.state.user.phoneNumber} onChange={this.handleChange.bind(this, 'phoneNumber')} />
             </div>
             <div>
               <input className="btn btn-primary" type="submit" value="Submit" />

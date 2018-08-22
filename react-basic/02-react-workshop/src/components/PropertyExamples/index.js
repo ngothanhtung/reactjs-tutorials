@@ -6,7 +6,6 @@ while the child components should only pass data from the state using props.
 */
 
 import React, { Component } from 'react';
-import moduleName from './';
 
 class PropsExample extends Component {
 	render() {
@@ -19,6 +18,7 @@ class PropsExample extends Component {
 	}
 }
 
+// default props
 PropsExample.defaultProps = {
 	headerText: "Header from default props...",
 	contentText: "Content from default props..."
