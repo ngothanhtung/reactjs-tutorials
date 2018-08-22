@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 import './style.css';
 
 const apiUrl = 'https://slacklivechat.com/users';
 
-class App extends Component {
+class AxiosExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -131,7 +132,7 @@ class App extends Component {
               <input type="text" className="input form-control" value={this.state.user.phoneNumber} onChange={this.handleChange.bind(this, 'phoneNumber')} />
             </div>
             <div>
-              <input className="btn btn-primary" type="submit" value="Submit" />
+              <input className="btn btn-primary" type="submit" value="Submit" />              
             </div>
           </form>
         </div>
@@ -142,4 +143,4 @@ class App extends Component {
     }
   }
 }
-export default App;
+export default AxiosExamples;
