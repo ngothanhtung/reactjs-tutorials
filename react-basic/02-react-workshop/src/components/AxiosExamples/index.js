@@ -64,13 +64,23 @@ class AxiosExamples extends Component {
             if (users[i]._id === this.state.editId) {
               users[i] = response.data;
               component.setState({ users: users });
+              // RESET FORM
+              component.setState({ mode: 'insert' });
+              component.setState({
+                user: {
+                  userName: '',
+                  password: '123456789',
+                  fullName: '',
+                  email: '',
+                  phoneNumber: '',
+                }
+              });
               return false;
             }
           }
         })
         .catch(error => console.log(error));
     }
-
   }
 
 
@@ -135,6 +145,7 @@ class AxiosExamples extends Component {
               <tr>
                 <th></th>
                 <th>Id</th>
+                <th>Username</th>
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -149,6 +160,7 @@ class AxiosExamples extends Component {
                       <button className="btn btn-sm btn-danger" onClick={this.handleSelect.bind(this, item._id)}>Select</button>
                     </td>
                     <td>{item._id}</td>
+                    <td>{item.userName}</td>
                     <td>{item.fullName}</td>
                     <td>{item.email}</td>
                     <td>{item.phoneNumber}</td>
