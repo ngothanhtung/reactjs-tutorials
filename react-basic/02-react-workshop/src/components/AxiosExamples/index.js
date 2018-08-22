@@ -12,6 +12,7 @@ class AxiosExamples extends Component {
     this.state = {
       loading: true,
       error: false,
+      mode: 'insert',
       users: [],
       user: {
         userName: '',
@@ -42,6 +43,8 @@ class AxiosExamples extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
+    if (this.state.mode !== 'insert') return;
     var component = this;
 
     axios.post(apiUrl, { user: this.state.user })
@@ -79,6 +82,18 @@ class AxiosExamples extends Component {
       });
   }
 
+  //SELECT
+  handleSelect(id, event) {
+    var users = this.state.users;
+    for (var i = 0; i < users.length; i++) {
+      if (users[i]._id === id) {
+        this.setState({ user: users[i] });
+        this.setState({ mode: 'edit' });
+        return false;
+      }
+    }
+  }
+
   componentDidMount() {
     this.getData();
   }
@@ -91,6 +106,7 @@ class AxiosExamples extends Component {
           <table className="table table-bordered table-hover">
             <thead>
               <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Full Name</th>
                 <th>Email</th>
@@ -101,6 +117,9 @@ class AxiosExamples extends Component {
             <tbody>
               {this.state.users.map((item, index) =>
                 <tr key={item._id}>
+                  <td>
+                    <button className="btn btn-sm btn-danger" onClick={this.handleSelect.bind(this, item._id)}>Select</button>
+                  </td>
                   <td>{item._id}</td>
                   <td>{item.fullName}</td>
                   <td>{item.email}</td>
@@ -132,7 +151,7 @@ class AxiosExamples extends Component {
               <input type="text" className="input form-control" value={this.state.user.phoneNumber} onChange={this.handleChange.bind(this, 'phoneNumber')} />
             </div>
             <div>
-              <input className="btn btn-primary" type="submit" value="Submit" />              
+              <input className="btn btn-primary" type="submit" value="Submit" />
             </div>
           </form>
         </div>
