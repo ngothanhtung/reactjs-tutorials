@@ -86,21 +86,23 @@ class AxiosExamples extends Component {
 
   //DELETE
   handleDelete(id, event) {
-    var component = this;
-    axios.delete(apiUrl + '/' + id)
-      .then(response => {
-        console.log(response);
-        var users = component.state.users;
-        for (var i = 0; i < users.length; i++) {
-          if (users[i]._id === id) {
-            users.splice(i, 1);
-            component.setState({ users: users });
-            return false;
+    if (window.confirm('Are you sure you wish to delete this item?')) {
+      var component = this;
+      axios.delete(apiUrl + '/' + id)
+        .then(response => {
+          console.log(response);
+          var users = component.state.users;
+          for (var i = 0; i < users.length; i++) {
+            if (users[i]._id === id) {
+              users.splice(i, 1);
+              component.setState({ users: users });
+              return false;
+            }
           }
-        }
-      }).catch(error => {
-        console.log(error);
-      });
+        }).catch(error => {
+          console.log(error);
+        });
+    }
   }
 
   //SELECT
