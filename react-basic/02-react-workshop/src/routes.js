@@ -9,6 +9,7 @@ import {
 
 import App from './components/App';
 import About from './components/About';
+import Music from './components/AudioPlayerExamples';
 //import NotFound from './components/NotFound';
 //import MaterialDesign from './components/MaterialDesign';
 
@@ -19,6 +20,7 @@ const Routes = () => (
 				<li><Link to="/">Home</Link></li>
 				<li><Link to="/about">About</Link></li>
 				<li><Link to="/topics">Topics</Link></li>
+				<li><Link to="/music">Music</Link></li>
 			</ul>
 
 			<hr />
@@ -26,6 +28,7 @@ const Routes = () => (
 			<Route exact path="/" component={App} />
 			<Route path="/about" component={About} />
 			<Route path="/topics" component={Topics} />
+			<Route path="/music" component={Music} />
 		</div>
 	</Router>
 )

@@ -16,9 +16,11 @@ import FormExample from './components/FormExamples';
 import TranslationExamples from './components/TranslationExamples';
 import AxiosExamples from './components/AxiosExamples';
 import Routes from './routes';
+import RouterExamples from './components/RouterExamples';
+import AudioPlayerExamples from './components/AudioPlayerExamples';
 // import MaterialDesign from './components/MaterialDesign';
 
-let component = <AxiosExamples />;
+let component = <RouterExamples />;
 ReactDOM.render(component, document.getElementById('root'));
 
 registerServiceWorker();
