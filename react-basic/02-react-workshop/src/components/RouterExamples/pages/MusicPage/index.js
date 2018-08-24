@@ -26,18 +26,6 @@ export default class MusicPage extends Component {
     };
   }
 
-  handleClick(props) {
-    // REACT DOM
-    var elementPlayer = document.getElementById('music-player');
-    var player = ReactDOM.findDOMNode(elementPlayer);
-    player.src = props.song.url;
-    player.play();
-
-    var elementSongName = document.getElementById('song-name');
-    var name = ReactDOM.findDOMNode(elementSongName);
-    name.innerHTML = props.song.title + ' - ' + props.song.artist;
-  }
-
   SongItem = (props) => {
     return (
       <div>
