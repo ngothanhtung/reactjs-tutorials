@@ -11,11 +11,12 @@ const songs = [
   }
 ];
 
-export default class App extends Component {
+export default class HomePage extends Component {
   render() {
     return (
       <div>
         <button className="btn btn-danger" onClick={() => {
+          // REACT DOM
           var element = document.getElementById('music-player');
           var player = ReactDOM.findDOMNode(element);
           player.src = songs[0].url;

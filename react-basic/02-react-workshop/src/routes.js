@@ -7,7 +7,7 @@ import {
 	Link
 } from 'react-router-dom'
 
-import App from './components/App';
+import App from './components/FormExamples';
 import About from './components/About';
 import Music from './components/AudioPlayerExamples';
 //import NotFound from './components/NotFound';

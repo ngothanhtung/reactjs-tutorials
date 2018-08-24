@@ -17,13 +17,25 @@ const songs = [
   },
 ];
 
-export default class AudioPlayerExamples extends Component {
+export default class MusicPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       active: songs[0],
       play: true,
     };
+  }
+
+  handleClick(props) {
+    // REACT DOM
+    var elementPlayer = document.getElementById('music-player');
+    var player = ReactDOM.findDOMNode(elementPlayer);
+    player.src = props.song.url;
+    player.play();
+
+    var elementSongName = document.getElementById('song-name');
+    var name = ReactDOM.findDOMNode(elementSongName);
+    name.innerHTML = props.song.title + ' - ' + props.song.artist;
   }
 
   SongItem = (props) => {
@@ -39,8 +51,6 @@ export default class AudioPlayerExamples extends Component {
           </div>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <span style={{ cursor: 'pointer' }} onClick={() => {
-              // this.setState({ active: props.song });
-
               // REACT DOM
               var elementPlayer = document.getElementById('music-player');
               var player = ReactDOM.findDOMNode(elementPlayer);
@@ -70,15 +80,6 @@ export default class AudioPlayerExamples extends Component {
             <this.SongItem key={index} song={item} />
           ))
         }
-        {/* <div className="footer">
-          <div style={{ paddingLeft: 8, paddingRight: 8, backgroundColor: '#EFF1F2' }}>
-            <div style={{ textAlign: 'center', padding: 4 }}>
-              <strong style={{ fontSize: 12 }}>{this.state.active.title} - {this.state.active.artist}</strong>
-            </div>
-
-            <audio controls src={active.url} autoPlay={this.state.play} preload="auto" ref="player"></audio>
-          </div>
-        </div> */}
       </div>
     );
   }
