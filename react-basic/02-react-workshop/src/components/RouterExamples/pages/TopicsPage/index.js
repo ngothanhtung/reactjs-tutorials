@@ -10,7 +10,7 @@ export default class Topics extends Component {
           <li>
             <Link to={`${this.props.match.url}/rendering/1`}>
               Rendering with React
-        </Link>
+            </Link>
           </li>
           <li>
             <Link to={`${this.props.match.url}/components/2`}>
