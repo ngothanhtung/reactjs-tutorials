@@ -2,7 +2,7 @@ import * as ActionTypes from '../constants/actionTypes';
 
 // DEFAULT STATE
 const defaultState = {
-  count: 0
+  count: 0,
 };
 
 const counterReducer = (state = defaultState, action) => {

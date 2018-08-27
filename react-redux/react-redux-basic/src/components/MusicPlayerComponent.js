@@ -5,19 +5,6 @@ export default class MusicPlayerComponent extends Component {
   render() {
     return (
       <div>
-        <div>
-          {
-            this.props.songs.map((item, index) => (
-              <div key={index}>
-                <button style={{ textAlign: 'left', marginBottom: 4 }} className="btn btn-primary btn-block" onClick={() => {
-                  this.props.play(item);
-                }}>
-                  {item.title}
-                </button>
-              </div>
-            ))
-          }
-        </div>
         {
           this.props.activeSong &&
           <div className="footer">

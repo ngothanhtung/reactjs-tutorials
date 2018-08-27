@@ -18,7 +18,9 @@ export default class RouterExamples extends Component {
 							<button type="button" className="btn btn-primary">
 								<Link style={{ color: 'white', textDecoration: 'none' }} to="/">Home</Link>
 							</button>
-							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/topics">Topics</Link></button>
+							<button type="button" className="btn btn-primary">
+								<Link style={{ color: 'white', textDecoration: 'none' }} to="/topics">Topics</Link>
+							</button>
 							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/music">Music</Link></button>
 							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/chat">Chat</Link></button>
 						</div>
