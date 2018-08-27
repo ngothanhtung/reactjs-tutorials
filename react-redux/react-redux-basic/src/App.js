@@ -7,6 +7,7 @@ import rootReducer from './reducers';
 // APPS
 import CounterApp from './CounterApp';
 import MusicApp from './MusicApp';
+import BankApp from './BankApp';
 
 // REDUX STORE
 const store = createStore(
@@ -23,6 +24,8 @@ class App extends Component {
           <CounterApp />
           <hr />
           <MusicApp />
+          <hr />
+          <BankApp />
         </div>
       </Provider>
     );
