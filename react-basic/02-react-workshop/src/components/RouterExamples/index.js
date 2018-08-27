@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import MusicPage from './pages/MusicPage';
 import TopicsPage from './pages/TopicsPage';
+import ChatExamples from '../ChatExamples';
 import './style.css';
 
 export default class RouterExamples extends Component {
@@ -19,12 +20,14 @@ export default class RouterExamples extends Component {
 							</button>
 							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/topics">Topics</Link></button>
 							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/music">Music</Link></button>
+							<button type="button" className="btn btn-primary"><Link style={{ color: 'white', textDecoration: 'none' }} to="/chat">Chat</Link></button>
 						</div>
 						<hr />
 						<div style={{ backgroundColor: 'yellow' }}>
 							<Route exact path="/" component={HomePage} />
 							<Route path="/topics" component={TopicsPage} />
 							<Route path="/music" component={MusicPage} />
+							<Route path="/chat" component={ChatExamples} />
 						</div>
 
 					</div>

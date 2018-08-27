@@ -61,7 +61,6 @@ class ChatExamples extends React.Component {
             messages: [...this.state.messages, message]
           })
         }
-
       }
     })
       .then(room => {

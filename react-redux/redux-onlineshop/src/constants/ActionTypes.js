@@ -1,3 +1,0 @@
-export const ADD_PRODUCT = 'ADD_PRODUCT';
-export const SELECT_PRODUCT = 'SELECT_PRODUCTS';
-export const GET_PRODUCTS = 'GET_PRODUCTS';

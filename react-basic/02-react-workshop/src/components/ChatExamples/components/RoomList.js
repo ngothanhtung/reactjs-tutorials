@@ -4,22 +4,19 @@ class RoomList extends React.Component {
   render() {
     const orderedRooms = [...this.props.rooms].sort((a, b) => a.id > b.id)
     return (
-      <div className="rooms-list">
-        <ul>
-          <h3>Your rooms:</h3>
-          {orderedRooms.map(room => {
-            const active = room.id === this.props.roomId ? 'active' : '';
-            return (
-              <li key={room.id} className={"room " + active}>
-                <a
-                  onClick={() => this.props.subscribeToRoom(room.id)}
-                  href="#">
-                  # {room.name}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
+      <div>
+        <h3>Your rooms:</h3>
+        {orderedRooms.map(room => {
+          const active = room.id === this.props.roomId ? 'btn-primary' : 'btn-default';
+          return (
+            <button key={room.id}
+              className={"btn btn-block " + active}
+              style={{ textAlign: 'left' }}
+              onClick={() => this.props.subscribeToRoom(room.id)}>
+              {room.name}
+            </button>
+          )
+        })}
       </div>
     )
   }

@@ -21,7 +21,7 @@ import AudioPlayerExamples from './components/AudioPlayerExamples';
 
 // import MaterialDesign from './components/MaterialDesign';
 
-let component = <ChatExamples />;
+let component = <RouterExamples />;
 ReactDOM.render(component, document.getElementById('root'));
 
 registerServiceWorker();
