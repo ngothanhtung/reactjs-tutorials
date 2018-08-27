@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
 
+// APPS
 import CounterApp from './CounterApp';
+import MusicApp from './MusicApp';
 
 // REDUX STORE
 const store = createStore(
@@ -19,6 +21,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="container" style={{ marginTop: 20 }}>
           <CounterApp />
+          <hr />
+          <MusicApp />
         </div>
       </Provider>
     );
@@ -26,3 +30,4 @@ class App extends Component {
 }
 
 export default App;
+
