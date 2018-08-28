@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 
-
+// IMPORT STORE ANYWHERE
+import store from '../store';
 export default class componentName extends Component {
 
   render() {
     return (
       <div>
-        <h1>
-          {
-            this.props.balance
-          }
-        </h1>
-        <button
-          onClick={() => {
-            this.props.deposite(5000000);
-          }}
-        >Deposite</button>
-        <button
-          onClick={() => {
-            this.props.withdraw(1000000);
-          }}
-        >Withdraw</button>
+        <h1>{this.props.balance}</h1>
+
+        <button className="btn btn-primary" onClick={() => {
+          this.props.deposite(5000000);
+        }}>Deposite</button>
+
+        <button className="btn btn-danger" onClick={() => {
+          this.props.withdraw(1000000);
+          // USING STORE AND CALL DISPATCH ANYWHERE
+          // store.dispatch({ type: 'BANK_WITHDRAW', money: 1 });
+        }}>Withdraw</button>
       </div>
     );
   }

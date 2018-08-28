@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
-
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+
+// REDUX STORE
+import store from './store';
 
 // APPS
 import CounterApp from './CounterApp';
 import MusicApp from './MusicApp';
 import BankApp from './BankApp';
-
-// REDUX STORE
-const store = createStore(
-  rootReducer,
-  // REDUX TOOLS
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 class App extends Component {
   render() {

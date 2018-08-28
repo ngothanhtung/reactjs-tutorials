@@ -8,11 +8,9 @@ const defaultState = {
 const bankReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ActionTypes.BANK_DEPOSIT:
-      var newBalance = state.balance + action.money;
-      return { ...state, balance: newBalance };
+      return { ...state, balance: state.balance + action.money };
     case ActionTypes.BANK_WITHDRAW:
-      var newBalance = state.balance - action.money;
-      return { ...state, balance: newBalance };
+      return { ...state, balance: state.balance - action.money };
     default:
       return state;
   }
