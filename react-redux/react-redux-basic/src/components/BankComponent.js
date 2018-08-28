@@ -18,6 +18,22 @@ export default class componentName extends Component {
           // USING STORE AND CALL DISPATCH ANYWHERE
           // store.dispatch({ type: 'BANK_WITHDRAW', money: 1 });
         }}>Withdraw</button>
+
+        <button
+          disabled={this.props.loading}
+          className="btn btn-warning"
+          onClick={() => {
+            this.props.withdrawAsync(1);
+            // USING STORE AND CALL DISPATCH ANYWHERE
+            // store.dispatch({ type: 'BANK_WITHDRAW', money: 1 });
+          }}>
+          {
+            this.props.loading && "Processing ..."
+          }
+          {
+            !this.props.loading && "Withdraw Async"
+          }
+        </button>
       </div>
     );
   }
