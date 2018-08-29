@@ -3,6 +3,7 @@ import * as ActionTypes from '../constants/actionTypes';
 // DEFAULT STATE
 const defaultState = {
   users: [],
+  newUser: null,
   loading: false,
   error: null
 };
@@ -20,6 +21,19 @@ const userReducer = (state = defaultState, action) => {
       };
     case ActionTypes.USER_GET_ERROR:
       return { ...state, error: action.error, loading: false };
+    // ----------------------------------------------------
+    case ActionTypes.USER_CREATE_PENDING:
+      return { ...state, loading: true };
+    case ActionTypes.USER_CREATE_SUCCESS:
+      return {
+        ...state,
+        newUser: action.newUser,
+        loading: false,
+        error: null
+      };
+    case ActionTypes.USER_CREATE_ERROR:
+      return { ...state, error: action.error, loading: false };
+
     default:
       return state;
   }

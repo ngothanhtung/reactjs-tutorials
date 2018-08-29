@@ -1,27 +1,23 @@
 import { connect } from 'react-redux';
-import { getUsersAsync } from '../actions/userAction';
-import UserComponent from '../components/UserComponent';
+import { createUsersAsync } from '../actions/userAction';
+import CreateUserComponent from '../components/CreateUserComponent';
 
 // Nối các states vào props (values) của View Component
 const mapStateToProps = (state) => ({
-  users: state.userReducer.users,
+  newUser: state.userReducer.newUser,
   loading: state.userReducer.loading,
 });
 
 // Nối các functions vào props (functions) của View Component
-// const mapDispatchToProps = {
-//   getUsersAsync: () => getUsersAsync(),
-// };
-const mapDispatchToProps = (dispatch) => ({
-  getUsersAsync: () => dispatch(getUsersAsync()),
-});
-
+const mapDispatchToProps = {
+  createUsersAsync: () => createUsersAsync(),
+};
 // Khác với cách mặc định bên dưới, vì hàm GetUsersAsync đã gồm dispatch rồi
 // const mapDispatchToProps = (dispatch) => ({
 //   increaseCount: (number) => dispatch(increaseCount(number)),
 //   decreaseCount: (number) => dispatch(decreaseCount(number)),
 // });
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUserComponent);
 
 

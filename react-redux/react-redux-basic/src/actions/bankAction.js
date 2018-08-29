@@ -10,6 +10,8 @@ export const withdraw = (money) => ({
   type: ActionTypes.BANK_WITHDRAW, // ACTION TYPE
   money: money // PARAMETER
 });
+
+
 // ------------------------------------------------------------
 
 export const withdrawAsync = (money) => {

@@ -12,7 +12,6 @@ const client = axios.create({
 
 // API
 // ------------------------------------------------------------
-
 export const getUsersAsync = () => {
   return (dispatch) => {
     dispatch(getUsers_Pending());
@@ -26,7 +25,7 @@ export const getUsersAsync = () => {
       });
   };
 }
-
+// CÁC DISPATCH báo trạng thái của ASYNC
 const getUsers_Success = (data) => ({
   type: ActionTypes.USER_GET_SUCCESS, // ACTION TYPE
   users: data // PARAMETER
@@ -42,3 +41,31 @@ const getUsers_Error = (error) => ({
 });
 
 // ------------------------------------------------------------
+
+export const createUsersAsync = () => {
+  return (dispatch) => {
+    dispatch(createUsers_Pending());
+
+    client.post('/')
+      .then((response) => {
+        dispatch(createUsers_Success(response.data));
+      })
+      .catch((error) => {
+        dispatch(createUsers_Error(error));
+      });
+  };
+}
+// CÁC DISPATCH báo trạng thái của ASYNC
+const createUsers_Success = (data) => ({
+  type: ActionTypes.USER_CREATE_SUCCESS, // ACTION TYPE
+  newUser: data // PARAMETER
+});
+
+const createUsers_Pending = () => ({
+  type: ActionTypes.USER_CREATE_PENDING, // ACTION TYPE  
+});
+
+const createUsers_Error = (error) => ({
+  type: ActionTypes.USER_CREATE_ERROR, // ACTION TYPE
+  error: error // PARAMETER
+});
