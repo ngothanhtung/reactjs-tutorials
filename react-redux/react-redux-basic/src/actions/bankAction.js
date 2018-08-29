@@ -1,4 +1,5 @@
 import * as ActionTypes from '../constants/actionTypes';
+
 // BANK
 export const deposite = (money) => ({
   type: ActionTypes.BANK_DEPOSIT, // ACTION TYPE

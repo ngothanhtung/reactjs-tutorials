@@ -2,23 +2,17 @@ import * as ActionTypes from '../constants/actionTypes';
 
 // DEFAULT STATE
 const defaultState = {
-  balance: 100,
+  users: null,
   loading: false,
   error: null
 };
 
-const bankReducer = (state = defaultState, action) => {
+const userReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ActionTypes.BANK_DEPOSIT:
-      return { ...state, balance: state.balance + action.money };
-    case ActionTypes.BANK_WITHDRAW:
-      return { ...state, balance: state.balance - action.money };
-
-    // ASYNC
-    case ActionTypes.BANK_WITHDRAW_PENDING:
+    case ActionTypes.USER_CREATE_PENDING:
       return { ...state, loading: true };
-    case ActionTypes.BANK_WITHDRAW_SUCCESS:
-      return { ...state, balance: state.balance - action.money, loading: false, error: null };
+    case ActionTypes.USER_CREATE_SUCCESS:
+      return { ...state, users: state.users, loading: false, error: null };
     case ActionTypes.BANK_WITHDRAW_ERROR:
       return { ...state, error: action.error, loading: false };
     default:
@@ -26,7 +20,7 @@ const bankReducer = (state = defaultState, action) => {
   }
 }
 
-export default bankReducer;
+export default userReducer;
 
 // Notes: 
 // Object.assign method

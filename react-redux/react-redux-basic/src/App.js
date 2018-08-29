@@ -8,6 +8,7 @@ import store from './store';
 import CounterApp from './CounterApp';
 import MusicApp from './MusicApp';
 import BankApp from './BankApp';
+import UserApp from './UserApp';
 
 class App extends Component {
   render() {
@@ -19,6 +20,8 @@ class App extends Component {
           <MusicApp />
           <hr />
           <BankApp />
+          <hr />
+          <UserApp />
         </div>
       </Provider>
     );
