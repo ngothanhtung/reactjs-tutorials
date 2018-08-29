@@ -10,14 +10,13 @@ const mapStateToProps = (state) => ({
 
 // Nối các functions vào props (functions) của View Component
 const mapDispatchToProps = {
-  getUsersAsync,
+  getUsersAsync: () => getUsersAsync(),
 };
 // Khác với cách mặc định bên dưới, vì hàm GetUsersAsync đã gồm dispatch rồi
 // const mapDispatchToProps = (dispatch) => ({
 //   increaseCount: (number) => dispatch(increaseCount(number)),
 //   decreaseCount: (number) => dispatch(decreaseCount(number)),
 // });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserComponent);
 
