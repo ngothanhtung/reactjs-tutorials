@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
 
+export default class CreateUserComponent extends Component {
+  constructor(props) {
+    super(props);
 
-export default class componentName extends Component {
+    console.log(this.props);
+
+    this.state = {
+      user: {
+        userName: '',
+        password: '123456789',
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+      }
+    }
+  }
+
+  handleChange(field, event) {
+    var object = this.state.user;
+    object[field] = event.target.value;
+    this.setState({ user: object });
+  }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.props.createUserAsync}>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          this.props.createUserAsync(this.state.user)
+        }}
+        >
           <div className="form-group">
             <label>Full Name:</label>
             <input type="text" className="input form-control" value={this.state.user.fullName} onChange={this.handleChange.bind(this, 'fullName')} />

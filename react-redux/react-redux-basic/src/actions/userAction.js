@@ -42,11 +42,11 @@ const getUsers_Error = (error) => ({
 
 // ------------------------------------------------------------
 
-export const createUsersAsync = () => {
+export const createUserAsync = (user) => {
   return (dispatch) => {
     dispatch(createUsers_Pending());
 
-    client.post('/')
+    client.post('/', { user: user })
       .then((response) => {
         dispatch(createUsers_Success(response.data));
       })

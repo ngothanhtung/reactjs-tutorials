@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 // IMPORT STORE ANYWHERE
 import store from '../store';
 export default class componentName extends Component {
-
   render() {
     return (
       <div>

@@ -9,8 +9,9 @@ const mapStateToProps = (state) => ({
 });
 
 // Nối các functions vào props (functions) của View Component
+// Nếu tất cả các functions là async
 // const mapDispatchToProps = {
-//   getUsersAsync: () => getUsersAsync(),
+//   getUsersAsync: getUsersAsync,
 // };
 const mapDispatchToProps = (dispatch) => ({
   getUsersAsync: () => dispatch(getUsersAsync()),
