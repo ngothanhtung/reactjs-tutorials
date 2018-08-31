@@ -5,14 +5,14 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('mern-web:server');
+var debug = require('debug')('expressjs-api:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '9000');
 app.set('port', port);
 
 /**
@@ -21,6 +21,45 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+// SOCKET
+/*
+const io = require('socket.io')(server, {
+  path: '/',
+  serveClient: false,
+  // below are engine.IO options
+  pingInterval: 10000,
+  pingTimeout: 5000,
+  cookie: false
+});
+
+io.on('connection', function (socket) {
+  console.log('socket client id: ', socket.id);
+
+  // Listen event from clients
+  socket.on('client-message', function (data) {
+    socket.to(data.room).emit("server-message", data);
+  });
+
+  // JOIN TO ROOM
+  socket.on('join-to-room', function (room) {
+    socket.join(room, function () {
+      console.log(`${socket.id} joined to room ${room}`);
+    });
+  });
+
+  // LEAVE FROM ROOM
+  socket.on('leave-from-room', function (room) {
+    socket.leave(room, function () {
+      console.log(`${socket.id} left from room ${room}`);
+    });
+  });
+
+  //Whenever someone disconnects this piece of code executed
+  socket.on('disconnect', function () {
+    console.log("Socket disconnected");
+  });
+});
+*/
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -87,4 +126,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }
