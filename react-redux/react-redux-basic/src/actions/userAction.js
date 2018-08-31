@@ -44,28 +44,107 @@ const getUsers_Error = (error) => ({
 
 export const createUserAsync = (user) => {
   return (dispatch) => {
-    dispatch(createUsers_Pending());
-
+    dispatch(createUser_Pending());
     client.post('/', { user: user })
       .then((response) => {
-        dispatch(createUsers_Success(response.data));
+        dispatch(createUser_Success(response.data));
       })
       .catch((error) => {
-        dispatch(createUsers_Error(error));
+        dispatch(createUser_Error(error));
       });
   };
 }
 // CÁC DISPATCH báo trạng thái của ASYNC
-const createUsers_Success = (data) => ({
+// Action Creator
+const createUser_Success = (data) => ({
   type: ActionTypes.USER_CREATE_SUCCESS, // ACTION TYPE
   newUser: data // PARAMETER
 });
 
-const createUsers_Pending = () => ({
+// Action Creator
+const createUser_Pending = () => ({
   type: ActionTypes.USER_CREATE_PENDING, // ACTION TYPE  
 });
 
-const createUsers_Error = (error) => ({
+// Action Creator
+const createUser_Error = (error) => ({
   type: ActionTypes.USER_CREATE_ERROR, // ACTION TYPE
+  error: error // PARAMETER
+});
+
+// ------------------------------------------------------------
+// DELETE USER
+export const deleteUserAsync = (id) => {
+  return (dispatch) => {
+    dispatch(deleteUser_Pending());
+    client.delete('/' + id)
+      .then((response) => {
+        dispatch(deleteUser_Success(id));
+      })
+      .catch((error) => {
+        dispatch(deleteUser_Error(error));
+      });
+  };
+}
+// CÁC DISPATCH báo trạng thái của ASYNC
+// Action Creator
+const deleteUser_Success = (id) => ({
+  type: ActionTypes.USER_DELETE_SUCCESS, // ACTION TYPE
+  id: id // PARAMETER
+});
+
+// Action Creator
+const deleteUser_Pending = () => ({
+  type: ActionTypes.USER_DELETE_PENDING, // ACTION TYPE  
+});
+
+// Action Creator
+const deleteUser_Error = (error) => ({
+  type: ActionTypes.USER_DELETE_ERROR, // ACTION TYPE
+  error: error // PARAMETER
+});
+
+
+// ------------------------------------------------------------
+// UPDATE USER
+export const updateUserAsync = (id, data) => {
+  return (dispatch) => {
+    dispatch(updateUser_Pending());
+    client.put('/' + id, { user: {
+       // Not include _id
+       userName: data.userName,
+       fullName: data.fullName,
+       password: data.password,
+       email: data.email,
+       phoneNumber: data.phoneNumber,
+    } })
+      .then((response) => {
+        dispatch(updateUser_Success(response.data));
+      })
+      .catch((error) => {
+        dispatch(updateUser_Error(error));
+      });
+  };
+}
+// CÁC DISPATCH báo trạng thái của ASYNC
+// Action Creator
+export const selectUser = (selectedUser) => ({
+  type: ActionTypes.USER_SELECT, // ACTION TYPE
+  selectedUser: selectedUser // PARAMETER
+});
+// Action Creator
+const updateUser_Success = (user) => ({
+  type: ActionTypes.USER_UPDATE_SUCCESS, // ACTION TYPE
+  user: user // PARAMETER
+});
+
+// Action Creator
+const updateUser_Pending = () => ({
+  type: ActionTypes.USER_UPDATE_PENDING, // ACTION TYPE  
+});
+
+// Action Creator
+const updateUser_Error = (error) => ({
+  type: ActionTypes.USER_UPDATE_ERROR, // ACTION TYPE
   error: error // PARAMETER
 });

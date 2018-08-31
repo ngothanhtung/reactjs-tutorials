@@ -1,11 +1,12 @@
 import * as ActionTypes from '../constants/actionTypes';
 
-// BANK
+// Action Creator
 export const deposite = (money) => ({
   type: ActionTypes.BANK_DEPOSIT, // ACTION TYPE
   money: money // PARAMETER
 });
 
+// Action Creator
 export const withdraw = (money) => ({
   type: ActionTypes.BANK_WITHDRAW, // ACTION TYPE
   money: money // PARAMETER
@@ -27,21 +28,24 @@ export const withdrawAsync = (money) => {
   }
 };
 
+// Action Creator
 const withdrawSuccess = (result) => ({
   type: ActionTypes.BANK_WITHDRAW_SUCCESS, // ACTION TYPE
   money: result // PARAMETER
 });
 
+// Action Creator
 const withdrawPending = () => ({
   type: ActionTypes.BANK_WITHDRAW_PENDING, // ACTION TYPE  
 });
 
+// Action Creator
 const withdrawError = (error) => ({
   type: ActionTypes.BANK_WITHDRAW_ERROR, // ACTION TYPE
   error: error // PARAMETER
 });
 
-// delay function
+// faked promise function
 const withdrawDelay = (money) => {
   return new Promise((resolve, reject) => {
     if (money <= 0) {

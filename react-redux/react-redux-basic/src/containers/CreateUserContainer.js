@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { createUserAsync } from '../actions/userAction';
+import { createUserAsync, editUser } from '../actions/userAction';
 import CreateUserComponent from '../components/CreateUserComponent';
 
 // Nối các states vào props (values) của View Component
 const mapStateToProps = (state) => ({
-  newUser: state.userReducer.newUser,
   loading: state.userReducer.loading,
 });
 

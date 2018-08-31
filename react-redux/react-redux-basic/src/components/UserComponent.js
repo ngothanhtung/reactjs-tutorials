@@ -23,10 +23,13 @@ export default class UserComponent extends Component {
           </thead>
           <tbody>
             {
-              (this.props.loading === false) && this.props.users.map((item, index) =>
+              this.props.users.map((item, index) =>
                 <tr key={index}>
                   <td>
-                    <button className="btn btn-sm btn-danger">Select</button>
+                    <button className="btn btn-sm btn-danger" onClick={() => {
+                      this.props.selectUser(item);
+
+                    }}>Select</button>
                   </td>
                   <td>{item._id}</td>
                   <td>{item.userName}</td>
@@ -34,13 +37,16 @@ export default class UserComponent extends Component {
                   <td>{item.email}</td>
                   <td>{item.phoneNumber}</td>
                   <td style={{ width: '1%' }}>
-                    <button className="btn btn-sm btn-danger">Delete</button>
+                    <button className="btn btn-sm btn-danger" disabled={this.props.loading} onClick={() => {
+                      if (window.confirm('Are you sure you wish to delete this item?')) {
+                        this.props.deleteUserAsync(item._id);
+                      }
+                    }}>Delete</button>
                   </td>
                 </tr>
               )}
           </tbody>
         </table>
-
         <hr />
       </div>
     );

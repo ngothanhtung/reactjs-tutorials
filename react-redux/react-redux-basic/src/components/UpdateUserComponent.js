@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-export default class CreateUserComponent extends Component {
+export default class UpdateUserComponent extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       user: {
         userName: '',
@@ -12,6 +11,13 @@ export default class CreateUserComponent extends Component {
         email: '',
         phoneNumber: '',
       }
+    }   
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevProps.selectedUser !== this.props.selectedUser){
+      //Perform some operation here
+      this.setState({user: this.props.selectedUser});
     }
   }
 
@@ -26,12 +32,12 @@ export default class CreateUserComponent extends Component {
       <div>
         <form onSubmit={(e) => {
           e.preventDefault();
-          this.props.createUserAsync(this.state.user)
+          this.props.updateUserAsync(this.props.selectedUser._id, this.state.user);
         }}
         >
           <div className="form-group">
             <label>Full Name:</label>
-            <input type="text" className="input form-control" value={this.state.user.fullName} onChange={this.handleChange.bind(this, 'fullName')} />
+            <input type="text" className="input form-control" value={ this.state.user.fullName } onChange={this.handleChange.bind(this, 'fullName')} />
           </div>
           <div className="form-group">
             <label>Username:</label>
