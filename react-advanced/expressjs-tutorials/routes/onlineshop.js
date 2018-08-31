@@ -38,6 +38,7 @@ router.get('/products', function (req, res) {
 // CREATE NEW PRODUCT
 router.post('/products/add', function (req, res) {
     var data = req.body;
+    console.log(data);
     db.insertDocument(data, "products", function (result) {
         res.json(result);
     })

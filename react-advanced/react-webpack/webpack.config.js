@@ -25,10 +25,10 @@ module.exports = {
   },
   output: debug ?
     {
-      path: path.join(__dirname, "/public/"),
+      path: path.join(__dirname, "/src/"),
       filename: "[name].bundle.js"
     } : {
-      path: path.join(__dirname, "/src/"),
+      path: path.join(__dirname, "/public/"),
       filename: "[name].bundle.js"
     },
   plugins: debug ?

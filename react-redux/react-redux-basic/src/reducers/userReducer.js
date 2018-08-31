@@ -42,7 +42,6 @@ const userReducer = (state = defaultState, action) => {
     case ActionTypes.USER_DELETE_PENDING:
       return { ...state, loading: true };
     case ActionTypes.USER_DELETE_SUCCESS:
-      console.log(action);
       var users = state.users.filter((element) => {
         return element._id !== action.id;
       });

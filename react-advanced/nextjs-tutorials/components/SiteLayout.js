@@ -20,6 +20,7 @@ export default class SiteLayout extends PureComponent {
             style={{ lineHeight: '64px' }}
           >
             <Menu.Item key="home"><Link href="/"><a>Home</a></Link></Menu.Item>
+            <Menu.Item key="news"><Link href="/news"><a>News</a></Link></Menu.Item>
             <Menu.Item key="toeic"><Link href="/toeic"><a>Toeic</a></Link></Menu.Item>
             <Menu.Item key="grammar"><Link href="/grammar"><a>Grammar</a></Link></Menu.Item>
             <Menu.Item key="about"><Link href={{ pathname: '/about', query: { name: 'Zeit' } }}><a>About</a></Link></Menu.Item>
