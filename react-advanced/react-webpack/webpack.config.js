@@ -5,7 +5,11 @@ var path = require('path');
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./js/client.js",
+  entry: {
+    react: ["react", "react-dom"],
+    client: "./js/client.js",
+    // about: "./about"
+  },
   module: {
     loaders: [
       {
@@ -19,13 +23,29 @@ module.exports = {
       }
     ]
   },
-  output: {
-    path: __dirname + "/src/",
-    filename: "client.min.js"
-  },
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+  output: debug ?
+    {
+      path: path.join(__dirname, "/public/"),
+      filename: "[name].bundle.js"
+    } : {
+      path: path.join(__dirname, "/src/"),
+      filename: "[name].bundle.js"
+    },
+  plugins: debug ?
+    [
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "react",
+        filename: "[name].bundle.js",
+        minChunks: Infinity
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "bundle",
+        chunks: ["index"],
+        filename: "[name].bundle.js",
+      })
+    ] : [
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.OccurenceOrderPlugin(),
+      new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
+    ]
 };
