@@ -1,3 +1,4 @@
+'use strict';
 // Khai báo thư viện MongoClient
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
@@ -7,116 +8,218 @@ var ObjectID = require('mongodb').ObjectID;
 const CONNECTION_STRING = 'mongodb://aptech:Aptech2018@ds259001.mlab.com:59001/onlineshop';
 const DATABASE_NAME = 'onlineshop';
 
-function MongoDbHelper() {
+class MongoDbHelper {
+	// INSERT: Thêm mới (một)
+	insertDocument(data, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.insertOne(data)
+						.then(result => {
+							client.close();
+							resolve({ data: data, result: result });
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// ----------------------------------------------------------------------------
+	// INSERT: Thêm mới (nhiều)
+	insertDocuments(data, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.insertMany(data)
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// ----------------------------------------------------------------------------
+	// UPDATE: Sửa
+	updateDocument(id, data, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					var query = { _id: ObjectID(id) };
+					collection.findOneAndUpdate(query, { $set: data })
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// ----------------------------------------------------------------------------
+	// UPDATE: Sửa (nhiều)
+	updateDocuments(query, data, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.updateMany(query, { $set: data })
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// ----------------------------------------------------------------------------
+	// REMOVE: Xoá
+	deleteDocument(id, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					var query = { _id: ObjectID(id) };
+					collection.deleteOne(query)
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// ----------------------------------------------------------------------------
+	// REMOVE: Xoá (nhiều)
+	deleteDocuments(query, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.deleteMany(query)
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+	// ----------------------------------------------------------------------------
+	// FIND: Tìm kiếm (id)
+	findDocument(id, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					var query = { _id: ObjectID(id) };
+					collection.findOne(query)
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+	// ----------------------------------------------------------------------------
+	// FIND: Tìm kiếm (nhiều)
+	findDocuments(query, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.find(query).toArray()
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+	// FIND: Tìm kiếm (nhiều)
+	findDocuments(query, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection.find(query)
+						//.skip(4)
+						.limit(100)
+						.project({ name: 1, price: 1, discount: 1 })
+						.sort({ price: -1, name: 1 })
+						.toArray()
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
 }
-
-// INSERT: Thêm mới
-MongoDbHelper.insertDocument = function (jsonData, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.insertOne(jsonData, function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(jsonData);
-                }
-            });
-        }
-    });
-};
-
-// INSERT: Thêm mới (nhiều)
-MongoDbHelper.insertDocuments = function (jsonData, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.insertOne(jsonData, function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(jsonData);
-                }
-            });
-        }
-    });
-};
-
-// UPDATE: Sửa
-MongoDbHelper.updateDocument = function (id, jsonData, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.updateOne({ _id: ObjectID(id) }, { $set: jsonData }, function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(result);
-                }
-            });
-        }
-    });
-};
-
-// REMOVE: Xoá
-MongoDbHelper.removeDocument = function (id, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.removeOne({ _id: ObjectID(id) }, function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(result);
-                }
-            });
-        }
-    });
-};
-
-// FIND: Tìm kiếm (nhiều)
-MongoDbHelper.findDocuments = function (jsonData, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.find(jsonData).toArray(function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(result);
-                }
-            });
-        }
-    });
-};
-
-// FIND: Tìm kiếm (id)
-MongoDbHelper.findDocument = function (id, collectionName, callback) {
-    MongoClient.connect(CONNECTION_STRING, function (err, db) {
-        if (err) console.log('MONGODB ERROR', err);
-        else {
-            var dbo = db.db(DATABASE_NAME);
-            var collection = dbo.collection(collectionName);
-            collection.findOne({ _id: ObjectID(id) }, function (err, result) {
-                if (err) console.log('MONGODB ERROR', err);
-                else {
-                    db.close();
-                    callback(result);
-                }
-            });
-        }
-    });
-};
 
 module.exports = MongoDbHelper;
 
