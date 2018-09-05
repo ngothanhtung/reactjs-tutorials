@@ -200,11 +200,23 @@ class MongoDbHelper {
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.find(query)
+					//var collection = dbo.collection('orders');
+					collection
+						.find(query)
+						// .aggregate([
+						// 	{
+						// 		$lookup: {
+						// 			from: 'products',
+						// 			localField: 'productId',
+						// 			foreignField: '_id',
+						// 			as: 'orderdetails'
+						// 		}
+						// 	}
+						// ])
 						//.skip(4)
-						.limit(100)
-						.project({ name: 1, price: 1, discount: 1 })
-						.sort({ price: -1, name: 1 })
+						//.limit(100)
+						//.project({ name: 1, price: 1, discount: 1 })
+						//.sort({ price: -1, name: 1 })
 						.toArray()
 						.then(result => {
 							client.close();

@@ -11,12 +11,19 @@ router.get('/products', function (req, res, next) {
   // filter: >,   >=,   <,   <=,   !=
   // filter: $gt, $gte, $lt, $lte, $ne
 
+  // all
+  var all = {};
+
   // filter: and
   var and = { price: { $gte: 0, $lte: 800 }, discount: { $gte: 50 } };
+
   // filter: $or
   var or = { $or: [{ price: { $gte: 0, $lte: 800 } }, { discount: 0 }] };
 
-  var query = and;
+  // var gift = { 'promotion.gift': true }; // method 1
+  var gift = { promotion: { gift: true } }; // method 2
+
+  var query = all;
 
   db.findDocuments(query, 'products').then(result => {
     res.json(result);
@@ -75,4 +82,15 @@ router.delete('/products/:id', function (req, res, next) {
 });
 
 // ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+router.post('/orders', function (req, res, next) {
+  const data = req.body;
+  db.insertDocument(data, 'orders')
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
 module.exports = router;
