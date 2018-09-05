@@ -9,7 +9,7 @@ router.get('/products', function (req, res, next) {
   // sort: 1: as, -1: desc
   var options = { limit: 10, sort: { price: -1 }, fields: { price: 1, discount: 1 } };
   // filter: >,   >=,   <,   <=,   !=
-  // filter: $gt, $gte, $lt, $lte, $ne
+  // filterne: $gt, $gte, $lt, $lte, $
 
   // all
   var all = {};
@@ -58,7 +58,7 @@ router.post('/products', function (req, res, next) {
 router.put('/products/:id', function (req, res, next) {
   const id = req.params.id;
   const data = req.body;
-  console.log(data);
+
   db.updateDocument(id, data, 'products')
     .then(result => {
       res.status(200).json(result);
