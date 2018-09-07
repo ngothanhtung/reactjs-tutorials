@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2016 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase SDK for Cloud Storage Quickstart</title>
+
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <!-- Header section containing title -->
+    <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+        <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+          <h3>Firebase SDK for Cloud Storage Quickstart</h3>
+        </div>
+      </div>
+    </header>
+
+    <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+        <!-- Container for the demo -->
+        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+            <h2 class="mdl-card__title-text">Upload a file</h2>
+          </div>
+          <div class="mdl-card__supporting-text mdl-color-text--grey-600" id="messagesDiv">
+            <p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
+            <h6>Choose File</h6>
+            <input type="file" id="file" name="file"/>
+            <h6>File URL:</h6>
+            <span id="linkbox"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <!-- <script src="/__/firebase/3.9.0/firebase-app.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-auth.js"></script>
+  <script src="/__/firebase/3.9.0/firebase-storage.js"></script>
+  <script src="/__/firebase/init.js"></script> -->
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDl57eWoSAHHSjRIJ3UnMJqh3MP_fnkhyc",
+      authDomain: "fir-training-2c5ac.firebaseapp.com",
+      databaseURL: "https://fir-training-2c5ac.firebaseio.com",
+      projectId: "fir-training-2c5ac",
+      storageBucket: "fir-training-2c5ac.appspot.com",
+      messagingSenderId: "233367019481"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script>
+    var auth = firebase.auth();
+    var storageRef = firebase.storage().ref();
+
+    function handleFileSelect(evt) {
+      evt.stopPropagation();
+      evt.preventDefault();
+      var file = evt.target.files[0];
+
+      var metadata = {
+        'contentType': file.type
+      };
+
+      // Push to child path.
+      // [START oncomplete]
+      storageRef.child('images/' + file.name).put(file, metadata).then(function(snapshot) {
+        console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+        console.log(snapshot.metadata);
+        var url = snapshot.downloadURL;
+        console.log('File available at', url);
+        // [START_EXCLUDE]
+        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
+        // [END_EXCLUDE]
+      }).catch(function(error) {
+        // [START onfailure]
+        console.error('Upload failed:', error);
+        // [END onfailure]
+      });
+      // [END oncomplete]
+    }
+
+    window.onload = function() {
+      document.getElementById('file').addEventListener('change', handleFileSelect, false);
+      document.getElementById('file').disabled = true;
+
+      auth.onAuthStateChanged(function(user) {
+        if (user) {
+          console.log('Anonymous user signed-in.', user);
+          document.getElementById('file').disabled = false;
+        } else {
+          console.log('There was no anonymous session. Creating a new anonymous user.');
+          // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+          auth.signInAnonymously();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
