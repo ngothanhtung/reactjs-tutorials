@@ -11,11 +11,11 @@ var db = admin.firestore();
 
 var CloudFireStoreHelper = require("./CloudFireStoreHelper");
 var helper = new CloudFireStoreHelper(db);
-helper.findAndUpdate(19370);
+// helper.findAndUpdate(19370);
 
 // ------------------------------------------------------------------------------------------------
 // ADD DOCUMENT
-// helper.add();
+helper.add();
 // ------------------------------------------------------------------------------------------------
 
 // ADD / EDIT DOCUMENT

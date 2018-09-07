@@ -14,7 +14,10 @@ class CloudFireStoreHelper {
 			'imageUrl': "https://images.unsplash.com/photo-1446770145316-10a05382c470?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
 		};
 
-		var docRef = this.db.collection('images').add(data);
+		var docRef = this.db.collection('images').add(data)
+			.then(result => {
+				console.log(result);
+			});
 	}
 
 	// Update Document
