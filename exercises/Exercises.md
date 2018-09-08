@@ -45,3 +45,4 @@
 1. Front-end: Reactjs (React-Redux pattern + React-Router), UI: Bootstrap: Reactstrap npm
 2. Back-end: Expressjs
 3. Database: Mongodb
+
