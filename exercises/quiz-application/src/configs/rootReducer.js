@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import loginReducer from './loginReducer';
+import loginReducer from '../modules/quiz/reducers/loginReducer';
 
 // COMBINE MANY REDUCERS
 const rootReducer = combineReducers({

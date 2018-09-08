@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Button from 'antd/lib/button';
 
 export default class LoginComponent extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ export default class LoginComponent extends Component {
           this.props.loading &&
           <h1>Loading ...</h1>
         }
-        <button onClick={() => {
+        <Button type="primary" onClick={() => {
           this.props.loginAsync('tungnt@softech.vn', '123456789');
         }}>
           LOGIN
-        </button>
+        </Button>
       </div>
     );
   }
