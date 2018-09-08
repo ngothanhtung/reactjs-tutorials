@@ -28,3 +28,20 @@
 ### Async Quiz:
 1. Data: https://slacklivechat.com/question
 
+
+## Quiz Application (08.09.2018)
+### Front-end
+1. Register (Email, FullName, Password, Phone)
+2. Login (Email, Password)
+3. Test: Timmer: 10 minutes, Type: One Choice Questions. After user answered 1 question, then post result to back-end.
+4. Result (100%)
+### Back-end
+1. Register (POST)
+2. Login (POST)
+3. Test (GET + POST)
+4. Result (GET)
+
+### Requirements:
+1. Front-end: Reactjs (React-Redux pattern + React-Router), UI: Bootstrap: Reactstrap npm
+2. Back-end: Expressjs
+3. Database: Mongodb
