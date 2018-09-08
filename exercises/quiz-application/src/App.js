@@ -6,6 +6,7 @@ import store from './configs/store';
 
 // APPS
 import Login from './containers/loginContainer';
+import LoginName from './containers/loginNameContainer';
 
 
 class App extends Component {
@@ -13,6 +14,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="container" style={{ marginTop: 20 }}>
+          <LoginName />
+          <hr />
           <Login />
         </div>
       </Provider>
