@@ -10,16 +10,33 @@ export default class LoginComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ display: 'flex' }}>
         {
-          this.props.loading &&
-          <h1>Loading ...</h1>
-        }
-        <Button type="primary" onClick={() => {
-          this.props.loginAsync('tungnt@softech.vn', '123456789');
-        }}>
-          LOGIN
+          (!this.props.loggedInUser) &&
+          <Button
+            icon="login"
+            loading={this.props.loading} type="primary" onClick={() => {
+              this.props.loginAsync('tungnt@softech.vn', '123456789')
+            }}>
+            Login
         </Button>
+        }
+
+        {
+          this.props.loggedInUser &&
+          <div>
+            <div style={{ width: 8 }}></div>
+            <Button
+              icon="logout"
+              type="primary" onClick={() => {
+                localStorage.clear();
+                // reload page
+                window.location.reload();
+              }}>
+              Logout
+            </Button>
+          </div>
+        }
       </div>
     );
   }

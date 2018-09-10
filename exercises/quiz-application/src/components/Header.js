@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Login from '../modules/quiz/containers/loginContainer';
-export default class Home extends Component {
+
+export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +10,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Login />
+        <span> Header </span>
       </div>
     );
   }

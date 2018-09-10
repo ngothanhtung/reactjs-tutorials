@@ -16,6 +16,7 @@ export const loginAsync = (email, password) => {
     client.post('/login', { email: email, password: password })
       .then((response) => {
         dispatch(login_Success(response.data));
+        localStorage.setItem('loggedInUser', JSON.stringify(response.data));
       })
       .catch((error) => {
         dispatch(login_Error(error));

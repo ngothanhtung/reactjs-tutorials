@@ -11,41 +11,54 @@ import store from './configs/store';
 // APPS
 // import Login from './containers/loginContainer';
 // import LoginName from './containers/loginNameContainer';
-import MainMenu from './components/MainMenu';
-import MainSider from './components/MainSider/index';
+import MainSider from './components/MainSider';
 
 // PAGES
 import Home from './pages/Home';
 import About from './pages/About';
+import LoginName from './components/LoginName';
+
 
 const { Header, Sider, Content } = Layout;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: false,
+    };
+  }
+
   render() {
     return (
       <Provider store={store}>
         <Router>
           <Layout>
-
+            <MainSider collapsed={this.state.collapsed}></MainSider>
             <Layout>
-              <Sider
-                trigger={null}
-                collapsible
-                collapsed={false}
-                breakpoint="lg"
-                width={256}
-              >
-                <MainSider></MainSider>
-              </Sider>
-              <Layout>
-                {/* <Header style={{ height: '48px' }}>
+              {/* <Header style={{ height: '48px' }}>
                   <Route path="/:id?" component={PageRoute} />
                 </Header> */}
-                <Content style={{ padding: '24px', height: '100%' }}>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/about" component={About} />
-                </Content>
-              </Layout>
+              <Header style={{ background: '#fff', padding: 0 }}>
+                <div className="header">
+                  <Icon
+                    className="trigger"
+                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                    onClick={() => {
+                      this.setState({
+                        collapsed: !this.state.collapsed,
+                      });
+                    }}
+                  />
+                  <div style={{ float: 'right', paddingRight: 24 }}>
+                    <LoginName />
+                  </div>
+                </div>
+              </Header>
+              <Content style={{ padding: '24px', height: '100%' }}>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+              </Content>
             </Layout>
           </Layout>
         </Router>
@@ -54,11 +67,6 @@ class App extends Component {
     );
   }
 }
-
-const PageRoute = ({ match }) => (
-  <MainMenu url={match.url} selectedKey={match.url !== '/' ? match.url.replace('/', '') : "home"} />
-);
-
 
 export default App;
 
