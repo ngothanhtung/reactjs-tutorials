@@ -36,9 +36,6 @@ class App extends Component {
           <Layout>
             <MainSider collapsed={this.state.collapsed}></MainSider>
             <Layout>
-              {/* <Header style={{ height: '48px' }}>
-                  <Route path="/:id?" component={PageRoute} />
-                </Header> */}
               <Header style={{ background: '#fff', padding: 0 }}>
                 <div className="header">
                   <Icon
@@ -55,9 +52,11 @@ class App extends Component {
                   </div>
                 </div>
               </Header>
-              <Content style={{ padding: '24px', height: '100%' }}>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
+              <Content style={{ padding: 24, height: '100%' }}>
+                <div style={{ backgroundColor: 'white', padding: 24 }}>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/about" component={About} />
+                </div>
               </Content>
             </Layout>
           </Layout>
