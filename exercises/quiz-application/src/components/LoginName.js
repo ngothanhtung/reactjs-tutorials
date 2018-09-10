@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginAsync } from '../modules/quiz/actions/loginActions';
+import { Avatar } from 'antd';
+
+const avatarUrl = 'https://edusynch.s3.amazonaws.com/uploads/student/avatar/102514/thumb_23172429_10156831208144676_2528946045023983681_n.jpg';
 
 class LoginName extends Component {
   constructor(props) {
@@ -20,7 +23,12 @@ class LoginName extends Component {
       <div>
         {
           this.props.loggedInUser &&
-          <span>Welcome {this.props.loggedInUser.email}!</span>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <Avatar size="small" src={avatarUrl} />
+            <div style={{ width: 4 }}></div>
+            <strong>Welcome {this.props.loggedInUser.fullName}!</strong>
+          </div>
+
         }
       </div>
     );
