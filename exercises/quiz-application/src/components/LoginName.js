@@ -22,6 +22,9 @@ class LoginName extends Component {
         {
           this.props.loggedInUser &&
           <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span>
+              {this.props.score}
+            </span>
             <Avatar size="small" src={this.props.loggedInUser.avatarUrl} />
             <div style={{ width: 4 }}></div>
             <strong>Welcome {this.props.loggedInUser.fullName}!</strong>
@@ -40,6 +43,7 @@ class LoginName extends Component {
 
 const mapStateToProps = (state) => ({
   loggedInUser: state.loginReducer.loggedInUser,
+  score: state.quizReducer.score,
 });
 
 const mapDispatchToProps = (dispatch) => ({

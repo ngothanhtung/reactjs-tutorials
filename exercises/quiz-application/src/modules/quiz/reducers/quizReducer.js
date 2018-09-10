@@ -10,8 +10,7 @@ const defaultState = {
 
 const quizReducer = (state = defaultState, action) => {
   switch (action.type) {
-    // ----------------------------------------------------
-    // LOGIN
+    // ----------------------------------------------------    
     case ActionTypes.GET_QUESTIONS_PENDING:
       return {
         ...state,
