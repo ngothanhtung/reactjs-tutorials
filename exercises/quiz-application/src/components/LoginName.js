@@ -25,8 +25,8 @@ class LoginName extends Component {
             <Avatar size="small" src={this.props.loggedInUser.avatarUrl} />
             <div style={{ width: 4 }}></div>
             <strong>Welcome {this.props.loggedInUser.fullName}!</strong>
-
-            <Button onClick={() => {
+            <div style={{ width: 6 }}></div>
+            <Button size={"small"} onClick={() => {
               localStorage.clear();
               window.location.href = '/';
             }}>Logout</Button>
