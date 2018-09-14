@@ -12,7 +12,7 @@ router.post('/login', function (req, res, next) {
     roles: [1, 5, 7, 9]
   };
   // res.json(result);
-  setTimeout((() => { res.json(result) }), 2000);
+  setTimeout((() => { res.json(result) }), 0);
 });
 
 module.exports = router;

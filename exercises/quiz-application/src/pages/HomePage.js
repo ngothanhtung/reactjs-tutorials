@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Quiz from '../modules/quiz/containers/QuizContainer';
 
-export default class About extends Component {
+export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +11,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
-        <span> About </span>
+        <Quiz />
       </div>
     );
   }

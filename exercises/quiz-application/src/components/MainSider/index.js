@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Logo from '../Logo';
-
 import './index.css';
 
-
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Sider } = Layout;
 
 export default class MainSider extends Component {
   constructor(props) {
@@ -41,7 +39,7 @@ export default class MainSider extends Component {
           onClick={this.handleClick}
           defaultSelectedKeys={[this.state.selectedKey]}
           defaultOpenKeys={[this.state.selectedKey]}
-          style={{ height: '100%', borderRight: 0 }}
+          style={{ borderRight: 0 }}
         >
           <SubMenu key="sub1" title={<span><Icon type="user" />Toeic</span>}>
             <Menu.Item key="1">option1</Menu.Item>

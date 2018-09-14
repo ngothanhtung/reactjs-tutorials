@@ -12,14 +12,16 @@ import store from './configs/store';
 // import Login from './containers/loginContainer';
 // import LoginName from './containers/loginNameContainer';
 import MainSider from './components/MainSider';
-
+import MainHeader from './components/MainHeader';
 // PAGES
-import Home from './pages/Home';
-import About from './pages/About';
-import LoginName from './components/LoginName';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import LoginPage from './pages/LoginPage';
+import FinishPage from './pages/FinishPage';
 
 
-const { Header, Sider, Content } = Layout;
+
+const { Header, Footer, Content } = Layout;
 
 class App extends Component {
   constructor(props) {
@@ -33,36 +35,29 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <Layout>
+          <Layout style={{ minHeight: '100vh' }}>
             <MainSider collapsed={this.state.collapsed}></MainSider>
             <Layout>
-              <Header style={{ background: '#fff', padding: 0 }}>
-                <div className="header">
-                  <Icon
-                    className="trigger"
-                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                    onClick={() => {
-                      this.setState({
-                        collapsed: !this.state.collapsed,
-                      });
-                    }}
-                  />
-                  <div style={{ float: 'right', paddingRight: 24 }}>
-                    <LoginName />
-                  </div>
-                </div>
-              </Header>
-              <Content style={{ padding: 24, height: '100%' }}>
-                <div style={{ backgroundColor: 'white', padding: 24 }}>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/about" component={About} />
+              <MainHeader collapsed={this.state.collapsed} onIconClick={() => {
+                this.setState({
+                  collapsed: !this.state.collapsed,
+                });
+              }} />
+              <Content style={{ padding: 24, display: 'flex', flex: 1 }}>
+                <div style={{ backgroundColor: 'white', padding: 24, flex: 1 }}>
+                  <Route exact path="/" component={HomePage} />
+                  <Route path="/about" component={AboutPage} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/finish" component={FinishPage} />
                 </div>
               </Content>
+              <Footer style={{ textAlign: 'center' }}>
+                AMES ENGLISH ©2018 Created by Softech Corporation
+            </Footer>
             </Layout>
           </Layout>
         </Router>
       </Provider>
-
     );
   }
 }
