@@ -117,6 +117,8 @@ export default class QuizComponent extends Component {
             onSubmit={(result) => {
               if (result) {
                 this.props.postAnswer(1);
+                // CALL API
+                //this.props.postAnswer(userId, questionId, optionId);
                 message.success('Good job!');
               }
               else {
