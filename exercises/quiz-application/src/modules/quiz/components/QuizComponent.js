@@ -30,6 +30,7 @@ class OneCorrectOptionQuestion extends Component {
 
         <Button type="primary"
           onClick={() => {
+
             const question = this.props.question;
             const found = question.options.filter(option => option.correct);
             if (found) {
@@ -40,6 +41,7 @@ class OneCorrectOptionQuestion extends Component {
                 this.props.onSubmit(false);
               }
             }
+            this.setState({ selected: -1 });
           }}
         >Submit</Button>
       </div>
@@ -59,7 +61,7 @@ class FillInTheBlankQuestion extends Component {
     return (
       <div>
         <Card title={this.props.question.questionText} style={{ width: '100%', marginBottom: 32 }}>
-          <Input placeholder="Your answer's text" onChange={(e) => {
+          <Input value={this.state.text} placeholder="Your answer's text" onChange={(e) => {
             this.setState({ text: e.target.value });
           }}
           />
@@ -74,6 +76,7 @@ class FillInTheBlankQuestion extends Component {
             } else {
               this.props.onSubmit(false);
             }
+            this.setState({ text: '' });
           }}
         >Submit</Button>
       </div>
