@@ -57,7 +57,7 @@ class LoginName extends Component {
               <Avatar
                 size="small"
                 style={{ verticalAlign: 'middle', marginRight: 4 }}
-                src={'https://avatars.slack-edge.com/2017-03-14/153965723219_6d4c12ff50d628f2d664_192.jpg'}
+                src={this.props.loggedInUser.avatarUrl}
                 alt="avatar"
               />
               <span style={{ verticalAlign: 'middle' }}>{this.props.loggedInUser.fullName}</span>

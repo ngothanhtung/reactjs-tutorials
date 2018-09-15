@@ -1,9 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-/videos
+
 # dependencies
 /node_modules
-/react-tutorials/chapter-05-react-redux/node_modules
-/react-tutorials/chapter-06-react-redux-onlineshop/node_modules
+
 # testing
 /coverage
 
@@ -20,6 +19,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.DS_Store
-/.idea
