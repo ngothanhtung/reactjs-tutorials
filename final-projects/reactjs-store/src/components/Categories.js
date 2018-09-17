@@ -23,10 +23,10 @@ export default class Categories extends Component {
       <div>
         {
           this.state.categories &&
-          <div>
+          <div style={{ display: 'flex', backgroundColor: '#dfe6e9' }}>
             {
               this.state.categories.map((item, index) => (
-                <div style={{ float: 'left', padding: 16, backgroundColor: '#dfe6e9' }} key={index}>
+                <div style={{ float: 'left', padding: 16, backgroundColor: '##dfe6e9' }} key={index}>
                   <span style={{ fontWeight: '700' }}>
                     {item.name}
                   </span>
