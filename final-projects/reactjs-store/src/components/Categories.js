@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const url = 'http://localhost:9000/categories';
 
@@ -15,7 +16,7 @@ export default class Categories extends Component {
     axios.get(url).then(response => {
       const data = response.data;
       this.setState({ categories: data });
-    })
+    });
   }
 
   render() {
@@ -26,11 +27,13 @@ export default class Categories extends Component {
           <div style={{ display: 'flex', backgroundColor: '#dfe6e9' }}>
             {
               this.state.categories.map((item, index) => (
-                <div style={{ float: 'left', padding: 16, backgroundColor: '##dfe6e9' }} key={index}>
-                  <span style={{ fontWeight: '700' }}>
-                    {item.name}
-                  </span>
-                </div>
+                <Link key={item._id} to={`/categories/${item._id}/products`}>
+                  <div style={{ float: 'left', padding: 16, backgroundColor: '##dfe6e9' }}>
+                    <span style={{ fontWeight: '700' }}>
+                      {item.name}
+                    </span>
+                  </div>
+                </Link>
               ))
             }
           </div>
