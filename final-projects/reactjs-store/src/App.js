@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import axios from 'axios';
+import Categories from './components/Categories';
 
 const url = 'http://localhost:9000/products';
 
@@ -24,6 +25,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
+          <Categories />
+        </div>
         {
           this.state.products &&
           <div>
