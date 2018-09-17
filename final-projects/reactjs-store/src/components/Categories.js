@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { Menu, Icon } from 'antd';
+
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+
 const url = 'http://localhost:9000/categories';
 
 export default class Categories extends Component {
@@ -9,6 +14,7 @@ export default class Categories extends Component {
     super(props);
     this.state = {
       categories: null,
+      current: 'mail',
     }
   }
 
@@ -19,25 +25,41 @@ export default class Categories extends Component {
     });
   }
 
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key,
+    });
+  }
+
   render() {
     return (
       <div>
-        {
-          this.state.categories &&
-          <div style={{ display: 'flex', backgroundColor: '#dfe6e9' }}>
-            {
-              this.state.categories.map((item, index) => (
+        <Menu
+          onClick={this.handleClick}
+          selectedKeys={[this.state.current]}
+          mode="horizontal"
+        >
+
+          {
+            this.state.categories &&
+            this.state.categories.map((item, index) => (
+              <Menu.Item key={item._id}>
+
                 <Link key={item._id} to={`/categories/${item._id}/products`}>
-                  <div style={{ float: 'left', padding: 16, backgroundColor: '##dfe6e9' }}>
-                    <span style={{ fontWeight: '700' }}>
-                      {item.name}
-                    </span>
-                  </div>
+                  <Icon type={item.iconType} />{item.name}
                 </Link>
-              ))
-            }
-          </div>
-        }
+              </Menu.Item>
+
+
+            ))
+
+          }
+
+
+        </Menu>
+
+
       </div>
     );
   }

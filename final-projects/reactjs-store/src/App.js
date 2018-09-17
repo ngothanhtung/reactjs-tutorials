@@ -9,6 +9,8 @@ import Categories from './components/Categories';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 
+import { Button } from 'antd';
+
 const url = 'http://localhost:9000/products';
 
 class App extends Component {
