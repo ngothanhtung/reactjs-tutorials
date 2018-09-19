@@ -4,8 +4,8 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 
 // Chuỗi kết nối đến MongoDB
-// const CONNECTION_STRING = 'mongodb://127.0.0.1:27017';
-const CONNECTION_STRING = 'mongodb://aptech:Aptech2018@ds259001.mlab.com:59001/onlineshop';
+const CONNECTION_STRING = 'mongodb://127.0.0.1:27017';
+// const CONNECTION_STRING = 'mongodb://aptech:Aptech2018@ds259001.mlab.com:59001/onlineshop';
 const DATABASE_NAME = 'onlineshop';
 
 class MongoDbHelper {
