@@ -9,7 +9,7 @@ export default class Products extends Component {
       <Row gutter={16}>
         {
           this.props.products && this.props.products.map((item, index) => (
-            <Col key={item._id} span={8}>
+            <Col key={item._id} md={{ span: 8 }} span={8}>
               <Product product={item} />
             </Col>
           ))
