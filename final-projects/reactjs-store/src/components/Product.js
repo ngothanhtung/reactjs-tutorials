@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Card, Icon } from 'antd';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addToCart } from '../modules/shoppingCart/actions';
 const { Meta } = Card;
 
-export default class Product extends Component {
+class Product extends Component {
 
   render() {
     return (
@@ -18,7 +20,9 @@ export default class Product extends Component {
         actions={[
           <Link to={`/products/${this.props.product._id}`}><Icon type="arrow-right" /></Link>,
           <Icon type="heart" />,
-          <Icon type="shopping-cart" />
+          <Icon type="shopping-cart" onClick={() => {
+            this.props.addToCart(this.props.product, 1);
+          }} />
         ]}
       >
         <Meta
@@ -32,3 +36,17 @@ export default class Product extends Component {
     );
   }
 }
+
+
+const mapStateToProps = (state) => ({
+  // addedProducts: state.shoppingCartReducer.addedProducts,
+  // total: state.shoppingCartReducer.total,
+});
+
+// Nối các functions vào props (functions) của View Component
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: (product, quantity) => dispatch(addToCart(product, quantity)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
+
