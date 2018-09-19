@@ -12,9 +12,9 @@ export default class Product extends Component {
         style={{ width: 300 }}
         cover={<img alt="" src={this.props.product.imageUrl} />}
         actions={[
-          <Link to={`/products/${this.props.product._id}`}><Icon type="setting" /></Link>,
-          <Icon type="edit" />,
-          <Icon type="ellipsis" />
+          <Link to={`/products/${this.props.product._id}`}><Icon type="arrow-right" /></Link>,
+          <Icon type="heart" />,
+          <Icon type="shopping-cart" />
         ]}
       >
         <Meta
