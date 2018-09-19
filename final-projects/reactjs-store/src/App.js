@@ -10,6 +10,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage';
 import { Provider } from 'react-redux';
 import store from './store';
 import ShoppingCartBadge from './components/ShoppingCartBadge';
+import ShoppingCartTotalMoney from './components/ShoppingCartTotalMoney';
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,8 +21,18 @@ class App extends Component {
         <Router>
           <Layout style={{ minHeight: '100vh' }}>
             <Header style={{ backgroundColor: 'white', display: 'flex' }}>
-              <Categories />
-              <ShoppingCartBadge />
+              <div style={{ display: 'flex', flex: 1 }}>
+                <div style={{ display: 'flex', flex: 1 }}>
+                  <Categories />
+                </div>
+                <div>
+                  <ShoppingCartBadge />
+                </div>
+                <div style={{ paddingLeft: 12 }}>
+                  <ShoppingCartTotalMoney />
+                </div>
+              </div>
+
             </Header>
             <Content style={{ display: 'flex', flex: 1, paddingTop: 24, paddingRight: 24, paddingLeft: 24 }}>
               <div style={{ display: 'flex', flex: 1, padding: 24, background: 'white' }}>

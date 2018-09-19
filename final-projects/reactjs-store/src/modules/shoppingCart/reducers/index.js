@@ -6,7 +6,8 @@ const defaultState = {
 };
 
 var updateTotal = (items) => {
-  return items.reduce((total, item) => (total + ((item.product.price * item.quantity) * (100 - item.product.discount) / 100)), 0);
+  // return items.reduce((total, item) => (total + ((item.product.price * item.quantity) * (100 - item.product.discount) / 100)), 0);
+  return items.reduce((total, item) => (total + ((item.product.price * item.quantity))), 0);
 }
 
 const shoppingCartReducer = (state = defaultState, action) => {
