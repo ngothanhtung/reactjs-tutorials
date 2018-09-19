@@ -5,6 +5,7 @@ import './App.css';
 import Categories from './components/Categories';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,6 +21,7 @@ class App extends Component {
             <div style={{ display: 'flex', flex: 1, padding: 24, background: 'white' }}>
               <Route exact path="/" component={HomePage} />
               <Route path="/categories/:id/products" component={ProductsPage} />
+              <Route path="/products/:id" component={ProductDetailsPage} />
             </div>
           </Content>
           <Footer>

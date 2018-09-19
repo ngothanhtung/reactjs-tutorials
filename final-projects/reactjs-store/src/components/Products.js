@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import Product from './Product';
 
+import { Col, Row } from 'antd';
+
 export default class Products extends Component {
   render() {
     return (
-      this.props.products && this.props.products.map((item, index) => (
-        <Product product={item} />
-      ))
+      <Row gutter={16}>
+        {
+          this.props.products && this.props.products.map((item, index) => (
+            <Col key={item._id} span={8}>
+              <Product product={item} />
+            </Col>
+          ))
+        }
+      </Row>
+
     );
   }
 }
