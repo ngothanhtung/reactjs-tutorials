@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-import logo from './logo.svg';
+import { Layout } from 'antd';
 import './App.css';
 
-import axios from 'axios';
+
 import Categories from './components/Categories';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -12,6 +11,7 @@ import ProductsPage from './pages/ProductsPage';
 import { Button } from 'antd';
 
 const url = 'http://localhost:9000/products';
+const { Header, Content, Footer } = Layout;
 
 class App extends Component {
   constructor(props) {
@@ -21,25 +21,26 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
-    axios.get(url).then(response => {
-      console.log(response.data);
-      this.setState({ products: response.data });
-    });
-  }
 
   render() {
     return (
       <Router>
-        <div className="App">
-          <div>
+        <Layout style={{ minHeight: '100vh' }}>
+          <Header style={{ backgroundColor: 'white', display: 'flex' }}>
             <Categories />
-          </div>
-          <div style={{ padding: 24, backgroundColor: 'yellow' }}>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/categories/:id/products" component={ProductsPage} />
-          </div>
-        </div>
+          </Header>
+          <Content style={{ display: 'flex', flex: 1, paddingTop: 24, paddingRight: 24, paddingLeft: 24 }}>
+            <div style={{ display: 'flex', flex: 1, padding: 24, background: 'white' }}>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/categories/:id/products" component={ProductsPage} />
+            </div>
+          </Content>
+          <Footer>
+            <div style={{ textAlign: 'center' }}>
+              CPCIT © 2018
+            </div>
+          </Footer>
+        </Layout>
       </Router>
     );
   }
