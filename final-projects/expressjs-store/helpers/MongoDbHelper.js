@@ -4,9 +4,9 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 
 // Chuỗi kết nối đến MongoDB
-const CONNECTION_STRING = 'mongodb://127.0.0.1:27017';
-// const CONNECTION_STRING = 'mongodb://aptech:Aptech2018@ds259001.mlab.com:59001/OnlineStore';
-const DATABASE_NAME = 'OnlineStore';
+// const CONNECTION_STRING = 'mongodb://127.0.0.1:27017';
+const CONNECTION_STRING = 'mongodb://aptech:Aptech2018@ds259001.mlab.com:59001/onlineshop';
+const DATABASE_NAME = 'onlineshop';
 
 class MongoDbHelper {
 	// INSERT: Thêm mới (một)
@@ -213,6 +213,49 @@ class MongoDbHelper {
 						// 		}
 						// 	}
 						// ])
+						//.skip(4)
+						//.limit(100)
+						//.project({ name: 1, price: 1, discount: 1 })
+						//.sort({ price: -1, name: 1 })
+						.toArray()
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							reject(err);
+						});
+				})
+				.catch(err => {
+					reject(err);
+				});
+		});
+	};
+
+
+	findProducts(query, collectionName) {
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING)
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection('products');
+					//var collection = dbo.collection('orders');
+					collection
+						// .find(query)
+						.aggregate([
+							{
+								$lookup: {
+									from: 'categories',
+									localField: 'categoryId',
+									foreignField: 'subCategories._id',
+									as: 'category'
+								}
+							},
+							{
+								$match: query
+							}
+						])
+						// .find(query)
 						//.skip(4)
 						//.limit(100)
 						//.project({ name: 1, price: 1, discount: 1 })

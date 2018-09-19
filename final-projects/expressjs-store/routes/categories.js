@@ -11,10 +11,18 @@ router.get('/', function (req, res, next) {
   })
 });
 
+// router.get('/:id/products', function (req, res) {
+//   const id = req.params.id;
+
+//   db.findDocuments({ categoryId: ObjectID(id) }, 'products').then(result => {
+//     res.json(result);
+//   })
+// });
+
 router.get('/:id/products', function (req, res) {
   const id = req.params.id;
 
-  db.findDocuments({ categoryId: ObjectID(id) }, 'products').then(result => {
+  db.findProducts({ categoryId: ObjectID(id) }, 'products').then(result => {
     res.json(result);
   })
 });
