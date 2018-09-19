@@ -3,14 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Layout } from 'antd';
 import './App.css';
 
-
 import Categories from './components/Categories';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 
-import { Button } from 'antd';
-
-const url = 'http://localhost:9000/products';
 const { Header, Content, Footer } = Layout;
 
 class App extends Component {
