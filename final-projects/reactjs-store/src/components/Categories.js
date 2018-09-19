@@ -14,7 +14,7 @@ export default class Categories extends Component {
     super(props);
     this.state = {
       categories: null,
-      current: 'homepage',
+      current: '',
     }
   }
 

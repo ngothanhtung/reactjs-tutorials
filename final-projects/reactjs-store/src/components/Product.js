@@ -10,7 +10,11 @@ export default class Product extends Component {
       <Card
         hoverable
         style={{ width: 300 }}
-        cover={<img alt="" src={this.props.product.imageUrl} />}
+        cover={
+          <Link to={`/products/${this.props.product._id}`}>
+            <img alt="Product Picture" src={this.props.product.imageUrl} />
+          </Link>
+        }
         actions={[
           <Link to={`/products/${this.props.product._id}`}><Icon type="arrow-right" /></Link>,
           <Icon type="heart" />,
@@ -19,8 +23,11 @@ export default class Product extends Component {
       >
         <Meta
           title={this.props.product.name}
-          description={this.props.product.price}
+          description={`Price: ${this.props.product.price}`}
         />
+        <div style={{ paddingTop: 12 }}>
+          <p>Description here ...</p>
+        </div>
       </Card>
     );
   }
