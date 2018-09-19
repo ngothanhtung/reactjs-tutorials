@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Products from '../components/Products';
+
 export default class ProductsPage extends Component {
   constructor(props) {
     super(props);
@@ -25,21 +27,7 @@ export default class ProductsPage extends Component {
     return (
       <div>
         <h1> ProductsPage </h1>
-        {
-          this.state.products && this.state.products.map((item, index) => (
-            <div key={item._id}>
-              <h3>
-                {item.name}
-              </h3>
-              <h4>
-                {item.price}
-              </h4>
-              <p>
-                <img src={item.imageUrl} style={{ width: 300 }} />
-              </p>
-            </div>
-          ))
-        }
+        <Products products={this.state.products} />
       </div>
     );
   }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Layout } from 'antd';
 import './App.css';
-
 import Categories from './components/Categories';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -10,14 +9,6 @@ import ProductsPage from './pages/ProductsPage';
 const { Header, Content, Footer } = Layout;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      products: null
-    }
-  }
-
-
   render() {
     return (
       <Router>
