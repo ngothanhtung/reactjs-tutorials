@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Icon } from 'antd';
+import { Card, Icon, Skeleton } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../modules/shoppingCart/actions';
@@ -9,12 +9,15 @@ class Product extends Component {
 
   render() {
     return (
+
       <Card
         hoverable
         style={{ width: 300 }}
         cover={
           <Link to={`/products/${this.props.product._id}`}>
-            <img alt="Product Picture" src={this.props.product.imageUrl} />
+            <div style={{ minHeight: 300 }}>
+              <img alt="Product Picture" src={this.props.product.imageUrl} />
+            </div>
           </Link>
         }
         actions={[
@@ -25,6 +28,7 @@ class Product extends Component {
           }} />
         ]}
       >
+
         <Meta
           title={this.props.product.name}
           description={`Price: ${this.props.product.price}`}

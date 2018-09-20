@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Badge, Icon } from 'antd'
+import { Badge, Icon } from 'antd';
+import { Link } from 'react-router-dom'
 
 
 class ShoppingCartTotalMoney extends Component {
   render() {
     return (
-      <Badge count={this.props.addedProducts.length}>
-        <Icon style={{ fontSize: 24 }} type="shopping-cart" />
-      </Badge>
+      <Link to="/shopping-cart" style={{ color: 'rgba(0, 0, 0, 0.65)' }}>
+        <Badge count={this.props.addedProducts.length}>
+          <Icon style={{ fontSize: 24 }} type="shopping-cart" />
+        </Badge>
+      </Link>
+
     )
   }
 }

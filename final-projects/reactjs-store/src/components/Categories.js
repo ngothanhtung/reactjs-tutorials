@@ -14,7 +14,7 @@ export default class Categories extends Component {
     super(props);
     this.state = {
       categories: null,
-      current: '',
+      selectedKey: 'homepage',
     }
   }
 
@@ -25,10 +25,18 @@ export default class Categories extends Component {
     });
   }
 
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      selectedKey: e.key,
+    });
+  }
+
   render() {
     return (
       <Menu
-        selectedKeys={[this.state.current]}
+        selectedKeys={[this.state.selectedKey]}
+        onClick={this.handleClick}
         mode="horizontal"
         theme="light"
         style={{ lineHeight: '64px' }}
@@ -48,7 +56,7 @@ export default class Categories extends Component {
                     item.subCategories.map((subItem, index) => (
                       <Menu.Item key={subItem._id}>
                         <Link key={subItem._id} to={`/categories/${subItem._id}/products`}>
-                          <Icon type={subItem.iconType} />{subItem.name}
+                          <Icon onClick={() => { this.setState({ current: subItem._id }) }} type={subItem.iconType} />{subItem.name}
                         </Link>
                       </Menu.Item>
                     ))

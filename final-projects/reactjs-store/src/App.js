@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import ShoppingCartBadge from './components/ShoppingCartBadge';
 import ShoppingCartTotalMoney from './components/ShoppingCartTotalMoney';
+import ShoppingCartPage from './pages/ShoppingCartPage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -39,6 +40,7 @@ class App extends Component {
                 <Route exact path="/" component={HomePage} />
                 <Route path="/categories/:id/products" component={ProductsPage} />
                 <Route path="/products/:id" component={ProductDetailsPage} />
+                <Route path="/shopping-cart" component={ShoppingCartPage} />
               </div>
             </Content>
             <Footer>
