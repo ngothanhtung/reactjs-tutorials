@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { List, Avatar, Icon, Table, Divider } from 'antd';
 
 
@@ -34,6 +35,9 @@ class ShoppingCartPage extends Component {
     return (
       <div style={{ display: 'flex', flex: 1 }}>
         <Table columns={columns} dataSource={this.props.addedProducts} />
+        <Link to="/check-out">
+          Check out
+        </Link>
       </div>
     )
   }

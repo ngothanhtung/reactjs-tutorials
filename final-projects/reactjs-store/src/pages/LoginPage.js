@@ -26,7 +26,7 @@ class LoginPage extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
         {this.props.loggedInUser && <Redirect to="/" />}
         <Form onSubmit={this.handleSubmit} style={{ maxWidth: 300 }}>
           <FormItem>
