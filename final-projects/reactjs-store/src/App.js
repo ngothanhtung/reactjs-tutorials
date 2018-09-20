@@ -12,6 +12,7 @@ import store from './store';
 import ShoppingCartBadge from './components/ShoppingCartBadge';
 import ShoppingCartTotalMoney from './components/ShoppingCartTotalMoney';
 import ShoppingCartPage from './pages/ShoppingCartPage';
+import LoginPage from './pages/LoginPage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -41,6 +42,7 @@ class App extends Component {
                 <Route path="/categories/:id/products" component={ProductsPage} />
                 <Route path="/products/:id" component={ProductDetailsPage} />
                 <Route path="/shopping-cart" component={ShoppingCartPage} />
+                <Route path="/login" component={LoginPage} />
               </div>
             </Content>
             <Footer>

@@ -10,4 +10,11 @@ router.get('/', function (req, res, next) {
   })
 });
 
+router.post('/login', function (req, res, next) {
+  const { email, password } = req.body;
+  db.findDocuments({ email: email, password: password }, 'users').then(result => {
+    res.json(result);
+  })
+});
+
 module.exports = router;
