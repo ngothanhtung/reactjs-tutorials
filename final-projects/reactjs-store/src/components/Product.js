@@ -9,14 +9,12 @@ class Product extends Component {
 
   render() {
     return (
-
       <Card
         hoverable
-        style={{ width: 300 }}
         cover={
           <Link to={`/products/${this.props.product._id}`}>
-            <div style={{ minHeight: 300 }}>
-              <img alt="Product Picture" src={this.props.product.imageUrl} />
+            <div style={{ minHeight: 200 }}>
+              <img alt="Product Picture" style={{ width: '100%' }} src={this.props.product.imageUrl} />
             </div>
           </Link>
         }

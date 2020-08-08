@@ -11,7 +11,7 @@ class ShoppingCartPage extends Component {
       title: 'Name',
       dataIndex: 'product.name',
       key: 'name',
-      render: text => <a href="javascript:;">{text}</a>,
+      render: text => <strong>{text}</strong>,
     }, {
       title: 'Price',
       dataIndex: 'product.price',
@@ -33,12 +33,16 @@ class ShoppingCartPage extends Component {
     }];
 
     return (
-      <div style={{ display: 'flex', flex: 1 }}>
-        <Table columns={columns} dataSource={this.props.addedProducts} />
-        <Link to="/check-out">
-          Check out
-        </Link>
-      </div>
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+        <div>
+          <Table columns={columns} dataSource={this.props.addedProducts} />
+        </div>
+        <div style={{ textAlign: 'center', padding: 24 }}>
+          <Link to="/check-out">
+            Check out
+          </Link>
+        </div>
+      </div >
     )
   }
 }
