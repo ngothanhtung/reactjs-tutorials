@@ -2,7 +2,6 @@ import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 
 const myIncrement = createAction('MY-INCREMENT');
-console.log(myIncrement());
 
 const myCounter = createReducer(0, {
   [myIncrement]: (state) => state + 1,
@@ -13,4 +12,6 @@ export default configureStore({
     counter: counterReducer,
     myCounter: myCounter,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  devTools: process.env.NODE_ENV !== 'production',
 });

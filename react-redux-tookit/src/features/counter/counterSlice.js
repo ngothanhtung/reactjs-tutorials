@@ -11,6 +11,7 @@ export const counterSlice = createSlice({
     value: 0,
     users: [],
     loading: false,
+    error: null,
   },
   reducers: {
     increment: (state) => {
@@ -28,21 +29,27 @@ export const counterSlice = createSlice({
     },
   },
   extraReducers: {
+    [fetchUsers.pending]: (state) => {
+      state.loading = true;
+    },
     [fetchUsers.fulfilled]: (state, action) => {
       state.users = action.payload;
+    },
+    [fetchUsers.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.error;
     },
   },
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-
+console.log(counterSlice.actions);
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 export const incrementAsync = (amount) => (dispatch) => {
   setTimeout(() => {
-    dispatch(fetchUsers());
     dispatch(incrementByAmount(amount));
   }, 1000);
 };
