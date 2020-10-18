@@ -13,7 +13,22 @@ function* AUTH_LOGIN(action) {
 }
 
 // ====================================================================================================================
+function* AUTH_TEST(action) {
+  try {
+    const response = yield fetch('https://softech.cloud/api/v1/google?text=nice');
+    const json = yield response.json();
+    yield put({ type: 'auth/test/success', payload: json });
+  } catch (error) {
+    yield put({
+      type: 'auth/test/error',
+      error,
+    });
+  }
+}
+
+// ====================================================================================================================
 // ====================================================================================================================
 export default function* sagas() {
   yield takeLatest('auth/login', AUTH_LOGIN);
+  yield takeLatest('auth/test', AUTH_TEST);
 }
