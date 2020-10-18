@@ -1,17 +1,28 @@
-import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import createSagaMiddleware from 'redux-saga';
+import { configureStore, createAction, createReducer, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-const myIncrement = createAction('MY-INCREMENT');
+import rootReducer from './rootReducer';
+import rootSagas from './rootSagas';
 
-const myCounter = createReducer(0, {
-  [myIncrement]: (state) => state + 1,
-});
+const sagaMiddleware = createSagaMiddleware();
 
-export default configureStore({
-  reducer: {
-    counter: counterReducer,
-    myCounter: myCounter,
-  },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+const middleware = [...getDefaultMiddleware({ thunk: true }), sagaMiddleware];
+
+// export default configureStore({
+//   reducer: {
+//     counter: counterReducer,
+//     myCounter: myCounter,
+//   },
+//   middleware: middleware,
+//   devTools: process.env.NODE_ENV !== 'production',
+// });
+
+const store = configureStore({
+  reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
+  middleware,
 });
+
+sagaMiddleware.run(rootSagas);
+
+export default store;
