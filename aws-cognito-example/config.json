@@ -1,0 +1,10 @@
+{
+  "API": {
+    "INVOKE_URL": ""
+  },
+  "COGNITO" : {
+    "REGION": "us-east-1",
+    "USER_POOL_ID": "us-east-1_MCie48GWv",
+    "APP_CLIENT_ID": "1fusn7ofmr1gce5v9724bm5s7v"
+  }
+}
