@@ -7,11 +7,11 @@ function App() {
   const signUp = async () => {
     try {
       const { user } = await Auth.signUp({
-        username: 'tungnt',
+        username: 'tungnt@softech.vn',
         password: 'MKkb@1980',
         attributes: {
           email: 'tungnt@softech.vn', // optional
-          phone_number: '0905157803', // optional - E.164 number convention
+          // phone_number: E.0905157803, // optional - E.164 number convention
           // other custom attributes
         },
       });
