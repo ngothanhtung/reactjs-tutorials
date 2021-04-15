@@ -10,9 +10,17 @@ export default function ParentComponent() {
     setAge(age + 1);
   }, [age]);
 
+  // const increaseAge = () => {
+  //   setAge(age + 1);
+  // };
+
   const increaseSalary = React.useCallback(() => {
     setSalary(salary + 100);
   }, [salary]);
+
+  // const increaseSalary = () => {
+  //   setSalary(salary + 100);
+  // };
 
   return (
     <div>

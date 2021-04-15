@@ -8,4 +8,6 @@ function Count({ text, count }) {
     </div>
   );
 }
+
+// export default Count;
 export default React.memo(Count);
