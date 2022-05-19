@@ -27,3 +27,5 @@
 ## 1. Javascript ESNext
 
 [Xem chi tiết] (https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/ESNext.md)
+
+## 2. React Basic
