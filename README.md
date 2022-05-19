@@ -26,4 +26,4 @@
 
 ## 1. Javascript ESNext
 
-[Xem chi tiết] (./docs/ESNext.md)
+[Xem chi tiết] (https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/ESNext.md)
