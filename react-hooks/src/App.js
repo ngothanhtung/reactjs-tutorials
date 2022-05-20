@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ParentComponent from './useCallback-hook/ParentComponent';
+import Basic from './useRef-hook/Basic';
 
 function App() {
   return (
     <div className='App'>
-      <ParentComponent />
+      <Basic />
     </div>
   );
 }

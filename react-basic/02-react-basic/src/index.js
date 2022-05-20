@@ -22,7 +22,7 @@ import AudioPlayerExamples from './components/AudioPlayerExamples';
 
 // import MaterialDesign from './components/MaterialDesign';
 
-let component = <CallExpressjsAPIExamples />;
+let component = <PropertyExamples />;
 ReactDOM.render(component, document.getElementById('root'));
 
 registerServiceWorker();
