@@ -17,10 +17,29 @@
    - Typescript React code snippets (infeng)
    - Vscode-styled-components (Julien Poissonnier)
 6. Cài đặt các tiện ích cho Visual Studio Code:
+
    - Better Comments (Aaron Bond)
    - Color Highlight (Sergii N)
    - Icon: Material Icon Theme (Philipp Kief)
    - Theme: Dracula Official (Dracula Theme)
+
+7. Các tài nguyên
+
+   - Avatars: https://pravatar.cc/
+   - Icons: https://react-icons.github.io/react-icons/
+   - Color:
+
+     > https://flatuicolors.com/
+
+     > https://ant.design/docs/spec/colors
+
+     > https://mui.com/material-ui/customization/color/
+
+   - Images:
+
+     > https://unsplash.com/
+
+     > https://pixabay.com/
 
 # ⭐ B. REACT BASIC
 
@@ -40,13 +59,13 @@
 
 [Xem chi tiết](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/4.md)
 
-# ⭐ D. STATE MANAGEMENT WITH REDUX
+# ⭐ D. STATE MANAGEMENT WITH REDUX & SAGAS
 
 [Xem chi tiết](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/5.md)
 
-# ⭐ E. USING UI KIT WITH ANTD DESIGN
+# ⭐ E. USING UI KIT WITH ANTD DESIGN & MUI
 
-[Xem chi tiết](https://ant.design/)
+## [Xem chi tiết: Ant Design](https://ant.design/)
 
 - 🌈 Enterprise-class UI designed for web applications.
 - 📦 A set of high-quality React components out of the box.
@@ -54,3 +73,8 @@
 - ⚙️ Whole package of design resources and development tools.
 - 🌍 Internationalization support for dozens of languages.
 - 🎨 Powerful theme customization in every detail.
+
+## [Xem chi tiết: MUI](https://mui.com/)
+
+- MUI offers a comprehensive suite of UI tools to help you ship new features faster.
+- Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.
