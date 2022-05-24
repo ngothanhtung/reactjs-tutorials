@@ -26,6 +26,12 @@
 
 ## 1. Javascript ESNext
 
-[Xem chi tiết] (https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/ESNext.md)
+[Xem chi tiết](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/1.md)
 
 ## 2. React Basic
+
+[Xem chi tiết](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/2.md)
+
+## 3. React Hooks
+
+[Xem chi tiết](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/docs/3.md)

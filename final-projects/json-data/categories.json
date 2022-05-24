@@ -1,4 +1,42 @@
-{"_id":{"$oid":"5b9f549a695c0e578189b722"},"name":"Computers","iconType":"appstore","subCategories":[{"name":"Desktops","_id":{"$oid":"5ba1f7ad8a42d909540b3024"}},{"name":"Notebooks","_id":{"$oid":"5ba1f7c08a42d909540b3025"}}]}
-{"_id":{"$oid":"5b9f54aa695c0e578189b723"},"name":"Electronics","iconType":"appstore"}
-{"_id":{"$oid":"5b9f54b1695c0e578189b724"},"name":"Books"}
-{"_id":{"$oid":"5b9f54bb695c0e578189b725"},"name":"Phones"}
+[
+  {
+    "_id": {
+      "$oid": "5b9f549a695c0e578189b722"
+    },
+    "name": "Computers",
+    "iconType": "appstore",
+    "subCategories": [
+      {
+        "name": "Desktops",
+        "_id": {
+          "$oid": "5ba1f7ad8a42d909540b3024"
+        }
+      },
+      {
+        "name": "Notebooks",
+        "_id": {
+          "$oid": "5ba1f7c08a42d909540b3025"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "5b9f54aa695c0e578189b723"
+    },
+    "name": "Electronics",
+    "iconType": "appstore"
+  },
+  {
+    "_id": {
+      "$oid": "5b9f54b1695c0e578189b724"
+    },
+    "name": "Books"
+  },
+  {
+    "_id": {
+      "$oid": "5b9f54bb695c0e578189b725"
+    },
+    "name": "Phones"
+  }
+]
