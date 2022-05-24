@@ -18,9 +18,9 @@ function App() {
       <ChartBar text='STORAGE' color1='#2980b9' color2='#3498db' percentage={50} />
       <ChartBar text='USERS' color1='#16a085' color2='#1abc9c' percentage={70} />
       <ChartBar text='VISITORS' color1='#d35400' color2='#e67e22' percentage={60} />
-      <ChartBar text='EMAILS' />
-      <ChartBar text='BASIC' />
-      <ChartBar text='OTHERS' />
+      <ChartBar text='EMAILS' color1='#192a56' color2='#273c75' percentage={60} />
+      <ChartBar text='BASIC' color1='#44bd32' color2='#4cd137' percentage={60} />
+      <ChartBar text='OTHERS' color1='#8c7ae6' color2='#9c88ff' percentage={60} />
 
       <div style={{ display: 'flex' }}>
         <Block title='Declarative' content='React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.' />
