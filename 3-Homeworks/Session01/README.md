@@ -49,4 +49,67 @@
 
 # Thực hiện các bài tập sau:
 
-1. ![]
+## 1. Block UI
+
+- Làm 1 component đặt tên là ChartBar1, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Component này có có props sau:
+
+```ts
+{
+  text: string,
+  color1: string,
+  colors: string
+  percentage: number
+}
+```
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-1.jpg?raw=true)
+
+## 2. Block UI
+
+- Làm 1 component đặt tên là ChartBar2, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Component này có có props sau:
+
+```ts
+{
+  text: string,
+  color: string,
+  iconName: string
+  percentage: number
+}
+```
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-2.jpg?raw=true)
+
+## 3. Block UI
+
+- Làm 1 component đặt tên là SocialBlock, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Component này có có props sau:
+
+```ts
+{
+  text: string,
+  color: string,
+  iconName: string
+  total: number
+  unit: string // unit='Likes' hoặc unit='Tweets', ...
+}
+```
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-3.jpg?raw=true)
+
+## 4. Block UI
+
+- Làm 1 component đặt tên là ChartColumn, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Component này có có props sau:
+
+```ts
+{
+  text: string,
+  total: number
+  unit: string // unit='' hoặc unit='$', ...
+  percentages: [20, 45, 30, 80, 75]
+}
+```
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-3.jpg?raw=true)
