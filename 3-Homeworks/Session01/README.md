@@ -51,7 +51,7 @@
 
 ## 1. Block UI
 
-- Làm 1 component đặt tên là ChartBar1, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Làm 1 component đặt tên là ChartBar1, sau đó sử dụng component này để tạo ra các blocks còn lại theo cách truyền props
 - Component này có có props sau:
 
 ```ts
@@ -86,7 +86,7 @@
 
 ## 3. Block UI
 
-- Làm 1 component đặt tên là SocialBlock, sau đó sử dụng component này để tạo ra các chart bar còn lại theo cách truyền props
+- Làm 1 component đặt tên là SocialBlock, sau đó sử dụng component này để tạo ra các blocks còn lại theo cách truyền props
 - Component này có có props sau:
 
 ```ts
@@ -103,7 +103,7 @@
 
 ## 4. Block UI
 
-- Làm 1 component đặt tên là ChartColumn, sau đó sử dụng component này để tạo ra các ChartColumns còn lại theo cách truyền props
+- Làm 1 component đặt tên là ChartColumn, sau đó sử dụng component này để tạo ra các blocks còn lại theo cách truyền props
 - Component này có các component con bên trong như: Text, Column, ...
 - Component này có có props sau:
 
@@ -120,7 +120,7 @@
 
 ## 5. Block UI
 
-- Làm 1 component đặt tên là Person, sau đó sử dụng component này để tạo ra các Persons còn lại theo cách truyền props
+- Làm 1 component đặt tên là Person, sau đó sử dụng component này để tạo ra các blocks còn lại theo cách truyền props
 - Component này có các components con bên trong như: Avatar, Text, Information, ContactBlock, ...:
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-5.jpg?raw=true)
