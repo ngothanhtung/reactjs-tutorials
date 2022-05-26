@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './styles.module.css';
 import './styles.css';
+//! Lưu ý dùng cách này
+import styles from './chartbar.module.css';
 
 function ChartBar({ text = 'TEXT', color1 = 'violet', color2 = 'pink', percentage = 50 }) {
   return (
