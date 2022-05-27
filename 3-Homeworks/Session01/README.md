@@ -49,6 +49,8 @@
 
 # Thực hiện các bài tập sau:
 
+# Phần A: CƠ BẢN
+
 ## 1. Block UI
 
 - Làm 1 component đặt tên là ChartBar1, sau đó sử dụng component này để tạo ra các blocks còn lại theo cách truyền props
@@ -125,10 +127,16 @@
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-5.jpg?raw=true)
 
----
-
-# PHẦN 3: Nâng cao
+# PHẦN 2: NÂNG CAO
 
 ## 6. Block UI
 
+- Các images tài nguyên trong folder ./block-ui-6-images/
+
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-6.jpg?raw=true)
+
+## 7. Block UI
+
+- Các images tài nguyên trong folder ./block-ui-7-images/
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-7.jpg?raw=true)
