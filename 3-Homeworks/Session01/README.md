@@ -47,13 +47,29 @@
    yarn start
    ```
 
-# Thực hiện các bài tập sau:
+# THỰC HIỆN CÁC BÀI TẬP:
 
 # PHẦN BẮT BUỘC:
 
-## Basic UI 1
+## 1. Basic UI
 
-# Phần A: LUYỆN TẬP
+- Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
+
+  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/basic-1.jpg?raw=true)
+
+## 2. Basic UI
+
+- Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
+
+  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/basic-2.jpg?raw=true)
+
+## 3. Basic UI
+
+- Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
+
+  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/basic-3.jpg?raw=true)
+
+# PHẦN LUYỆN TẬP
 
 ## 1. Block UI
 
@@ -131,15 +147,15 @@
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-5.jpg?raw=true)
 
-# PHẦN 2: NÂNG CAO
+# PHẦN NÂNG CAO:
 
-## 6. Block UI
+## 1. Advanced Block UI
 
 - Các images tài nguyên trong folder ./block-ui-6-images/
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-6.jpg?raw=true)
 
-## 7. Block UI
+## 1. Advanced Block UI
 
 - Các images tài nguyên trong folder ./block-ui-7-images/
 
