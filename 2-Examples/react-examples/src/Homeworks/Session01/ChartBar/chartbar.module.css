@@ -4,7 +4,6 @@
   background-color: #fafafa;
   border: 1px solid #efeeee;
   box-shadow: 0px 0px 6px 0px #efeeee inset;
-
   height: 48px;
   margin-bottom: 8px;
 }
@@ -17,6 +16,7 @@
   align-items: center;
   padding-right: 16px;
 }
+
 .column_right {
   display: flex;
   flex: 1;

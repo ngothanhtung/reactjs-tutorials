@@ -10,6 +10,7 @@
    - ESLint (Microsoft)
    - IntelliCode (Microsoft)
    - JavaScript (ES6) code snippets (charalampos karypidis)
+   - ES7+ React/Redux/React-Native snippets (dsznajder)
    - npm (Microsoft)
    - npm Intellisense (Christian Kohler)
    - Prettier - Code formatter (Prettier)
