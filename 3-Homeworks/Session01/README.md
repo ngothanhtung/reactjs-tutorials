@@ -124,3 +124,11 @@
 - Component này có các components con bên trong như: Avatar, Text, Information, ContactBlock, ...:
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-5.jpg?raw=true)
+
+---
+
+# PHẦN 3: Nâng cao
+
+## 6. Block UI
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-6.jpg?raw=true)
