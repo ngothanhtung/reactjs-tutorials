@@ -49,7 +49,11 @@
 
 # Thực hiện các bài tập sau:
 
-# Phần A: CƠ BẢN
+# PHẦN BẮT BUỘC:
+
+## Basic UI 1
+
+# Phần A: LUYỆN TẬP
 
 ## 1. Block UI
 
