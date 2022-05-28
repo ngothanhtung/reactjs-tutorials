@@ -166,4 +166,7 @@
 - Tự làm cho mình 1 hồ sơ năng lực, ví dụ như sau:
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/resume-1.png?raw=true)
-![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/resume-1.jpg?raw=true)
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/resume-2.jpg?raw=true)
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/resume-3.jpg?raw=true)
