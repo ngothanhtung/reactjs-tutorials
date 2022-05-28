@@ -160,3 +160,9 @@
 - Các images tài nguyên trong folder ./block-ui-7-images/
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/block-ui-7.jpg?raw=true)
+
+# PHẦN TỔNG HỢP / SÁNG TẠO:
+
+- Tự làm cho mình 1 hồ sơ năng lực, ví dụ như sau:
+
+![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session01/resume-1.png?raw=true)
