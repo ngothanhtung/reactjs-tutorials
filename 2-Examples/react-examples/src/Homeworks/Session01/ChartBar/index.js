@@ -12,6 +12,7 @@ function ChartBar({ text = 'TEXT', color1 = 'violet', color2 = 'pink', percentag
       <div className={styles.column_right}>
         <div className={`${styles.column_percentage_left} rectGrow`} style={{ backgroundColor: color2, width: `${percentage}%` }}>
           <span className={styles.text}>{percentage}%</span>
+          <span className={styles['text-big']}>BIG TEXT</span>
         </div>
         <div className={styles.column_percentage_right}></div>
       </div>
