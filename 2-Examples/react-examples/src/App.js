@@ -8,6 +8,7 @@ import './App.css';
 import LikeButton from './Examples/StateExamples/LikeButton';
 import RatingButton from './Examples/StateExamples/RatingButton';
 import HandleEvent from './Examples/StateExamples/HandleEvent';
+import Gallery from './Homeworks/Session02/Gallery';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -51,9 +52,10 @@ function App() {
       <img alt='' src={`/images/${count}.jpeg`} style={{ width: '100%' }} />
       <Footer></Footer> */}
 
-      <LikeButton />
+      {/* <LikeButton />
       <RatingButton />
-      <HandleEvent />
+      <HandleEvent /> */}
+      <Gallery />
     </div>
   );
 }
