@@ -9,6 +9,8 @@ import LikeButton from './Examples/StateExamples/LikeButton';
 import RatingButton from './Examples/StateExamples/RatingButton';
 import HandleEvent from './Examples/StateExamples/HandleEvent';
 import Gallery from './Homeworks/Session02/Gallery';
+import LifecycleExample from './Examples/LifecycleExamples';
+import LifecyleHookExamples from './Examples/LifecyleHookExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -55,7 +57,9 @@ function App() {
       {/* <LikeButton />
       <RatingButton />
       <HandleEvent /> */}
-      <Gallery />
+      {/* <Gallery /> */}
+      {/* <LifecycleExample /> */}
+      <LifecyleHookExamples />
     </div>
   );
 }
