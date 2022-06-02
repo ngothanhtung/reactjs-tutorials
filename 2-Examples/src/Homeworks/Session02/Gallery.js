@@ -1,15 +1,41 @@
 import React from 'react';
+import styles from './gallery.module.css';
+
+const maxImageCount = 4;
 
 function Gallery() {
-  const [count, setCount] = React.useState(1);
+  const [index, setIndex] = React.useState(1);
 
-  setInterval(() => {
-    setCount(count + 1);
-  }, 3000);
+  let imagePath = `/images/${index}.jpeg`;
 
   return (
     <div>
-      <h1>{count}</h1>
+      <img className={styles.image_big} src={imagePath} alt='' />
+      <div className={styles.button_container}>
+        <button
+          disabled={index === 1}
+          style={{ backgroundColor: index === 1 ? 'gray' : null }}
+          className={styles.button_navigation}
+          onClick={() => {
+            setIndex(index - 1);
+          }}
+        >
+          Previous
+        </button>
+        <div className={styles.text}>
+          {index} / {maxImageCount}
+        </div>
+        <button
+          disabled={index === maxImageCount}
+          style={{ backgroundColor: index === maxImageCount ? 'gray' : null }}
+          className={styles.button_navigation}
+          onClick={() => {
+            setIndex(index + 1);
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }

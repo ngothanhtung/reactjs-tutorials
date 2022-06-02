@@ -57,9 +57,9 @@ function App() {
       {/* <LikeButton />
       <RatingButton />
       <HandleEvent /> */}
-      {/* <Gallery /> */}
+      <Gallery />
       {/* <LifecycleExample /> */}
-      <LifecyleHookExamples />
+      {/* <LifecyleHookExamples /> */}
     </div>
   );
 }
