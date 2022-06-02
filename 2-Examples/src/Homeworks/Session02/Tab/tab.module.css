@@ -1,0 +1,22 @@
+.tab_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab_title {
+  height: 48px;
+  width: 120px;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  border: 0;
+}
+.tab_content {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: gray;
+}

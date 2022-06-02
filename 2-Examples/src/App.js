@@ -11,6 +11,7 @@ import HandleEvent from './Examples/StateExamples/HandleEvent';
 import Gallery from './Homeworks/Session02/Gallery';
 import LifecycleExample from './Examples/LifecycleExamples';
 import LifecyleHookExamples from './Examples/LifecyleHookExamples';
+import Tab from './Homeworks/Session02/Tab';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -57,7 +58,19 @@ function App() {
       {/* <LikeButton />
       <RatingButton />
       <HandleEvent /> */}
-      <Gallery />
+      {/* <Gallery /> */}
+      <Tab
+        tabs={[
+          {
+            title: 'HISTORY',
+            content: '1Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam',
+          },
+          {
+            title: 'APPROACH',
+            content: '2Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam',
+          },
+        ]}
+      />
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
     </div>
