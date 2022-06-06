@@ -1,17 +1,19 @@
+import './App.css';
 import React from 'react';
 import Header from './components/Header';
 import Block from './components/Block';
 import Footer from './components/Footer';
 
 import ChartBar from './components/ChartBar';
-import './App.css';
+
 import LikeButton from './Examples/StateExamples/LikeButton';
 import RatingButton from './Examples/StateExamples/RatingButton';
 import HandleEvent from './Examples/StateExamples/HandleEvent';
-import Gallery from './Homeworks/Session02/Gallery';
+import Gallery from './Homeworks/Session03/Gallery';
 import LifecycleExample from './Examples/LifecycleExamples';
 import LifecyleHookExamples from './Examples/LifecyleHookExamples';
-import Tab from './Homeworks/Session02/Tab';
+import Tab from './Homeworks/Session03/Tab';
+import MusicPlayer from './Homeworks/Session03/MusicPlayer';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -59,7 +61,7 @@ function App() {
       <RatingButton />
       <HandleEvent /> */}
       {/* <Gallery /> */}
-      <Tab
+      {/* <Tab
         tabs={[
           {
             title: 'HISTORY',
@@ -70,9 +72,11 @@ function App() {
             content: '2Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam',
           },
         ]}
-      />
+      /> */}
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
+
+      <MusicPlayer />
     </div>
   );
 }

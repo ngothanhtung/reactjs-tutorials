@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Session01 from './Homeworks/Session01';
 
 import reportWebVitals from './reportWebVitals';
 
