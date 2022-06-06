@@ -1,3 +1,5 @@
+> Documents of course will be move to (https://documents.aptech.io/docs/category/aptech-mern)
+
 # ⭐ A. SETUP DEVELOPMENT ENVIROMENT
 
 1. Nodejs: https://nodejs.org/en/ (Cài bản LTS)
