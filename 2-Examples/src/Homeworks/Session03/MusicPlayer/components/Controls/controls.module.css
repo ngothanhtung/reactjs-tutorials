@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a4b0be;
+  font-size: 18px;
+}
+
+.button_play {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4834d4;
+  font-size: 32px;
+  background-color: white;
+}

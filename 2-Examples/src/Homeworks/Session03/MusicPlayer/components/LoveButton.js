@@ -4,7 +4,8 @@ import { AiFillHeart } from 'react-icons/ai';
 function LoveButton() {
   const [loved, setLoved] = React.useState(false);
 
-  const onClick = () => {
+  const onClick = (e) => {
+    e.preventDefault();
     setLoved(!loved);
   };
 
