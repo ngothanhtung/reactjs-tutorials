@@ -1,0 +1,12 @@
+.button {
+  cursor: pointer;
+  height: 48px;
+  min-width: 64px;
+  border: 0;
+  background-color: blue;
+  color: white;
+}
+
+.button_disable {
+  background-color: grey;
+}

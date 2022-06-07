@@ -1,0 +1,44 @@
+import React from 'react';
+import Song from './Song';
+
+const songs = [
+  {
+    id: 1,
+    title: 'Sống xa anh chẳng dễ dàng',
+    artist: 'Bảo Anh',
+    imageUrl: 'assets/Song-Xa-Anh-Chang-De-Dang-Bao-Anh.jpeg',
+    audioUrl: 'assets/Song-Xa-Anh-Chang-De-Dang-Bao-Anh.mp3',
+    duration: 256,
+  },
+  {
+    id: 2,
+    title: 'Yêu một người vô tâm',
+    artist: 'Bảo Anh',
+    imageUrl: 'assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.jpeg',
+    audioUrl: 'assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.mp3',
+    duration: 309,
+  },
+];
+
+for (let i = 3; i <= 100; i++) {
+  songs.push({
+    id: i,
+    title: 'Yêu một người vô tâm',
+    artist: 'Bảo Anh',
+    imageUrl: 'assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.jpeg',
+    audioUrl: 'assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.mp3',
+    duration: 309,
+  });
+}
+
+function ListExamples() {
+  return (
+    <div>
+      {songs.map((song, index) => {
+        return <Song key={`song-${song.id}`} title={song.title} />;
+      })}
+    </div>
+  );
+}
+
+export default ListExamples;
