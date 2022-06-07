@@ -14,6 +14,7 @@ import LifecycleExample from './Examples/LifecycleExamples';
 import LifecyleHookExamples from './Examples/LifecyleHookExamples';
 import Tab from './Homeworks/Session03/Tab';
 import MusicPlayer from './Homeworks/Session03/MusicPlayer';
+import EventHandlerExamples from './Examples/EventHandlerExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -76,7 +77,8 @@ function App() {
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
 
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
+      <EventHandlerExamples />
     </div>
   );
 }
