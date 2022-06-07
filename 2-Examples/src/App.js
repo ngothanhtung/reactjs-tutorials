@@ -79,10 +79,10 @@ function App() {
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
 
-      {/* <MusicPlayer /> */}
+      <MusicPlayer />
       {/* <EventHandlerExamples /> */}
       {/* <ConditionalRenderingExamples /> */}
-      <ListExamples />
+      {/* <ListExamples /> */}
     </div>
   );
 }

@@ -8,8 +8,8 @@
 
 .disc {
   display: flex;
-  height: 300px;
-  width: 300px;
+  height: 360px;
+  width: 360px;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
