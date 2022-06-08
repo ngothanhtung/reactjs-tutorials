@@ -18,7 +18,7 @@ const Song = ({ song, playing, onClick }) => {
       </div>
 
       <div className={styles.song_text_container} onClick={handleOnClick}>
-        <div style={{ flex: 1, textAlign: 'left', fontSize: 12, fontWeight: '600' }}>{song.title}</div>
+        <div style={{ flex: 2, textAlign: 'left', fontSize: 12, fontWeight: '600' }}>{song.title}</div>
         <div style={{ flex: 1, textAlign: 'left', fontSize: 11 }}>{song.artist}</div>
       </div>
       <div className={styles.song_duration_container}>

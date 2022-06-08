@@ -13,29 +13,31 @@ function Controls({ onClick, playing }) {
     }
   };
   return (
-    <div style={{ display: 'flex', flex: 1, justifyContent: 'space-around' }}>
-      <button className={styles.button} onClick={() => handleOnClick('shuffle')}>
-        <IoIosShuffle />
-      </button>
-      <button className={styles.button} onClick={() => handleOnClick('previous')}>
-        <IoIosSkipBackward />
-      </button>
-      {!playing && (
-        <button className={styles.button_play} onClick={() => handleOnClick('play')}>
-          <IoIosPlay />
+    <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'space-around', maxWidth: 320, alignItems: 'center' }}>
+        <button className={styles.button} onClick={() => handleOnClick('shuffle')}>
+          <IoIosShuffle />
         </button>
-      )}
-      {playing && (
-        <button className={[styles.button_play, styles.playing].join(' ')} onClick={() => handleOnClick('pause')}>
-          <IoIosPause />
+        <button className={styles.button} onClick={() => handleOnClick('previous')}>
+          <IoIosSkipBackward />
         </button>
-      )}
-      <button className={styles.button} onClick={() => handleOnClick('next')}>
-        <IoIosSkipForward />
-      </button>
-      <button className={styles.button} onClick={() => handleOnClick('repeat')}>
-        <IoIosRepeat />
-      </button>
+        {!playing && (
+          <button className={styles.button_play} onClick={() => handleOnClick('play')}>
+            <IoIosPlay />
+          </button>
+        )}
+        {playing && (
+          <button className={[styles.button_play, styles.playing].join(' ')} onClick={() => handleOnClick('pause')}>
+            <IoIosPause />
+          </button>
+        )}
+        <button className={styles.button} onClick={() => handleOnClick('next')}>
+          <IoIosSkipForward />
+        </button>
+        <button className={styles.button} onClick={() => handleOnClick('repeat')}>
+          <IoIosRepeat />
+        </button>
+      </div>
     </div>
   );
 }
