@@ -2,13 +2,11 @@ import React from 'react';
 import styles from './controls.module.css';
 import { IoIosShuffle, IoIosSkipBackward, IoIosPlay, IoIosPause, IoIosSkipForward, IoIosRepeat } from 'react-icons/io';
 
-function Controls({ onClick }) {
-  const [status, setStatus] = React.useState('pause');
-
+function Controls({ onClick, playing }) {
   const handleOnClick = (actionName) => {
-    if (actionName === 'play' || actionName === 'pause') {
-      setStatus(actionName);
-    }
+    // if (actionName === 'play' || actionName === 'pause') {
+    //   setStatus(actionName);
+    // }
 
     if (onClick && typeof onClick === 'function') {
       onClick(actionName);
@@ -22,13 +20,13 @@ function Controls({ onClick }) {
       <button className={styles.button} onClick={() => handleOnClick('previous')}>
         <IoIosSkipBackward />
       </button>
-      {status === 'pause' && (
+      {!playing && (
         <button className={styles.button_play} onClick={() => handleOnClick('play')}>
           <IoIosPlay />
         </button>
       )}
-      {status === 'play' && (
-        <button className={styles.button_play} onClick={() => handleOnClick('pause')}>
+      {playing && (
+        <button className={[styles.button_play, styles.playing].join(' ')} onClick={() => handleOnClick('pause')}>
           <IoIosPause />
         </button>
       )}
