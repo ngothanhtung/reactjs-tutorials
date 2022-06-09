@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from '../Slider';
 
-const Player = React.forwardRef(({ selectedSong, onEnded }, ref) => {
+const Player = React.forwardRef(({ selectedSong, onEnded, onPlaying }, ref) => {
   const [currentTime, setCurrentTime] = React.useState(0);
   return (
     <div>
@@ -18,15 +18,21 @@ const Player = React.forwardRef(({ selectedSong, onEnded }, ref) => {
         style={{ display: 'none' }}
         controls
         src={selectedSong.audioUrl}
-        autoPlay={true}
+        autoPlay={selectedSong}
         preload='auto'
         ref={ref}
-        onTimeUpdate={(e) => {
+        onTimeUpdate={() => {
           setCurrentTime(ref.current.currentTime);
         }}
-        onEnded={(e) => {
+        onEnded={() => {
           if (onEnded && typeof onEnded === 'function') {
+            onEnded();
             console.log('End and call next song');
+          }
+        }}
+        onPlaying={() => {
+          if (onPlaying && typeof onPlaying === 'function') {
+            onPlaying();
           }
         }}
       />

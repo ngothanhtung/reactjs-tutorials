@@ -12,7 +12,7 @@ function Disc({ song, playing }) {
 
       <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'center', paddingTop: 24 }}>
         <span style={{ fontWeight: 700, fontSize: 18, color: '#2c3e50' }}>{song.title}</span>
-        <span style={{ fontWeight: 500, fontSize: 15, color: '#b2bec3' }}>{song.artist}</span>
+        <span style={{ fontWeight: 500, fontSize: 15, color: '#b2bec3', marginTop: 4 }}>{song.artist}</span>
       </div>
     </div>
   );

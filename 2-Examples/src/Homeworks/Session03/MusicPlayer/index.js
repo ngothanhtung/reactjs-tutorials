@@ -16,7 +16,17 @@ function MusicPlayer() {
       <Disc song={selectedSong} playing={playing} />
 
       {/* HTML AUDIO */}
-      <Player ref={refPlayer} selectedSong={selectedSong} />
+      <Player
+        ref={refPlayer}
+        selectedSong={selectedSong}
+        onPlaying={() => {
+          setPlaying(true);
+        }}
+        onEnded={() => {
+          refPlayer.current.pause();
+          setPlaying(false);
+        }}
+      />
 
       {/* THANH DIEU KHIEN */}
       <Controls
@@ -25,7 +35,6 @@ function MusicPlayer() {
           switch (actionName) {
             case 'play':
               refPlayer.current.play();
-              setPlaying(true);
               break;
             case 'pause':
               refPlayer.current.pause();
@@ -43,9 +52,8 @@ function MusicPlayer() {
         playing={playing}
         selectedSong={selectedSong}
         onClick={(song) => {
-          refPlayer.current.play();
           setSelectedSong(song);
-          setPlaying(true);
+          refPlayer.current.play();
         }}
       />
     </div>

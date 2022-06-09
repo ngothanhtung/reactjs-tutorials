@@ -12,9 +12,6 @@
   width: 4px;
   margin-right: 6px;
   transition: 0.5s;
-}
-
-.playing {
   animation: equalize 4s 0s infinite;
   animation-timing-function: linear;
 }
@@ -42,10 +39,6 @@
   height: 18px;
   background: #4834d4;
   animation-delay: -4.9s;
-}
-
-.not_playing {
-  height: 0px;
 }
 
 @keyframes equalize {

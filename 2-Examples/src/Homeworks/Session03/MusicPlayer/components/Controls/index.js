@@ -4,16 +4,12 @@ import { IoIosShuffle, IoIosSkipBackward, IoIosPlay, IoIosPause, IoIosSkipForwar
 
 function Controls({ onClick, playing }) {
   const handleOnClick = (actionName) => {
-    // if (actionName === 'play' || actionName === 'pause') {
-    //   setStatus(actionName);
-    // }
-
     if (onClick && typeof onClick === 'function') {
       onClick(actionName);
     }
   };
   return (
-    <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+    <div style={{ display: 'flex', flex: 1, justifyContent: 'center', marginBottom: 24 }}>
       <div style={{ display: 'flex', flex: 1, justifyContent: 'space-around', maxWidth: 320, alignItems: 'center' }}>
         <button className={styles.button} onClick={() => handleOnClick('shuffle')}>
           <IoIosShuffle />
