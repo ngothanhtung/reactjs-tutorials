@@ -20,6 +20,7 @@ import ListExamples from './Examples/ListExamples';
 import FormsExamples from './Examples/FormsExamples';
 import FormikExamples from './Examples/FormikExamples';
 import FormWithYup from './Examples/FormikExamples/FormWithYup';
+import AntdExamples from './Examples/AntdExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -88,7 +89,8 @@ function App() {
       {/* <ListExamples /> */}
       {/* <FormsExamples /> */}
       {/* <FormikExamples /> */}
-      <FormWithYup />
+      {/* <FormWithYup /> */}
+      <AntdExamples />
     </div>
   );
 }
