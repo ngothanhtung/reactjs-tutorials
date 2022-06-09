@@ -9,6 +9,7 @@
   align-items: center;
   color: #a4b0be;
   font-size: 18px;
+  transition: all 0.5s;
 }
 
 .button_play {
@@ -24,6 +25,16 @@
   color: #4834d4;
   font-size: 32px;
   background-color: white;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  color: #4834d4;
+  transform: scale(1.5);
+}
+
+.button:active {
+  color: #1e07b4;
 }
 
 .playing {
