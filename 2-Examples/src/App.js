@@ -17,6 +17,7 @@ import MusicPlayer from './Homeworks/Session03/MusicPlayer';
 import EventHandlerExamples from './Examples/EventHandlerExamples';
 import ConditionalRenderingExamples from './Examples/ConditionalRenderingExamples';
 import ListExamples from './Examples/ListExamples';
+import FormsExamples from './Examples/FormsExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -79,10 +80,11 @@ function App() {
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
 
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
       {/* <EventHandlerExamples /> */}
       {/* <ConditionalRenderingExamples /> */}
       {/* <ListExamples /> */}
+      <FormsExamples />
     </div>
   );
 }
