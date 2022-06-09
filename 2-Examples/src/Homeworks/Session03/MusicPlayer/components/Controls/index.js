@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './controls.module.css';
 import { IoIosShuffle, IoIosSkipBackward, IoIosPlay, IoIosPause, IoIosSkipForward, IoIosRepeat } from 'react-icons/io';
 
-function Controls({ onClick, playing }) {
+function Controls({ onClick, currentIndex, max = 2, playing }) {
   const handleOnClick = (actionName) => {
     if (onClick && typeof onClick === 'function') {
       onClick(actionName);
@@ -14,7 +14,7 @@ function Controls({ onClick, playing }) {
         <button className={styles.button} onClick={() => handleOnClick('shuffle')}>
           <IoIosShuffle />
         </button>
-        <button className={styles.button} onClick={() => handleOnClick('previous')}>
+        <button disabled={currentIndex === 0} className={styles.button} onClick={() => handleOnClick('previous')}>
           <IoIosSkipBackward />
         </button>
         {!playing && (
@@ -27,7 +27,7 @@ function Controls({ onClick, playing }) {
             <IoIosPause />
           </button>
         )}
-        <button className={styles.button} onClick={() => handleOnClick('next')}>
+        <button disabled={currentIndex === max - 1} className={styles.button} onClick={() => handleOnClick('next')}>
           <IoIosSkipForward />
         </button>
         <button className={styles.button} onClick={() => handleOnClick('repeat')}>

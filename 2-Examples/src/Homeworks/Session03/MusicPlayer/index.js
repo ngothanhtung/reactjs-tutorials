@@ -5,10 +5,13 @@ import { songs } from './data';
 import Songs from './components/Songs';
 import Player from './components/Player';
 
-function MusicPlayer() {
-  const [selectedSong, setSelectedSong] = React.useState(songs[0]);
+function MusicPlayer({ max = 2 }) {
+  const [selectedSongIndex, setSelectedSongIndex] = React.useState(0);
+
   const [playing, setPlaying] = React.useState(false);
   const refPlayer = React.useRef();
+
+  const selectedSong = songs[selectedSongIndex];
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', padding: 24 }}>
@@ -31,6 +34,8 @@ function MusicPlayer() {
       {/* THANH DIEU KHIEN */}
       <Controls
         playing={playing}
+        currentIndex={selectedSongIndex}
+        max={max}
         onClick={(actionName) => {
           switch (actionName) {
             case 'play':
@@ -39,6 +44,12 @@ function MusicPlayer() {
             case 'pause':
               refPlayer.current.pause();
               setPlaying(false);
+              break;
+            case 'previous':
+              setSelectedSongIndex((previousIndex) => previousIndex - 1);
+              break;
+            case 'next':
+              setSelectedSongIndex((previousIndex) => previousIndex + 1);
               break;
             default:
               break;
@@ -52,7 +63,9 @@ function MusicPlayer() {
         playing={playing}
         selectedSong={selectedSong}
         onClick={(song) => {
-          setSelectedSong(song);
+          const i = songs.findIndex((s) => s.id === song.id);
+          setSelectedSongIndex(i);
+          // setSelectedSong(song);
           refPlayer.current.play();
         }}
       />
