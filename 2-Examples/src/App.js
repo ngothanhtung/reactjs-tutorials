@@ -18,6 +18,8 @@ import EventHandlerExamples from './Examples/EventHandlerExamples';
 import ConditionalRenderingExamples from './Examples/ConditionalRenderingExamples';
 import ListExamples from './Examples/ListExamples';
 import FormsExamples from './Examples/FormsExamples';
+import FormikExamples from './Examples/FormikExamples';
+import FormWithYup from './Examples/FormikExamples/FormWithYup';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -84,7 +86,9 @@ function App() {
       {/* <EventHandlerExamples /> */}
       {/* <ConditionalRenderingExamples /> */}
       {/* <ListExamples /> */}
-      <FormsExamples />
+      {/* <FormsExamples /> */}
+      {/* <FormikExamples /> */}
+      <FormWithYup />
     </div>
   );
 }

@@ -1,26 +1,18 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
-function FormikExamples() {
-  const validate = (values, props) => {
-    const errors = {};
-    if (['admin', 'null', 'god'].includes(values.firstName)) {
-      errors.firstName = 'Nice try';
-    }
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+  lastName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+});
 
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-
-    return errors;
-  };
-
+function FormWithYup() {
   return (
     <div>
       <Formik
-        validate={validate}
+        validationSchema={SignupSchema}
         initialValues={{
           firstName: 'Peter',
           lastName: 'Jackson',
@@ -33,9 +25,16 @@ function FormikExamples() {
         <Form>
           <label htmlFor='firstName'>First Name</label>
           <Field id='firstName' name='firstName' placeholder='Please enter your first name' />
+          <div style={{ color: 'red' }}>
+            <ErrorMessage name='firstName' />
+          </div>
 
           <label htmlFor='lastName'>Last Name</label>
           <Field id='lastName' name='lastName' placeholder='Please enter your last name' />
+
+          <div style={{ color: 'red' }}>
+            <ErrorMessage name='lastName' />
+          </div>
 
           <label htmlFor='email'>Email</label>
           <Field id='email' name='email' placeholder='Please enter your email' type='email' />
@@ -49,4 +48,4 @@ function FormikExamples() {
   );
 }
 
-export default FormikExamples;
+export default FormWithYup;

@@ -10,6 +10,12 @@ function MultipleInputFieldsExample() {
   });
 
   const handleChange = (e) => {
+    const x = { id: 1, name: 'Peter', age: 30, address: 'DANANG' };
+    // const y = { ...x, name: 'John' };
+    // const y = { id: 1, name: 'John', age: 30, address: 'DANANG' };
+    // const y = x;
+    // y.name = 'MARY'
+
     if (e.target.type === 'checkbox') {
       setInputs((values) => ({ ...values, [e.target.name]: e.target.checked }));
     } else {

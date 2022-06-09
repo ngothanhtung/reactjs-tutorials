@@ -1,14 +1,13 @@
 import React from 'react';
 
 function SimpleExample() {
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState('Peter');
   const [gender, setGender] = React.useState('unknown');
-
   const [children, setChildren] = React.useState(true);
-
   const [country, setCountry] = React.useState('VN');
 
   const handleSubmit = (e) => {
+    // event of form
     e.preventDefault();
     console.log('Name:', name);
     console.log('Gender:', gender);
@@ -48,7 +47,7 @@ function SimpleExample() {
               setGender('woman');
             }}
           />
-          <label for='gender'>Woman</label>
+          <label htmlFor='gender'>Woman</label>
 
           <input
             type='radio'
@@ -58,7 +57,7 @@ function SimpleExample() {
               setGender('unknown');
             }}
           />
-          <label for='gender'>Unknown</label>
+          <label htmlFor='gender'>Unknown</label>
           <hr />
           <input
             type='checkbox'
