@@ -1,13 +1,18 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
+//* Formik without yup
 function FormikExamples() {
+  // Validate function for formik
   const validate = (values, props) => {
     const errors = {};
-    if (['admin', 'null', 'god'].includes(values.firstName)) {
-      errors.firstName = 'Nice try';
+
+    // Check firstName
+    if (['admin', 'null', 'god'].includes(values.userName)) {
+      errors.userName = 'Nice try';
     }
 
+    // Check email is valid
     if (!values.email) {
       errors.email = 'Required';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
@@ -19,9 +24,11 @@ function FormikExamples() {
 
   return (
     <div>
+      {/* Formik root */}
       <Formik
         validate={validate}
         initialValues={{
+          userName: 'admin',
           firstName: 'Peter',
           lastName: 'Jackson',
           email: 'peter@jackson.com',
@@ -30,13 +37,23 @@ function FormikExamples() {
           console.log(values);
         }}
       >
+        {/* Form  */}
         <Form>
+          {/* Input element: UserName */}
+          <label htmlFor='userName'>User name</label>
+          <Field id='userName' name='userName' placeholder='Please enter your user name' />
+          <div style={{ color: 'red' }}>
+            <ErrorMessage name='userName' />
+          </div>
+          {/* Input element: FirstName */}
           <label htmlFor='firstName'>First Name</label>
           <Field id='firstName' name='firstName' placeholder='Please enter your first name' />
 
+          {/* Input element: LastName */}
           <label htmlFor='lastName'>Last Name</label>
           <Field id='lastName' name='lastName' placeholder='Please enter your last name' />
 
+          {/* Input element: Email */}
           <label htmlFor='email'>Email</label>
           <Field id='email' name='email' placeholder='Please enter your email' type='email' />
           <div style={{ color: 'red' }}>
