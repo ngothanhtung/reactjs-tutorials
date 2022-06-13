@@ -21,6 +21,7 @@ import FormsExamples from './Examples/FormsExamples';
 import FormikExamples from './Examples/FormikExamples';
 import FormWithYup from './Examples/FormikExamples/FormWithYup';
 import AntdExamples from './Examples/AntdExamples';
+import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -88,8 +89,9 @@ function App() {
       {/* <ConditionalRenderingExamples /> */}
       {/* <ListExamples /> */}
       {/* <FormsExamples /> */}
-      <FormikExamples />
+      {/* <FormikExamples /> */}
       {/* <FormWithYup /> */}
+      <RegisterFormWithYup />
       {/* <AntdExamples /> */}
     </div>
   );
