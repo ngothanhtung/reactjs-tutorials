@@ -24,6 +24,7 @@ import AntdExamples from './Examples/AntdExamples';
 import GridSystemExample from './Examples/AntdExamples/GridSystemExample';
 import AntdForm from './Examples/AntdExamples/AntdForm';
 import AntdModal from './Examples/AntdExamples/AntdModal';
+import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -93,6 +94,7 @@ function App() {
       {/* <FormsExamples /> */}
       {/* <FormikExamples /> */}
       {/* <FormWithYup /> */}
+      <RegisterFormWithYup />
       {/* <AntdExamples /> */}
       {/* <AntdForm /> */}
       <AntdModal />
