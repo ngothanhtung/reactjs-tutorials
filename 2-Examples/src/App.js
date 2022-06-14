@@ -21,6 +21,9 @@ import FormsExamples from './Examples/FormsExamples';
 import FormikExamples from './Examples/FormikExamples';
 import FormWithYup from './Examples/FormikExamples/FormWithYup';
 import AntdExamples from './Examples/AntdExamples';
+import GridSystemExample from './Examples/AntdExamples/GridSystemExample';
+import AntdForm from './Examples/AntdExamples/AntdForm';
+import AntdModal from './Examples/AntdExamples/AntdModal';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -88,9 +91,12 @@ function App() {
       {/* <ConditionalRenderingExamples /> */}
       {/* <ListExamples /> */}
       {/* <FormsExamples /> */}
-      <FormikExamples />
+      {/* <FormikExamples /> */}
       {/* <FormWithYup /> */}
       {/* <AntdExamples /> */}
+      {/* <AntdForm /> */}
+      <AntdModal />
+      {/* <GridSystemExample /> */}
     </div>
   );
 }
