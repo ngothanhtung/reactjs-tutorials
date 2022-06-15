@@ -94,10 +94,10 @@ function App() {
       {/* <FormsExamples /> */}
       {/* <FormikExamples /> */}
       {/* <FormWithYup /> */}
-      <RegisterFormWithYup />
+      {/* <RegisterFormWithYup /> */}
       {/* <AntdExamples /> */}
-      {/* <AntdForm /> */}
-      <AntdModal />
+      <AntdForm />
+      {/* <AntdModal /> */}
       {/* <GridSystemExample /> */}
     </div>
   );
