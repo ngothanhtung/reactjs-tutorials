@@ -1,0 +1,17 @@
+POST https://server.aptech.io/training/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "tungnt@softech.vn",
+    "password": "123456789"
+}
+
+###
+GET https://server.aptech.io/training/auth/profile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1bmdudCIsImlhdCI6MTY1NTM3Njg1OSwiZXhwIjoxNjU1MzgwNDU5fQ.goFkhp664nNgbbf2ISNDr7dzmdtt2bYdm47E2pYTIjM
+
+{
+    "username": "tungnt@softech.vn",
+    "password": "123456789"
+}

@@ -25,6 +25,8 @@ import GridSystemExample from './Examples/AntdExamples/GridSystemExample';
 import AntdForm from './Examples/AntdExamples/AntdForm';
 import AntdModal from './Examples/AntdExamples/AntdModal';
 import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
+import UseMemoCounter from './Examples/Hooks/useMemo-hook/Counter';
+import ReactMemo from './Examples/Hooks/components';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -96,9 +98,11 @@ function App() {
       {/* <FormWithYup /> */}
       {/* <RegisterFormWithYup /> */}
       {/* <AntdExamples /> */}
-      <AntdForm />
+      {/* <AntdForm /> */}
       {/* <AntdModal /> */}
       {/* <GridSystemExample /> */}
+      {/* <UseMemoCounter /> */}
+      <ReactMemo />
     </div>
   );
 }
