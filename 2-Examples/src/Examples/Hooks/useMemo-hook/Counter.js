@@ -18,12 +18,13 @@ function WithoutMemoCounter() {
   const [todos, setTodos] = React.useState([]);
 
   // Without React.useMemo(arrow_function)
-  const calculation = expensiveFunction(count);
+  // const calculation = expensiveFunction(count);
 
   // Within React.useMemo(arrow_function)
-  // const calculation = React.useMemo(() => {
-  //   return expensiveFunction(count);
-  // }, [count]);
+
+  const calculation = React.useMemo(() => {
+    return expensiveFunction(count);
+  }, [count]);
 
   return (
     <div>

@@ -1,17 +1,13 @@
-POST https://server.aptech.io/training/auth/login HTTP/1.1
+POST https://training.softech.cloud/api/training/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "tungnt@softech.vn",
+    "username": "tungnt2",
     "password": "123456789"
 }
 
 ###
-GET https://server.aptech.io/training/auth/profile HTTP/1.1
+GET https://training.softech.cloud/api/training/users HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1bmdudCIsImlhdCI6MTY1NTM3Njg1OSwiZXhwIjoxNjU1MzgwNDU5fQ.goFkhp664nNgbbf2ISNDr7dzmdtt2bYdm47E2pYTIjM
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250MiIsImZ1bGxuYW1lIjoiTmfDtCBUaGFuaCBUw7luZyIsImVtYWlsIjoidHVuZ250QHNvZnRlY2guZWR1LnZuIn0sImlhdCI6MTY1NTM4NTQxMywiZXhwIjoxNjU1NDcxODEzLCJhdWQiOiJzb2Z0ZWNoLmNsb3VkIiwiaXNzIjoic29mdGVjaC5jbG91ZCIsInN1YiI6IjYyODM5NzY2ZWZmY2ZiMGFlNGZkMWMyYSJ9.3xR4317qxtJ2pw-fRSoQIAOmRpBi81osux_fy9rwOPMMwNXQnHtGsiP8PZav1W1zPzJMs8SrR2M8GaJX9YqRNg
 
-{
-    "username": "tungnt@softech.vn",
-    "password": "123456789"
-}

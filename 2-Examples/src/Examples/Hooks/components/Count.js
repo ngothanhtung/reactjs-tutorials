@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Count({ text, count }) {
-  console.log(`Render: ${text}`);
+  console.log(`Render Count: ${text}`);
   return (
     <div>
       {text} - {count}
@@ -9,5 +9,5 @@ function Count({ text, count }) {
   );
 }
 
-export default Count;
-// export default React.memo(Count);
+// export default Count;
+export default React.memo(Count);

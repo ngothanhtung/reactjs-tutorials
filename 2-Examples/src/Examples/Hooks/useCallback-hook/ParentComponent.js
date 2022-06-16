@@ -7,19 +7,20 @@ export default function ParentComponent() {
   const [salary, setSalary] = React.useState(1000);
 
   const increaseAge = React.useCallback(() => {
-    setAge(age + 1);
-  }, [age]);
+    // setAge(age + 1);
+    setAge((a) => a + 1);
+  }, []);
 
   // const increaseAge = () => {
-  //   setAge(age + 1);
+  //   setAge((a) => a + 1);
   // };
 
   const increaseSalary = React.useCallback(() => {
-    setSalary(salary + 100);
-  }, [salary]);
+    setSalary((s) => s + 100);
+  }, []);
 
   // const increaseSalary = () => {
-  //   setSalary(salary + 100);
+  //   setSalary((s) => s + 100);
   // };
 
   return (
@@ -27,10 +28,10 @@ export default function ParentComponent() {
       <h2>useCallback hooks</h2>
       <hr />
       <Count text='Age' count={age} />
-      <Button handleClick={increaseAge}>Increase Age</Button>
+      <Button onClick={increaseAge}>Increase Age</Button>
 
       <Count text='Salary' count={salary} />
-      <Button handleClick={increaseSalary}>Increase Salary</Button>
+      <Button onClick={increaseSalary}>Increase Salary</Button>
     </div>
   );
 }

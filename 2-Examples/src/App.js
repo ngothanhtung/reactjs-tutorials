@@ -27,6 +27,12 @@ import AntdModal from './Examples/AntdExamples/AntdModal';
 import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
 import UseMemoCounter from './Examples/Hooks/useMemo-hook/Counter';
 import ReactMemo from './Examples/Hooks/components';
+import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
+import Basic from './Examples/Hooks/useRef-hook/Basic';
+import Advanced from './Examples/Hooks/useRef-hook/Advanced';
+import Login from './Examples/NetworkingExamples/Login';
+import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
+import Users from './Examples/NetworkingExamples/Users';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -102,7 +108,14 @@ function App() {
       {/* <AntdModal /> */}
       {/* <GridSystemExample /> */}
       {/* <UseMemoCounter /> */}
-      <ReactMemo />
+      {/* <ParentComponent /> */}
+      {/* <Basic /> */}
+      {/* <Advanced /> */}
+      {/* <ReactMemo /> */}
+
+      {/* <Login /> */}
+      {/* <LoginWithAxios /> */}
+      <Users />
     </div>
   );
 }
