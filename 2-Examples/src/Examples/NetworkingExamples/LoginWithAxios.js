@@ -4,13 +4,12 @@ import axios from 'axios';
 function LoginWithAxios() {
   const onSubmit = () => {
     const data = {
-      username: 'tungnt2',
+      username: 'tungnt@softech.vn',
       password: '123456789',
     };
 
-    const url = 'https://training.softech.cloud/api/training/users/login';
+    const url = 'https://server.aptech.io/training/auth/login';
 
-    console.log('Login: Start');
     // Promise
     axios
       .post(url, data)
@@ -22,23 +21,20 @@ function LoginWithAxios() {
         console.error(err);
         console.log('Login thất bại');
       });
-    console.log('Login: End');
   };
 
-  const onSubmitAsyncAwait = async () => {
+  const onSubmitAsync = async () => {
     const data = {
-      username: 'tungnt2',
+      username: 'tungnt@softech.vn',
       password: '123456789',
     };
 
-    const url = 'https://training.softech.cloud/api/training/users/login';
+    const url = 'https://server.aptech.io/training/auth/login';
 
     try {
-      console.log('Login: Start');
       // Promise
       const response = await axios.post(url, data);
       console.log(response.data);
-      console.log('Login: End');
     } catch (err) {
       console.error(err);
       console.log('Login thất bại');
@@ -49,8 +45,7 @@ function LoginWithAxios() {
     <div>
       <h2>Login with Axios</h2>
       <button onClick={onSubmit}>Login</button>
-
-      <button onClick={onSubmitAsyncAwait}>Login with Asyn / Await</button>
+      <button onClick={onSubmitAsync}>Login with Asyn / Await</button>
     </div>
   );
 }
