@@ -33,12 +33,13 @@ import Advanced from './Examples/Hooks/useRef-hook/Advanced';
 import Login from './Examples/NetworkingExamples/Login';
 import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import Users from './Examples/NetworkingExamples/Users';
+import ReactRouterExamples from './Examples/ReactRouterExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
 
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       {/* <Header text='Aptech' color='red' size='64'></Header> */}
       {/* 
       <Header text='Google' color='green' size={24}></Header>
@@ -113,9 +114,11 @@ function App() {
       {/* <Advanced /> */}
       {/* <ReactMemo /> */}
 
-      <Login />
+      {/* <Login /> */}
       {/* <LoginWithAxios /> */}
       {/* <Users /> */}
+
+      <ReactRouterExamples />
     </div>
   );
 }
