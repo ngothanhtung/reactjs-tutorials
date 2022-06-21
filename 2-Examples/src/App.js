@@ -34,6 +34,7 @@ import Login from './Examples/NetworkingExamples/Login';
 import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import Users from './Examples/NetworkingExamples/Users';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
+import ReactContextExample from './Examples/Hooks/useContext';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -117,8 +118,8 @@ function App() {
       {/* <Login /> */}
       {/* <LoginWithAxios /> */}
       {/* <Users /> */}
-
-      <ReactRouterExamples />
+      {<ReactContextExample />}
+      {/* <ReactRouterExamples /> */}
     </div>
   );
 }
