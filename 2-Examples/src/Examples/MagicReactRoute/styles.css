@@ -7,8 +7,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
+
 :root {
   --color: #222327;
+}
+
+body {
+  background-color: var(--color);
 }
 
 #magic {
@@ -16,7 +21,6 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding-bottom: 24px;
   min-height: 100vh;
   background-color: var(--color);
 }
@@ -31,7 +35,8 @@
 }
 
 .navigation {
-  position: relative;
+  position: fixed;
+  bottom: 8px;
   display: flex;
   width: 400px;
   height: 70px;
@@ -128,4 +133,28 @@
   background-color: transparent;
   border-top-left-radius: 20px;
   box-shadow: -1px -10px 0 0 var(--color);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #222327;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--color); 
+  border-radius: 4px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(54, 54, 54); 
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color); 
 }

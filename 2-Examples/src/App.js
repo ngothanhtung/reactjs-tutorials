@@ -118,9 +118,9 @@ function App() {
       {/* <Login /> */}
       {/* <LoginWithAxios /> */}
       {/* <Users /> */}
-      <ReactContextExample />
+      {/* <ReactContextExample /> */}
       {/* <ReactRouterExamples /> */}
-      {/* <MagicReactRoute /> */}
+      <MagicReactRoute />
     </div>
   );
 }
