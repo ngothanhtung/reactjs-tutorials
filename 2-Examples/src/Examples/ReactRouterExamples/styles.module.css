@@ -11,5 +11,13 @@
 }
 
 .link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.link a {
   font-weight: 600;
+  text-decoration: none;
 }

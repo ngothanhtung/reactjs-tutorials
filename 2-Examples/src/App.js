@@ -35,6 +35,7 @@ import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import Users from './Examples/NetworkingExamples/Users';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
 import ReactContextExample from './Examples/Hooks/useContext';
+import MagicReactRoute from './Examples/MagicReactRoute';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -118,8 +119,9 @@ function App() {
       {/* <Login /> */}
       {/* <LoginWithAxios /> */}
       {/* <Users /> */}
-      {<ReactContextExample />}
+      {/* {<ReactContextExample />} */}
       {/* <ReactRouterExamples /> */}
+      <MagicReactRoute />
     </div>
   );
 }

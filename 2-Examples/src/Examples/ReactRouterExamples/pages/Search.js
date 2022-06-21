@@ -7,9 +7,10 @@ function Search() {
 
   let name = params.get('name');
   let age = params.get('age');
+  let address = params.get('address');
 
   console.log(location);
-  console.log(name, age);
+  console.log(name, age, address);
 
   return <div>Search</div>;
 }
