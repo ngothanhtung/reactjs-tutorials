@@ -1,7 +1,7 @@
 import React from 'react';
 import Toolbar from './components/Toolbar';
 
-const themes = {
+export const themes = {
   light: {
     foreground: '#000000',
     background: '#eeeeee',
@@ -15,8 +15,18 @@ const themes = {
 export const ThemeContext = React.createContext(null);
 
 function ReactContextExample() {
+  const [theme, setTheme] = React.useState(themes.light);
+
   return (
-    <ThemeContext.Provider value={themes.light}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        setThemeDark: () => {setTheme(themes.dark)},
+        setThemeLight: () => {
+          setTheme(themes.light);
+        },
+      }}
+    >
       <Toolbar />
     </ThemeContext.Provider>
   );

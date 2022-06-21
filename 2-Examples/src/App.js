@@ -115,13 +115,12 @@ function App() {
       {/* <Basic /> */}
       {/* <Advanced /> */}
       {/* <ReactMemo /> */}
-
       {/* <Login /> */}
       {/* <LoginWithAxios /> */}
       {/* <Users /> */}
-      {/* {<ReactContextExample />} */}
+      <ReactContextExample />
       {/* <ReactRouterExamples /> */}
-      <MagicReactRoute />
+      {/* <MagicReactRoute /> */}
     </div>
   );
 }
