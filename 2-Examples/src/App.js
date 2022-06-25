@@ -37,6 +37,7 @@ import ReactRouterExamples from './Examples/ReactRouterExamples';
 import ReactContextExample from './Examples/Hooks/useContext';
 // import MagicReactRoute from './Examples/MagicReactRoute';
 import ReduxExamples from './Examples/ReduxExamples';
+import ReduxToolkitExamples from './Examples/ReduxToolkitExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -119,7 +120,8 @@ function App() {
       {/* <ReactContextExample /> */}
       {/* <ReactRouterExamples /> */}
       {/* <MagicReactRoute /> */}
-      <ReduxExamples />
+      {/* <ReduxExamples /> */}
+      <ReduxToolkitExamples />
     </div>
   );
 }
