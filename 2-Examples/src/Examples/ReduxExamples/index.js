@@ -13,9 +13,9 @@ function ReduxExamples() {
   return (
     <Provider store={store}>
       <div style={{ padding: 24 }}>
-        {/* <CounterApp /> */}
+        <CounterApp />
         {/* <BankApp /> */}
-        <UserApp />
+        {/* <UserApp /> */}
       </div>
     </Provider>
   );

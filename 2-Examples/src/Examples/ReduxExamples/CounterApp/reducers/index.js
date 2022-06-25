@@ -8,7 +8,7 @@ const defaultState = {
 const counterReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ActionTypes.COUNTER_INCREASE_COUNT:
-      var newCount = state.count + action.number;
+      const newCount = state.count + action.number;
       return { ...state, count: newCount };
 
     case ActionTypes.COUNTER_DECREASE_COUNT:
