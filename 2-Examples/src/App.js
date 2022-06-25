@@ -35,7 +35,8 @@ import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import Users from './Examples/NetworkingExamples/Users';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
 import ReactContextExample from './Examples/Hooks/useContext';
-import MagicReactRoute from './Examples/MagicReactRoute';
+// import MagicReactRoute from './Examples/MagicReactRoute';
+import ReduxExamples from './Examples/ReduxExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -53,7 +54,6 @@ function App() {
       <ChartBar text='EMAILS' color1='#192a56' color2='#273c75' percentage={60} />
       <ChartBar text='BASIC' color1='#44bd32' color2='#4cd137' percentage={60} />
       <ChartBar text='OTHERS' color1='#8c7ae6' color2='#9c88ff' percentage={60} /> */}
-
       {/* <div style={{ display: 'flex' }}>
         <Block title='Declarative' content='React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable and easier to debug.' />
         <Block title='Component-Based' content='Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.' />
@@ -78,7 +78,6 @@ function App() {
       </button>
       <img alt='' src={`/images/${count}.jpeg`} style={{ width: '100%' }} />
       <Footer></Footer> */}
-
       {/* <LikeButton />
       <RatingButton />
       <HandleEvent /> */}
@@ -97,7 +96,6 @@ function App() {
       /> */}
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
-
       {/* <MusicPlayer /> */}
       {/* <EventHandlerExamples /> */}
       {/* <ConditionalRenderingExamples /> */}
@@ -120,7 +118,8 @@ function App() {
       {/* <Users /> */}
       {/* <ReactContextExample /> */}
       {/* <ReactRouterExamples /> */}
-      <MagicReactRoute />
+      {/* <MagicReactRoute /> */}
+      <ReduxExamples />
     </div>
   );
 }
