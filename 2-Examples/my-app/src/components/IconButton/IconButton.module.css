@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 330px;
+  background-color: #000000;
+  border-radius: 20px;
+  gap: 29px;
+}
+.text {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+}
+.icon {
+  margin-left: 35px;
+}

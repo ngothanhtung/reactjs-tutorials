@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+}
