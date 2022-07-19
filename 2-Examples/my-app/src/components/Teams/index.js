@@ -2,7 +2,7 @@ import React from 'react';
 import Avatar from './components/Avatar';
 import styles from './Teams.module.css';
 
-export default function Teams({ title = 'Title', subTitle = 'Sub title', color = '#12C0E7', users = ['avatar-1.png', 'avatar-2.png', 'avatar-3.png'] }) {
+export default function Teams({ title = 'Title', subTitle, color = '#12C0E7', textColor = '#000000', users = ['avatar-1.png', 'avatar-2.png', 'avatar-3.png'] }) {
   return (
     <div className={styles.container} style={{ backgroundColor: color }}>
       <div className={styles.leftColumn}>
@@ -11,8 +11,12 @@ export default function Teams({ title = 'Title', subTitle = 'Sub title', color =
         })}
       </div>
       <div className={styles.rightColumn}>
-        <div>{title}</div>
-        <div>{subTitle}</div>
+        <div className={styles.title} style={{ color: textColor }}>
+          {title}
+        </div>
+        <div className={styles.subTitle} style={{ color: textColor }}>
+          {subTitle}
+        </div>
       </div>
     </div>
   );

@@ -4,16 +4,33 @@
   background-color: #740ef5;
   height: 98px;
   width: 330px;
-  border-radius: 49px;
+  border-radius: calc(98px / 2);
 }
 
 .leftColumn {
-  padding-left: 20px;
+  box-sizing: border-box;
+  padding-left: 24px;
   display: flex;
-  flex: 0;
 }
 
 .rightColumn {
-  padding-left: 12px;
-  flex: 1;
+  box-sizing: border-box;
+  padding-left: 24px;
+}
+
+.title {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+.subTitle {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.5px;
+  text-align: left;
 }
