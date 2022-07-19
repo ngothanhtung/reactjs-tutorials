@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #740ef5;
+  height: 98px;
+  width: 330px;
+  border-radius: 49px;
+}
+
+.leftColumn {
+  padding-left: 20px;
+  display: flex;
+  flex: 0;
+}
+
+.rightColumn {
+  padding-left: 12px;
+  flex: 1;
+}
