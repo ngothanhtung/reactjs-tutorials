@@ -44,7 +44,7 @@ code {
 }
 
 .music_disc_rotation {
-  animation: music_disc_rotation 20s infinite linear;
+  animation: music_disc_rotation 10s infinite linear;
 }
 
 @keyframes music_disc_rotation {

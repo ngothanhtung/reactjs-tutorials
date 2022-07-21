@@ -36,8 +36,8 @@ import Users from './Examples/NetworkingExamples/Users';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
 import ReactContextExample from './Examples/Hooks/useContext';
 // import MagicReactRoute from './Examples/MagicReactRoute';
-import ReduxExamples from './Examples/ReduxExamples';
-import ReduxToolkitExamples from './Examples/ReduxToolkitExamples';
+// import ReduxExamples from './Examples/ReduxExamples';
+// import ReduxToolkitExamples from './Examples/ReduxToolkitExamples';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -97,7 +97,7 @@ function App() {
       /> */}
       {/* <LifecycleExample /> */}
       {/* <LifecyleHookExamples /> */}
-      {/* <MusicPlayer /> */}
+      <MusicPlayer />
       {/* <EventHandlerExamples /> */}
       {/* <ConditionalRenderingExamples /> */}
       {/* <ListExamples /> */}
@@ -121,7 +121,7 @@ function App() {
       {/* <ReactRouterExamples /> */}
       {/* <MagicReactRoute /> */}
       {/* <ReduxExamples /> */}
-      <ReduxToolkitExamples />
+      {/* <ReduxToolkitExamples /> */}
     </div>
   );
 }
