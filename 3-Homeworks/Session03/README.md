@@ -15,6 +15,7 @@
 4. Bài tập TABS như [http://foundry.mediumra.re/elements-tabs.html]
 5. Bài tập ACCORDIONS như [http://foundry.mediumra.re/elements-accordions.html]
 6. Bài tập GALLERY như [http://foundry.mediumra.re/elements-galleries.html]
+7. Bài tập LIKE BUTTON như [https://www.figma.com/community/file/1015292336939385740?preview=fullscreen]
 
 # PHẦN NÂNG CAO:
 
