@@ -1,0 +1,21 @@
+.buttonLiked {
+  height: 56px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  border-radius: 8px;
+}
+
+.button {
+  height: 56px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid blue;
+
+  border-radius: 8px;
+}

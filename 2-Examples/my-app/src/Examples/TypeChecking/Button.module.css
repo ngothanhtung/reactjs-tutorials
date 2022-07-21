@@ -1,0 +1,19 @@
+.button-contain {
+  height: 56px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 8px;
+}
+
+.button-outline {
+  height: 56px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  border-radius: 8px;
+}
