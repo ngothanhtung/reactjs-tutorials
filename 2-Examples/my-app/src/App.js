@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Button from './components/Button';
@@ -10,7 +11,11 @@ import RateButton from './Examples/StateExamples/RateButton';
 import Rate10Button from './Examples/StateExamples/Rate10Button';
 import BlockUI05 from './Homeworks/Session02/BlockUI05';
 
+import LifecycleExample from './Examples/LifecycleExample';
+
 function App() {
+  const [visible, setVisible] = React.useState(true);
+  const [number, setNumber] = React.useState(1);
   return (
     <div className='App'>
       {/* <div>
@@ -38,7 +43,25 @@ function App() {
       <Rate10Button /> */}
 
       {/* HOMEWORK - BLOCK UI 05 */}
-      <BlockUI05 />
+      {/* <BlockUI05 /> */}
+
+      {/* LIFE CYCLE */}
+      {visible && <LifecycleExample number={number} />}
+      <button
+        onClick={() => {
+          setNumber((n) => n + 5);
+        }}
+      >
+        Change number
+      </button>
+
+      <button
+        onClick={() => {
+          setVisible(false);
+        }}
+      >
+        Hide
+      </button>
     </div>
   );
 }
