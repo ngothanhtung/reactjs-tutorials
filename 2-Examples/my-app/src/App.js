@@ -12,6 +12,8 @@ import Rate10Button from './Examples/StateExamples/Rate10Button';
 import BlockUI05 from './Homeworks/Session02/BlockUI05';
 
 import LifecycleExample from './Examples/LifecycleExample';
+import EventHandlerExamples from './Examples/EventHandlerExamples';
+import MusicPlayer from './Examples/EventHandlerExamples/MusicPlayer';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -46,6 +48,7 @@ function App() {
       {/* <BlockUI05 /> */}
 
       {/* LIFE CYCLE */}
+      {/*       
       {visible && <LifecycleExample number={number} />}
       <button
         onClick={() => {
@@ -61,7 +64,10 @@ function App() {
         }}
       >
         Hide
-      </button>
+      </button> */}
+
+      {/* <EventHandlerExamples /> */}
+      <MusicPlayer />
     </div>
   );
 }
