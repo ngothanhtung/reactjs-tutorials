@@ -82,7 +82,7 @@ export default function MusicPlayer() {
       <div>
         {songs.map((song, index) => {
           return (
-            <div>
+            <div key={`song-${index}`}>
               <p>{song.title}</p>
             </div>
           );

@@ -14,6 +14,12 @@ import BlockUI05 from './Homeworks/Session02/BlockUI05';
 import LifecycleExample from './Examples/LifecycleExample';
 import EventHandlerExamples from './Examples/EventHandlerExamples';
 import MusicPlayer from './Examples/EventHandlerExamples/MusicPlayer';
+import FormikBasicExample from './Examples/FormikExamples/FormikBasicExample';
+import FormWithYup from './Examples/FormikExamples/FormWithYup';
+import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
+import UseMemoExample from './Examples/Hooks/useMemo-hook/Counter';
+import ReactMemo from './Examples/Hooks/components';
+import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -67,7 +73,16 @@ function App() {
       </button> */}
 
       {/* <EventHandlerExamples /> */}
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
+
+      {/* FORMIK */}
+      {/* <FormikBasicExample /> */}
+      {/* <FormWithYup /> */}
+      {/* <RegisterFormWithYup /> */}
+
+      {/* HOOKS */}
+      {/* <UseMemoExample /> */}
+      <ParentComponent />
     </div>
   );
 }
