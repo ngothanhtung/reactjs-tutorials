@@ -18,7 +18,7 @@ import FormikBasicExample from './Examples/FormikExamples/FormikBasicExample';
 import FormWithYup from './Examples/FormikExamples/FormWithYup';
 import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup ';
 import UseMemoExample from './Examples/Hooks/useMemo-hook/Counter';
-import ReactMemo from './Examples/Hooks/components';
+
 import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
 
 function App() {
