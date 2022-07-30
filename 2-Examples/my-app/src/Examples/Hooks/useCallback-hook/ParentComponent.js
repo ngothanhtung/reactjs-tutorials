@@ -6,18 +6,22 @@ export default function ParentComponent() {
   const [age, setAge] = React.useState(18);
   const [salary, setSalary] = React.useState(1000);
 
+  // Within useCallback
   const increaseAge = React.useCallback(() => {
     setAge((a) => a + 1);
   }, []);
 
+  // Without useCallback
   // const increaseAge = () => {
   //   setAge((a) => a + 1);
   // };
 
+  // Within useCallback
   const increaseSalary = React.useCallback(() => {
     setSalary((s) => s + 100);
   }, []);
 
+  // Without useCallback
   // const increaseSalary = () => {
   //   setSalary((s) => s + 100);
   // };
