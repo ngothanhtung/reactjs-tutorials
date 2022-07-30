@@ -3,6 +3,15 @@
   gap: 4px;
 }
 
+.buttonDisabled {
+  height: 48px;
+  width: 48px;
+  background-color: gray;
+  border-radius: calc(48px / 2);
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
 .button {
   height: 48px;
   width: 48px;
@@ -97,4 +106,24 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+.songContainer {
+  display: flex;
+  gap: 24px;
+  min-height: 56px;
+  justify-content: space-between;
+}
+
+.songTitle {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.songArtist {
+  font-size: 14px;
+}
+
+.songDuration {
+  font-size: 14px;
 }

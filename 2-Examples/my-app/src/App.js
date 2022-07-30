@@ -73,7 +73,7 @@ function App() {
       </button> */}
 
       {/* <EventHandlerExamples /> */}
-      {/* <MusicPlayer /> */}
+      <MusicPlayer />
 
       {/* FORMIK */}
       {/* <FormikBasicExample /> */}
@@ -82,7 +82,7 @@ function App() {
 
       {/* HOOKS */}
       {/* <UseMemoExample /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
     </div>
   );
 }
