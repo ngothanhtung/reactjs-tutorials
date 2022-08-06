@@ -105,7 +105,7 @@
 ### REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users
-- Authorization: Bearer
+- Authorization: Bearer Token
 - Method: GET
 
 ### RESPONSE:
@@ -153,7 +153,7 @@
 ### REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/auth/api-key
-- Authorization: API KEY with [x-api-key = tester31] on header
+- Authorization: API KEY [x-api-key = aptech-tester-pro] on header
 - Method: GET
 
 ### RESPONSE:
@@ -204,7 +204,7 @@ id = 615456cf4139ac6c5cc07fee
 
 - Url: https://training.softech.cloud/api/training/users/:id
 - Authorization: Bearer Token
-- Method: PUT
+- Method: PATCH
 - Params:
 
 ```
