@@ -20,6 +20,8 @@ import RegisterFormWithYup from './Examples/FormikExamples/RegisterFormWithYup '
 import UseMemoExample from './Examples/Hooks/useMemo-hook/Counter';
 
 import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
+import Login from './Examples/NetworkingExamples/Login';
+import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -73,7 +75,7 @@ function App() {
       </button> */}
 
       {/* <EventHandlerExamples /> */}
-      <MusicPlayer />
+      {/* <MusicPlayer /> */}
 
       {/* FORMIK */}
       {/* <FormikBasicExample /> */}
@@ -83,6 +85,10 @@ function App() {
       {/* HOOKS */}
       {/* <UseMemoExample /> */}
       {/* <ParentComponent /> */}
+
+      {/* NETWORKING */}
+      {/* <Login /> */}
+      <LoginWithAxios />
     </div>
   );
 }
