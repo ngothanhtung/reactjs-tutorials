@@ -259,21 +259,11 @@ id = 615456cf4139ac6c5cc07fee
 
 https://jsonplaceholder.typicode.com/
 
-# C. Bài tập luyện tập với Slack API:
+# C. Bài tập luyện tập với OMDb API và The Movie Database (TMDB):
 
-- Url: https://slack.com/api/chat.postMessage
-- Authorization: Bearer token
-- Method: POST
-- Body:
+> http://www.omdbapi.com/
 
-```json
-{
-  "channel": "C039Q7MGT9C",
-  "text": "Welcome "
-}
-```
-
-token = 'Lấy ở nhóm trên FB'
+> https://www.themoviedb.org/
 
 # D. Bài tập luyện tập với FPT AI (Text to speech)
 
