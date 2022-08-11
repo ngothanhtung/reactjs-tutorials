@@ -36,43 +36,44 @@ function ReactRouterExamples() {
             <Link to='/nested-routes'>Nested Routes</Link>
           </li>
         </ul>
+        <div style={{ backgroundColor: 'yellow', height: '100vh' }}>
+          {/* ROUTES SETTINGS */}
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/settings' element={<Settings />} />
 
-        {/* ROUTES SETTINGS */}
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/settings' element={<Settings />} />
+            {/* PARAMETER */}
+            <Route path='/parameter/:id/:name' element={<Parameter />} />
 
-          {/* PARAMETER */}
-          <Route path='/parameter/:id/:name' element={<Parameter />} />
+            <Route path='/search' element={<Search />} />
 
-          <Route path='/search' element={<Search />} />
+            {/* NESTED ROUTES */}
+            <Route path='/nested-routes' element={<NestedRoutes />}>
+              {/* INDEX ROUTE */}
+              <Route
+                index
+                element={
+                  <main style={{ padding: '1rem' }}>
+                    <p>Administrator Area</p>
+                  </main>
+                }
+              />
+              <Route path='/nested-routes/users' element={<Users />} />
+              <Route path='/nested-routes/roles' element={<Roles />} />
+            </Route>
 
-          {/* NESTED ROUTES */}
-          <Route path='/nested-routes' element={<NestedRoutes />}>
-            {/* INDEX ROUTE */}
+            {/* NO MATCH ROUTE */}
             <Route
-              index
+              path='*'
               element={
                 <main style={{ padding: '1rem' }}>
-                  <p>Administrator Area</p>
+                  <p>404 Page not found 😂😂😂</p>
                 </main>
               }
             />
-            <Route path='/nested-routes/users' element={<Users />} />
-            <Route path='/nested-routes/roles' element={<Roles />} />
-          </Route>
-
-          {/* NO MATCH ROUTE */}
-          <Route
-            path='*'
-            element={
-              <main style={{ padding: '1rem' }}>
-                <p>404 Page not found 😂😂😂</p>
-              </main>
-            }
-          />
-        </Routes>
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
