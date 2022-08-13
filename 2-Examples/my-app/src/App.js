@@ -22,6 +22,8 @@ import UseMemoExample from './Examples/Hooks/useMemo-hook/Counter';
 import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
 import Login from './Examples/NetworkingExamples/Login';
 import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
+import ReactRouterExamples from './Examples/ReactRouterExamples';
+import MagicReactRoute from './Examples/MagicReactRoute';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -88,7 +90,10 @@ function App() {
 
       {/* NETWORKING */}
       {/* <Login /> */}
-      <LoginWithAxios />
+      {/* <LoginWithAxios /> */}
+
+      {/* <ReactRouterExamples /> */}
+      <MagicReactRoute />
     </div>
   );
 }
