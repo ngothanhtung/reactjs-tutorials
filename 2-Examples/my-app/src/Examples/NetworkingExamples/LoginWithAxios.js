@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
+import axiosClient from '../../configs/axios';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().required('Required'),
@@ -9,6 +9,17 @@ const LoginSchema = Yup.object().shape({
 });
 
 function LoginWithAxios() {
+  React.useEffect(() => {
+    axiosClient
+      .get('/users')
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div>
       <Formik
@@ -21,12 +32,12 @@ function LoginWithAxios() {
           console.log('Login');
           const data = values;
 
-          const url = 'https://training.softech.cloud/api/training/users/login';
+          // const url = 'https://training.softech.cloud/api/training/users/login';
 
           try {
             // Promise
-            const response = await axios.post(url, data);
-            console.log(response.data);
+            const response = await axiosClient.post('/users/login', data);
+            // console.log(response.data);
           } catch (err) {
             console.error(err);
             console.log('Login thất bại');
