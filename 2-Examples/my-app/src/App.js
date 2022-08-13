@@ -23,7 +23,8 @@ import ParentComponent from './Examples/Hooks/useCallback-hook/ParentComponent';
 import Login from './Examples/NetworkingExamples/Login';
 import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
-import MagicReactRoute from './Examples/MagicReactRoute';
+// import MagicReactRoute from './Examples/MagicReactRoute';
+import ReduxExamples from './Examples/ReduxExamples';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -93,7 +94,10 @@ function App() {
       {/* <LoginWithAxios /> */}
 
       {/* <ReactRouterExamples /> */}
-      <MagicReactRoute />
+      {/* <MagicReactRoute /> */}
+
+      {/* REDUX */}
+      <ReduxExamples />
     </div>
   );
 }
