@@ -25,6 +25,7 @@ import LoginWithAxios from './Examples/NetworkingExamples/LoginWithAxios';
 import ReactRouterExamples from './Examples/ReactRouterExamples';
 // import MagicReactRoute from './Examples/MagicReactRoute';
 import ReduxExamples from './Examples/ReduxExamples';
+import ReduxToolkitExamples from './Examples/ReduxToolkitExamples';
 
 function App() {
   const [visible, setVisible] = React.useState(true);
@@ -97,7 +98,8 @@ function App() {
       {/* <MagicReactRoute /> */}
 
       {/* REDUX */}
-      <ReduxExamples />
+      {/* <ReduxExamples /> */}
+      <ReduxToolkitExamples />
     </div>
   );
 }
