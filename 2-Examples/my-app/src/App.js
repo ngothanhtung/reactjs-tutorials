@@ -92,14 +92,14 @@ function App() {
 
       {/* NETWORKING */}
       {/* <Login /> */}
-      {/* <LoginWithAxios /> */}
+      <LoginWithAxios />
 
       {/* <ReactRouterExamples /> */}
       {/* <MagicReactRoute /> */}
 
       {/* REDUX */}
       {/* <ReduxExamples /> */}
-      <ReduxToolkitExamples />
+      {/* <ReduxToolkitExamples /> */}
     </div>
   );
 }

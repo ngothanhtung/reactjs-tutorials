@@ -37,7 +37,7 @@ function LoginWithAxios() {
           try {
             // Promise
             const response = await axiosClient.post('/users/login', data);
-            // console.log(response.data);
+            console.log(response.data);
           } catch (err) {
             console.error(err);
             console.log('Login thất bại');
