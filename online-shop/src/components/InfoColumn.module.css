@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  background-color: #fafafa;
+  height: 40px;
+  margin-bottom: 24px;
+}
+
+.leftColumn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 160px;
+  height: 40px;
+
+  padding-right: 16px;
+  background-color: #e44d4c;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.rightColumn {
+  display: flex;
+  flex: 1;
+}
+
+.percent {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+
+  height: 40px;
+  width: 20%;
+
+  background-color: #f65350;
+  padding-left: 16px;
+
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
