@@ -2,6 +2,10 @@ import React from 'react';
 import InfoColumn from './components/InfoColumn';
 import './App.css';
 import Profile from './components/Profile';
+import LikeButton from './components/LikeButton';
+import Counter from './components/Counter';
+import Rates from './components/Rates';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -14,7 +18,11 @@ function App() {
       <InfoColumn title='BASIC' percent={80} />
       <InfoColumn title='OTHERS' percent={37} /> */}
 
-      <Profile />
+      {/* <Profile /> */}
+      {/* <LikeButton /> */}
+      {/* <Counter /> */}
+      {/* <Rates /> */}
+      <Gallery />
     </div>
   );
 }

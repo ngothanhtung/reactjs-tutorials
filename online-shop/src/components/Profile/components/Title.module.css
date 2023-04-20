@@ -1,0 +1,23 @@
+.container {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 780px;
+  height: 160px;
+  background-color: #ff9c01;
+  left: 220px;
+  padding-left: 140px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.subTitle {
+  font-size: 24px;
+  color: #ffffff;
+}
