@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  cursor: pointer;
+  width: 300px;
+  height: 60px;
+  background-color: #000000;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  padding-inline: 24px;
+}
+
+.buttonText {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.leftIcon {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 24px;
+}
+.rightIcon {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 24px;
+}
