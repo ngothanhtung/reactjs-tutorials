@@ -4,7 +4,7 @@
 2. Mở cửa số bash (Chuột phải chọn Git Bash Here)
 3. Gõ lệnh để tạo 1 project React như sau:
 
-   ```
+   ```shell
    npx create-react-app my-app
    ```
 
@@ -37,33 +37,39 @@
 
 6. Trong VS Code, mở cửa số terminal bằng cách chọn Terminal => New Terminal ở menu phía trên, su đó gõ lệnh sau để chạy project:
 
-   ```
+   ```shell
    npm run start
    ```
 
    hoặc
 
-   ```
+   ```shell
    yarn start
    ```
 
-# THỰC HIỆN CÁC BÀI TẬP:
+## THỰC HIỆN CÁC BÀI TẬP
 
-# PHẦN BẮT BUỘC:
+## PHẦN BẮT BUỘC
 
-## 1. Basic UI
+### DAY 01
+
+- Luyện tập các component trong file figma
+
+### DAY 02
+
+#### 1. Basic UI
 
 - Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
 
-  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/basic-1.jpg?raw=true)
+  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/Day02/basic-1.jpg?raw=true)
 
-## 2. Basic UI
+#### 2. Basic UI
 
 - Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
 
-  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/basic-2.jpg?raw=true)
+  ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/Day02/basic-2.jpg?raw=true)
 
-## 3. Basic UI
+#### 3. Basic UI
 
 - Yêu cầu làm giống hệt UI sau (hình ảnh để trong thư mục ./basic-images/):
 
@@ -147,7 +153,7 @@
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/block-ui-5.jpg?raw=true)
 
-# PHẦN NÂNG CAO:
+# PHẦN NÂNG CAO
 
 ## 1. Advanced Block UI
 
@@ -161,7 +167,7 @@
 
 ![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session02/block-ui-7.jpg?raw=true)
 
-# PHẦN TỔNG HỢP / SÁNG TẠO:
+# PHẦN TỔNG HỢP / SÁNG TẠO
 
 - Tự làm cho mình 1 hồ sơ năng lực, ví dụ như sau:
 
