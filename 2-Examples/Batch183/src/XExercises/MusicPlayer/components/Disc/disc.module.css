@@ -1,0 +1,38 @@
+.disc_container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.disc {
+  display: flex;
+  height: 360px;
+  width: 360px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.disc_center {
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border: 8px solid #00000010;
+}
+
+.disc_rotation {
+  animation: disc-rotation 20s infinite linear;
+}
+
+@keyframes disc-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,56 @@
+.button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a4b0be;
+  font-size: 18px;
+  transition: all 0.5s;
+}
+
+.button_play {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4834d4;
+  font-size: 32px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  color: #4834d4;
+  transform: scale(1.5);
+}
+
+.button:active {
+  color: #1e07b4;
+}
+
+.playing {
+  animation-name: playing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes playing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

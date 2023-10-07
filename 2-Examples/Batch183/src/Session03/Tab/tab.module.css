@@ -1,9 +1,10 @@
-.tab_container {
+.tabContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.tab_title {
+
+.tabTitle {
   height: 48px;
   width: 120px;
   background-color: green;
@@ -13,10 +14,13 @@
   color: white;
   font-weight: 700;
   border: 0;
+  cursor: pointer;
 }
-.tab_content {
+
+.tabContent {
   margin-top: 12px;
   text-align: center;
   font-size: 13px;
   color: gray;
+  padding: 24px;
 }
