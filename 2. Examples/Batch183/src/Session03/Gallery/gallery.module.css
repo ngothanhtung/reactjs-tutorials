@@ -1,0 +1,27 @@
+.image_big {
+  width: 100%;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+.button_navigation {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 120px;
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  border: 0;
+  border-radius: 4px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

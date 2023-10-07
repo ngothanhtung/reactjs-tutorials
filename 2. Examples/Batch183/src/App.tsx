@@ -1,12 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import Button from './Button';
-import IconButton from './IconButton';
+import Button from './Session02/Button';
+import IconButton from './Session02/IconButton';
 
+import { AiFillApple, AiFillFacebook, AiFillGoogleCircle, AiOutlineArrowRight } from 'react-icons/ai';
 import { FaHome } from 'react-icons/fa';
-import { AiOutlineArrowRight, AiFillApple, AiFillGoogleCircle, AiFillFacebook } from 'react-icons/ai';
 
 function App() {
   return (
