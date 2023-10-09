@@ -1,0 +1,28 @@
+/* power container like ios */
+.container {
+  display: flex;
+  padding-left: 12px;
+  height: 60px;
+  width: 120px;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 100px;
+  background: gray;
+  margin-bottom: 24px;
+}
+.onButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  background: yellow;
+  cursor: pointer;
+}
+.offButton {
+  margin-left: 68px;
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  background: black;
+  cursor: pointer;
+}
