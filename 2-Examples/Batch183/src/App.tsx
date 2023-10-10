@@ -12,10 +12,12 @@ import TeamButton from './Session02/TeamButton';
 import PowerButton from './Session02/PowerButton';
 import Products from './Session02/Products';
 import MusicPlayer from './XExercises/MusicPlayer';
+import SwitchButton from './Session03/SwitchButton';
+import CheckButton from './Session03/CheckButton';
 
 function App() {
   return (
-    <div>
+    <div style={{ padding: 24 }}>
       {/* <Button text='Submit' color='red' icon={<FaHome />} />
       <Button text='Reset' color='#8e44ad' />
       <Button text='Save' color='#2980b9' /> */}
@@ -49,13 +51,18 @@ function App() {
       {/* <Products /> */}
 
       {/* <TeamButton title='Miriam Jimenez' subTitle='Two currently' /> */}
-      {/* <Gallery /> */}
-      {/* <Tab /> */}
+
       {/* <div style={{ display: 'flex', flex: 1, height: 600, width: '100%', backgroundColor: 'yellow', justifyContent: 'space-evenly', alignItems: 'flex-end', flexDirection: 'row' }}>
         <div style={{ backgroundColor: 'red', height: 60, width: 100 }}></div>
         <div style={{ backgroundColor: 'green', height: 60, width: 100 }}></div>
       </div> */}
-      <MusicPlayer />
+
+      <SwitchButton />
+
+      <CheckButton />
+
+      {/* <Gallery /> */}
+      <Tab />
     </div>
   );
 }

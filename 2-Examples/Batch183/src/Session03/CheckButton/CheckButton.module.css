@@ -1,0 +1,41 @@
+/* power container like ios */
+.container {
+  display: flex;
+  margin-bottom: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #cccccc;
+  transition: 0.3s; /* Add animation for smooth transition */
+}
+
+.container.on {
+  border-color: #4caf50;
+}
+
+.container.off {
+  border-color: #cccccc;
+}
+
+.button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s; /* Add animation for smooth transition */
+}
+
+.button.on {
+  transform: scale(1);
+}
+.button.off {
+  transform: scale(0);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #4caf50;
+}

@@ -1,26 +1,37 @@
 .tabContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.tabTitle {
+.tabButton {
   height: 48px;
   width: 120px;
-  background-color: green;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #636e72;
+  background-color: #efefef;
   font-weight: 700;
   border: 0;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.tabButton.active {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.tabButton.inactive {
+  background-color: #efefef;
+  color: #636e72;
 }
 
 .tabContent {
-  margin-top: 12px;
-  text-align: center;
+  border: 1px solid #efefef;
   font-size: 13px;
   color: gray;
   padding: 24px;
+  min-height: 300px;
 }
