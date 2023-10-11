@@ -1,0 +1,41 @@
+.barContainer {
+  display: flex;
+  background-color: #bdc3c7;
+  height: 48px;
+  width: 100%;
+  margin-bottom: 12px;
+  width: 540px;
+}
+.leftColumn {
+  box-sizing: border-box;
+  display: flex;
+  height: 48px;
+  width: 160px;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: green;
+  padding-right: 16px;
+}
+.leftColumn span {
+  font-weight: bold;
+  color: white;
+}
+
+.rightColumn {
+  display: flex;
+  flex: 1;
+}
+.percentageBar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: blueviolet;
+  height: 48px;
+  width: 30%;
+  padding-left: 16px;
+}
+
+.percentageBar span {
+  font-weight: bold;
+  color: white;
+}

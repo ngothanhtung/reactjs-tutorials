@@ -14,6 +14,7 @@ import Products from './Session02/Products';
 import MusicPlayer from './XExercises/MusicPlayer';
 import SwitchButton from './Session03/SwitchButton';
 import CheckButton from './Session03/CheckButton';
+import BlockUI01 from './Session02/BlockUI01';
 
 function App() {
   return (
@@ -52,17 +53,14 @@ function App() {
 
       {/* <TeamButton title='Miriam Jimenez' subTitle='Two currently' /> */}
 
-      {/* <div style={{ display: 'flex', flex: 1, height: 600, width: '100%', backgroundColor: 'yellow', justifyContent: 'space-evenly', alignItems: 'flex-end', flexDirection: 'row' }}>
-        <div style={{ backgroundColor: 'red', height: 60, width: 100 }}></div>
-        <div style={{ backgroundColor: 'green', height: 60, width: 100 }}></div>
-      </div> */}
+      <BlockUI01 />
 
-      <SwitchButton />
+      {/* <SwitchButton />
 
-      <CheckButton />
+      <CheckButton /> */}
 
       {/* <Gallery /> */}
-      <Tab />
+      {/* <Tab /> */}
     </div>
   );
 }
