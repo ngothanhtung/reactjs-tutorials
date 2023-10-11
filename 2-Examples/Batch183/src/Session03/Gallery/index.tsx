@@ -8,7 +8,8 @@ type Props = {};
 export default function Gallery({}: Props) {
   const [index, setIndex] = React.useState(1);
 
-  let imagePath = `/images/${index}.jpeg`;
+  // let imagePath = `/images/${index}.jpeg`;
+  let imagePath = '/images/' + index + '.jpeg';
 
   return (
     <div className={styles.container}>

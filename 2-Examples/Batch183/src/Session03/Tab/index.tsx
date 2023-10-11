@@ -36,6 +36,7 @@ function Tab({ tabs = defaultTabs }) {
         {tabs.map((item, index) => {
           return (
             <button
+              key={index}
               onClick={() => {
                 setSelectedTabIndex(index);
               }}

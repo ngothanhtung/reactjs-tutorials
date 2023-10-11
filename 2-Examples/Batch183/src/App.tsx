@@ -16,6 +16,9 @@ import SwitchButton from './Session03/SwitchButton';
 import CheckButton from './Session03/CheckButton';
 import BlockUI01 from './Session02/BlockUI01';
 import Rating10 from './Session02/Rating10';
+import Counter from './Session03/Counter';
+import LikeButton from './Session03/LikeButton';
+import Rating from './Session03/Rating';
 
 function App() {
   return (
@@ -54,15 +57,19 @@ function App() {
 
       {/* <TeamButton title='Miriam Jimenez' subTitle='Two currently' /> */}
 
-      <Rating10 rate={7} />
+      {/* <Rating10 rate={7} /> */}
       {/* <BlockUI01 /> */}
+      {/* <Counter /> */}
+
+      {/* <LikeButton /> */}
 
       {/* <SwitchButton />
-
       <CheckButton /> */}
 
       {/* <Gallery /> */}
       {/* <Tab /> */}
+
+      <Rating stars={3} />
     </div>
   );
 }

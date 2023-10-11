@@ -1,3 +1,4 @@
+// npm install classnames --save
 import classnames from 'classnames';
 import React from 'react';
 import styles from './SwitchButton.module.css';
@@ -14,4 +15,9 @@ export default function SwitchButton() {
       <div className={classnames(styles.button, status === 'on' ? styles.on : styles.off)}></div>
     </div>
   );
+  // return (
+  //   <div className={[styles.container, styles.on].join(' ')} onClick={toggleSwitch}>
+  //     <div className={classnames(styles.button, status === 'on' ? styles.on : styles.off)}></div>
+  //   </div>
+  // );
 }
