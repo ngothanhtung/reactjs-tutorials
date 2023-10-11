@@ -15,6 +15,7 @@ import MusicPlayer from './XExercises/MusicPlayer';
 import SwitchButton from './Session03/SwitchButton';
 import CheckButton from './Session03/CheckButton';
 import BlockUI01 from './Session02/BlockUI01';
+import Rating10 from './Session02/Rating10';
 
 function App() {
   return (
@@ -53,7 +54,8 @@ function App() {
 
       {/* <TeamButton title='Miriam Jimenez' subTitle='Two currently' /> */}
 
-      <BlockUI01 />
+      <Rating10 rate={7} />
+      {/* <BlockUI01 /> */}
 
       {/* <SwitchButton />
 

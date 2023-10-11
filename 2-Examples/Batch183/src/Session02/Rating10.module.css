@@ -1,0 +1,4 @@
+.starRight {
+  transform: scaleX(-1);
+  margin-left: -16px;
+}
