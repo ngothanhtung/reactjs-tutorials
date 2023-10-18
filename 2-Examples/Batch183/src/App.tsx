@@ -26,6 +26,7 @@ import MountingExample from './Session03/LifecycleExample/MountingExample';
 import NewProps from './Session03/LifecycleExample/NewProps';
 import HandleEvent from './Session04/HandleEvent';
 import Onboarding from './Session03/Onboarding';
+import OneChoice from './Session04/Quiz/OneChoice';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -109,7 +110,9 @@ function App() {
       </button> */}
 
       {/* <HandleEvent /> */}
-      <Onboarding />
+      {/* <Onboarding /> */}
+      <OneChoice questionContent='Chiến thắng Điện Biên Phủ vào năm nào?' answers={['1945', '1954', '1968', '1975', '1980']} correctAnswer='1954' />
+      <OneChoice questionContent='Argentina vô địch World Cup năm 2022?' answers={['Đúng', 'Sai']} correctAnswer='Đúng' />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.answers button {
+  border: none;
+  background-color: aqua;
+  height: 48px;
+  text-align: left;
+  font-weight: 700;
+  border-radius: 4px;
+}
