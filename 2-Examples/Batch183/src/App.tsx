@@ -25,6 +25,7 @@ import AutoPlayGallery from './Session03/LifecycleExample/AutoPlayGallery';
 import MountingExample from './Session03/LifecycleExample/MountingExample';
 import NewProps from './Session03/LifecycleExample/NewProps';
 import HandleEvent from './Session04/HandleEvent';
+import Onboarding from './Session03/Onboarding';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -107,7 +108,8 @@ function App() {
         Change Props
       </button> */}
 
-      <HandleEvent />
+      {/* <HandleEvent /> */}
+      <Onboarding />
     </div>
   );
 }
