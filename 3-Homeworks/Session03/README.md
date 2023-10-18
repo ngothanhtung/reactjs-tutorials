@@ -1,8 +1,6 @@
 # Hướng dẫn làm bài tập
 
-# PHẦN BẮT BUỘC:
-
-## 1. Basic stateful components
+## PHẦN BẮT BUỘC
 
 1. Like button
 2. Rate button
@@ -16,10 +14,8 @@
 5. Bài tập ACCORDIONS như [http://foundry.mediumra.re/elements-accordions.html]
 6. Bài tập GALLERY như [http://foundry.mediumra.re/elements-galleries.html]
 7. Bài tập LIKE BUTTON như [https://www.figma.com/community/file/1015292336939385740?preview=fullscreen]
+8. Bài tập trong file [FIGMA](https://www.figma.com/file/2We7ul3qatN6P1x2LTbGMo/Exercise---Session-03?type=design&node-id=0%3A1&mode=design&t=y32LKdbnClDN9bSX-1)
 
-# PHẦN NÂNG CAO:
+## PHẦN NÂNG CAO
 
-1. Chuyển các bài tập sau sang REACT: https://github.com/ngothanhtung/html-ui-blocks
-2. Làm 1 music player
-
-![](https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session03/MusicPlayer.png?raw=true)
+- Music player (Tham khảo <https://github.com/ngothanhtung/reactjs-tutorials/blob/master/3-Homeworks/Session03/MusicPlayer.jpg?raw=true>)

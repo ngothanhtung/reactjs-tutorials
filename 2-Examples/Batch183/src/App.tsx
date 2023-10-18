@@ -19,6 +19,8 @@ import Rating10 from './Session02/Rating10';
 import Counter from './Session03/Counter';
 import LikeButton from './Session03/LikeButton';
 import Rating from './Session03/Rating';
+import LifecycleExample from './Session03/LifecycleExample';
+import AutoPlayGallery from './Session03/LifecycleExample/AutoPlayGallery';
 
 function App() {
   return (
@@ -69,7 +71,8 @@ function App() {
       {/* <Gallery /> */}
       {/* <Tab /> */}
 
-      <Rating stars={3} />
+      {/* <Rating stars={3} /> */}
+      <LifecycleExample />
     </div>
   );
 }

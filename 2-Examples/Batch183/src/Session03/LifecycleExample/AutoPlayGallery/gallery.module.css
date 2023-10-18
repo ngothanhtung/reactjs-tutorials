@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.imageBig {
+  width: 100%;
+  height: calc(100vh - 120px);
+  object-fit: cover;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+.button {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 120px;
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  border: 0;
+  border-radius: 4px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

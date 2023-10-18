@@ -1,10 +1,10 @@
-# A. Bài tập chính:
+# A. Bài tập chính
 
-### API: Login (Có token kèm theo)
+## API: Login (Có token kèm theo)
 
-#### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/login
+- Url: <https://training.softech.cloud/api/training/users/login>
 - Method: POST
 - Body (Raw, JSON):
 
@@ -15,7 +15,7 @@
 }
 ```
 
-#### RESPONSE:
+### RESPONSE
 
 - If success:
 
@@ -45,11 +45,11 @@
 
 ---
 
-### API: Register a new user
+## API: Register a new user
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/register
+- Url: <https://training.softech.cloud/api/training/users/register>
 - Method: POST
 - Body (Raw, JSON):
 
@@ -62,7 +62,7 @@
 }
 ```
 
-### RESPONSE:
+### RESPONSE
 
 - If user exists
 
@@ -102,13 +102,13 @@
 
 ## API: Get all users (Authentication Bearer)
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users
+- Url: <https://training.softech.cloud/api/training/users>
 - Authorization: Bearer Token
 - Method: GET
 
-### RESPONSE:
+### RESPONSE
 
 ```json
 [
@@ -126,13 +126,13 @@
 
 ## API: Get all users (Authentication Basic)
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/auth/basic
+- Url: <https://training.softech.cloud/api/training/users/auth/basic>
 - Authorization: Basic (username, password)
 - Method: GET
 
-### RESPONSE:
+### RESPONSE
 
 ```json
 [
@@ -150,13 +150,13 @@
 
 ## API: Get all users (Authentication API-KEY)
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/auth/api-key
+- Url: <https://training.softech.cloud/api/training/users/auth/api-key>
 - Authorization: API KEY [x-api-key = aptech-tester-pro] on header
 - Method: GET
 
-### RESPONSE:
+### RESPONSE
 
 ```json
 [
@@ -174,9 +174,9 @@
 
 ## API: Delete a user
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/:id
+- Url: <https://training.softech.cloud/api/training/users/:id>
 - Authorization: Bearer Token
 - Method: DELETE
 - Params:
@@ -185,7 +185,7 @@
 id = 615456cf4139ac6c5cc07fee
 ```
 
-### RESPONSE:
+### RESPONSE
 
 ```json
 {
@@ -200,9 +200,9 @@ id = 615456cf4139ac6c5cc07fee
 
 ## API: Update a user
 
-### REQUEST:
+### REQUEST
 
-- Url: https://training.softech.cloud/api/training/users/:id
+- Url: <https://training.softech.cloud/api/training/users/:id>
 - Authorization: Bearer Token
 - Method: PATCH
 - Params:
@@ -255,20 +255,20 @@ id = 615456cf4139ac6c5cc07fee
 }
 ```
 
-# B. Bài tập luyện tập với jsonplaceholder.typicode.com:
+# B. Bài tập luyện tập với jsonplaceholder.typicode.com
 
-https://jsonplaceholder.typicode.com/
+<https://jsonplaceholder.typicode.com/>
 
-# C. Bài tập luyện tập với OMDb API và The Movie Database (TMDB):
+# C. Bài tập luyện tập với OMDb API và The Movie Database (TMDB)
 
-> http://www.omdbapi.com/
+> <http://www.omdbapi.com/>
 
-> https://www.themoviedb.org/
+> <https://www.themoviedb.org/>
 
 # D. Bài tập luyện tập với FPT AI (Text to speech)
 
-- Đăng ký tài khoản tại (https://fpt.ai/tts) và thực hiện lệnh gọi API Text to Speech theo hướng dẫn
+- Đăng ký tài khoản tại (<https://fpt.ai/tts>) và thực hiện lệnh gọi API Text to Speech theo hướng dẫn
 
 # E. Bài tập luyện tập với Open Weather
 
-- Đăng ký tài khoản tại (https://openweathermap.org/api) và thực hiện lệnh gọi API theo hướng dẫn
+- Đăng ký tài khoản tại (<https://openweathermap.org/api>) và thực hiện lệnh gọi API theo hướng dẫn
