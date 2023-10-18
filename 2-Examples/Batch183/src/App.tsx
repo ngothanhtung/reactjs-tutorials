@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 
 import Button from './Session02/Button';
@@ -21,8 +22,14 @@ import LikeButton from './Session03/LikeButton';
 import Rating from './Session03/Rating';
 import LifecycleExample from './Session03/LifecycleExample';
 import AutoPlayGallery from './Session03/LifecycleExample/AutoPlayGallery';
+import MountingExample from './Session03/LifecycleExample/MountingExample';
+import NewProps from './Session03/LifecycleExample/NewProps';
+import HandleEvent from './Session04/HandleEvent';
 
 function App() {
+  const [show, setShow] = React.useState(true);
+  const [count, setCount] = React.useState(100);
+
   return (
     <div style={{ padding: 24 }}>
       {/* <Button text='Submit' color='red' icon={<FaHome />} />
@@ -72,7 +79,35 @@ function App() {
       {/* <Tab /> */}
 
       {/* <Rating stars={3} /> */}
-      <LifecycleExample />
+      {/* <LifecycleExample /> */}
+      {/* {show && <MountingExample />} */}
+
+      {/* <button
+        onClick={() => {
+          setShow(true);
+        }}
+      >
+        Mount
+      </button>
+
+      <button
+        onClick={() => {
+          setShow(false);
+        }}
+      >
+        Unmount
+      </button>
+
+      <NewProps count={count} />
+      <button
+        onClick={() => {
+          setCount(count + 1);
+        }}
+      >
+        Change Props
+      </button> */}
+
+      <HandleEvent />
     </div>
   );
 }
