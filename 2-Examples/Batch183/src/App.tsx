@@ -1,32 +1,34 @@
-import React from 'react';
 import './App.css';
 
-import Button from './Session02/Button';
-import IconButton from './Session02/IconButton';
-
+import React from 'react';
 import { AiFillApple, AiFillFacebook, AiFillGoogleCircle, AiOutlineArrowRight } from 'react-icons/ai';
 import { FaHome } from 'react-icons/fa';
 
-import Gallery from './Session03/Gallery';
-import Tab from './Session03/Tab';
-import TeamButton from './Session02/TeamButton';
+import BlockUI01 from './Session02/BlockUI01';
+import Button from './Session02/Button';
+import IconButton from './Session02/IconButton';
 import PowerButton from './Session02/PowerButton';
 import Products from './Session02/Products';
-import MusicPlayer from './XExercises/MusicPlayer';
-import SwitchButton from './Session03/SwitchButton';
-import CheckButton from './Session03/CheckButton';
-import BlockUI01 from './Session02/BlockUI01';
 import Rating10 from './Session02/Rating10';
+import TeamButton from './Session02/TeamButton';
+import CheckButton from './Session03/CheckButton';
 import Counter from './Session03/Counter';
-import LikeButton from './Session03/LikeButton';
-import Rating from './Session03/Rating';
+import Gallery from './Session03/Gallery';
 import LifecycleExample from './Session03/LifecycleExample';
 import AutoPlayGallery from './Session03/LifecycleExample/AutoPlayGallery';
 import MountingExample from './Session03/LifecycleExample/MountingExample';
 import NewProps from './Session03/LifecycleExample/NewProps';
-import HandleEvent from './Session04/HandleEvent';
+import LikeButton from './Session03/LikeButton';
 import Onboarding from './Session03/Onboarding';
+import Rating from './Session03/Rating';
+import SwitchButton from './Session03/SwitchButton';
+import Tab from './Session03/Tab';
+import HandleEvent from './Session04/HandleEvent';
 import OneChoice from './Session04/Quiz/OneChoice';
+import ReactFormHook from './Session05/ReactFormHook';
+import MusicPlayer from './XExercises/MusicPlayer';
+import FillInTheBlank from './Session04/Quiz/FillInTheBlank';
+import MultipleChoice from './Session04/Quiz/MultipleChoice';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -113,6 +115,12 @@ function App() {
       {/* <Onboarding /> */}
       <OneChoice questionContent='Chiến thắng Điện Biên Phủ vào năm nào?' answers={['1945', '1954', '1968', '1975', '1980']} correctAnswer='1954' />
       <OneChoice questionContent='Argentina vô địch World Cup năm 2022?' answers={['Đúng', 'Sai']} correctAnswer='Đúng' />
+
+      <MultipleChoice questionContent='Những quốc gia nào từng vô địch World Cup?' answers={['Anh', 'Pháp', 'Nhật', 'Việt Nam']} correctAnswers={['Anh', 'Pháp']} />
+
+      <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup 2022.' correctAnswer='Argentina' />
+
+      {/* <ReactFormHook /> */}
     </div>
   );
 }

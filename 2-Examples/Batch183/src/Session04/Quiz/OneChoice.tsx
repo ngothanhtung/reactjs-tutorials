@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './OneChoice.module.css';
 
 type Props = {
@@ -10,27 +11,44 @@ type Props = {
 const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 export default function OneChoice({ questionContent, answers, correctAnswer }: Props) {
-  const handleClick = (text: string) => {
-    if (text === correctAnswer) {
+  // user answer
+  const [userAnswer, setUserAnswer] = React.useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+    setUserAnswer(event.target.value);
+  };
+
+  const handleClick = () => {
+    if (userAnswer === correctAnswer) {
       alert('Correct');
     } else {
       alert('Wrong');
     }
   };
   return (
-    <div>
+    <div className={styles.container}>
       <h3>{questionContent}</h3>
+      <hr />
       <div className={styles.answers}>
         {answers?.map((answer, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              handleClick(answer);
-            }}
-          >
-            {alphabet[index]}. {answer}
-          </button>
+          <div className={styles.answer}>
+            <input type='radio' radioGroup='answer' name={questionContent} value={answer} autoComplete='off' onChange={handleChange} />
+            <strong>
+              {alphabet[index]}. {answer}
+            </strong>
+          </div>
         ))}
+      </div>
+      <div>
+        <button
+          className={styles.submit}
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

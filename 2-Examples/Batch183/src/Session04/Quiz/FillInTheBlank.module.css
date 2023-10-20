@@ -1,0 +1,45 @@
+.container {
+  margin-top: 48px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  color: grey;
+  background-color: grey;
+  margin-bottom: 24px;
+}
+
+.question {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.question input {
+  /* border: none; */
+  border: 1px dashed grey;
+  background-color: white;
+  border-radius: 4px;
+  padding-inline: 8px;
+  padding-block: 6px;
+  text-align: center;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.question input:focus {
+  outline: none;
+  background-color: lightgoldenrodyellow;
+}
+
+.submit {
+  margin-top: 24px;
+  border: none;
+  background-color: green;
+  height: 32px;
+  text-align: left;
+  font-weight: 700;
+  border-radius: 4px;
+  padding-inline: 12px;
+}
