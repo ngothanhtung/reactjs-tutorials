@@ -23,8 +23,10 @@ export default function FillInTheBlank({ questionContent, correctAnswer }: Props
     }
   };
 
-  // cắt bởi '___' hoặc '\r\n'
-  const text = questionContent.split(/(___|\r\n)/g);
+  // cắt bởi '___'
+  const text = questionContent.split(/(___)/g);
+
+  console.log(text);
 
   return (
     <div className={styles.container}>
@@ -35,13 +37,12 @@ export default function FillInTheBlank({ questionContent, correctAnswer }: Props
           if (item === '___') {
             return (
               <div key={index} style={{ display: 'inline-block', height: 30 }}>
-                <input autoComplete='off' style={{ minWidth: 100, width: correctAnswer.length * 15, maxWidth: 400, fontSize: 20 }} onChange={handleChange} />
+                <input autoComplete='off' style={{ minWidth: 30, width: correctAnswer.length * 15, maxWidth: 400, fontSize: 20 }} onChange={handleChange} />
               </div>
             );
           }
           return <span key={index}>{item}</span>; // text
         })}
-        h
       </div>
 
       <div>

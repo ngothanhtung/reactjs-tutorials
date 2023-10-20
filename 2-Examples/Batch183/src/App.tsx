@@ -113,12 +113,12 @@ function App() {
 
       {/* <HandleEvent /> */}
       {/* <Onboarding /> */}
-      <OneChoice questionContent='Chiến thắng Điện Biên Phủ vào năm nào?' answers={['1945', '1954', '1968', '1975', '1980']} correctAnswer='1954' />
-      <OneChoice questionContent='Argentina vô địch World Cup năm 2022?' answers={['Đúng', 'Sai']} correctAnswer='Đúng' />
+      {/* <OneChoice questionContent='Chiến thắng Điện Biên Phủ vào năm nào?' answers={['1945', '1954', '1968', '1975', '1980']} correctAnswer='1954' /> */}
+      {/* <OneChoice questionContent='Argentina vô địch World Cup năm 2022?' answers={['Đúng', 'Sai']} correctAnswer='Đúng' /> */}
 
-      <MultipleChoice questionContent='Những quốc gia nào từng vô địch World Cup?' answers={['Anh', 'Pháp', 'Nhật', 'Việt Nam']} correctAnswers={['Anh', 'Pháp']} />
+      {/* <MultipleChoice questionContent='Những quốc gia nào từng vô địch World Cup?' answers={['Anh', 'Pháp', 'Nhật', 'Việt Nam', 'Canada']} correctAnswers={['Anh', 'Pháp']} /> */}
 
-      <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup 2022.' correctAnswer='Argentina' />
+      <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup.' correctAnswer='Argentina' />
 
       {/* <ReactFormHook /> */}
     </div>

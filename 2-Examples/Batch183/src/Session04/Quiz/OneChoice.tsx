@@ -31,14 +31,16 @@ export default function OneChoice({ questionContent, answers, correctAnswer }: P
       <h3>{questionContent}</h3>
       <hr />
       <div className={styles.answers}>
-        {answers?.map((answer, index) => (
-          <div className={styles.answer}>
-            <input type='radio' radioGroup='answer' name={questionContent} value={answer} autoComplete='off' onChange={handleChange} />
-            <strong>
-              {alphabet[index]}. {answer}
-            </strong>
-          </div>
-        ))}
+        {answers?.map((answer, index) => {
+          return (
+            <div className={styles.answer} key={`answer-${index}`}>
+              <input type='radio' radioGroup='answer' name={questionContent} value={answer} autoComplete='off' onChange={handleChange} />
+              <strong>
+                {alphabet[index]}. {answer}
+              </strong>
+            </div>
+          );
+        })}
       </div>
       <div>
         <button
