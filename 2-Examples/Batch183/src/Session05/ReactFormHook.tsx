@@ -1,8 +1,24 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup
+  .object({
+    fullname: yup.string().required('Họ và tên bắt buộc nhập.'),
+    address: yup.string().required(),
+    email: yup.string().email('Email không hợp lệ').required('Email bắt buộc nhập.'),
+    phone: yup.string().required(),
+    city: yup.string().required(),
+    gender: yup.string().required(),
+    agree: yup.boolean().required(),
+  })
+  .required();
 
 interface IFormInput {
   fullname: string;
   address: string;
+  email: string;
+  phone: string;
   city: string;
   gender: string;
   agree: boolean;
@@ -14,7 +30,11 @@ export default function ReactFormHook() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<IFormInput>();
+  } = useForm<IFormInput>({
+    resolver: yupResolver(schema),
+  });
+
+  console.log('errors', errors);
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     return console.log(data);
@@ -30,9 +50,10 @@ export default function ReactFormHook() {
         {/* register your input into the hook by invoking the "register" function */}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <label htmlFor='fullname'>Fullname</label>
-          <input {...register('fullname', { required: true })} id='fullname' />
+          {/* <span>Fullname</span> */}
+          <input {...register('fullname')} id='fullname' />
           {/* errors will return when field validation fails  */}
-          {errors.fullname && <span>Fullname is required</span>}
+          <span>{errors.fullname?.message}</span>
         </div>
 
         {/* ADDRESS */}
@@ -40,6 +61,20 @@ export default function ReactFormHook() {
           <label htmlFor='address'>Address</label>
           {/* include validation with required or other standard HTML validation rules */}
           <input defaultValue='38 Yên Bái' {...register('address')} id='address' />
+        </div>
+        {/* PHONE */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <label htmlFor='address'>Phone</label>
+          {/* include validation with required or other standard HTML validation rules */}
+          <input {...register('phone')} id='phone' />
+        </div>
+        {/* EMAIl */}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <label htmlFor='email'>Email</label>
+          {/* include validation with required or other standard HTML validation rules */}
+          <input {...register('email')} id='email' />
+          {/* errors will return when field validation fails  */}
+          <span>{errors.email?.message}</span>
         </div>
 
         {/* CITY */}

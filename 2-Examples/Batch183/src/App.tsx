@@ -29,6 +29,7 @@ import ReactFormHook from './Session05/ReactFormHook';
 import MusicPlayer from './XExercises/MusicPlayer';
 import FillInTheBlank from './Session04/Quiz/FillInTheBlank';
 import MultipleChoice from './Session04/Quiz/MultipleChoice';
+import BasicForm from './Session05/BasicForm';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -118,9 +119,10 @@ function App() {
 
       {/* <MultipleChoice questionContent='Những quốc gia nào từng vô địch World Cup?' answers={['Anh', 'Pháp', 'Nhật', 'Việt Nam', 'Canada']} correctAnswers={['Anh', 'Pháp']} /> */}
 
-      <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup.' correctAnswer='Argentina' />
+      {/* <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup.' correctAnswer='Argentina' /> */}
 
-      {/* <ReactFormHook /> */}
+      {/* <BasicForm /> */}
+      <ReactFormHook />
     </div>
   );
 }
