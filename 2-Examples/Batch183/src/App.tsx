@@ -30,6 +30,12 @@ import MusicPlayer from './XExercises/MusicPlayer';
 import FillInTheBlank from './Session04/Quiz/FillInTheBlank';
 import MultipleChoice from './Session04/Quiz/MultipleChoice';
 import BasicForm from './Session05/BasicForm';
+import Login from './Session06/Login';
+import LoginWithAxios from './Session06/LoginWithAxios';
+import GetDataWithAxios from './Session06/GetDataWithAxios';
+import InsertDataWithAxios from './Session06/InsertDataWithAxios';
+import DeleteDataWithAxios from './Session06/DeleteDataWithAxios';
+import UpdateDataWithAxios from './Session06/UpdateDataWithAxios';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -122,7 +128,15 @@ function App() {
       {/* <FillInTheBlank questionContent='Hãy điền tên quốc gia ___ vô địch World Cup.' correctAnswer='Argentina' /> */}
 
       {/* <BasicForm /> */}
-      <ReactFormHook />
+      {/* <ReactFormHook /> */}
+
+      {/* <Login /> */}
+      <LoginWithAxios />
+      <hr style={{ marginBlock: 48 }} />
+      {/* <GetDataWithAxios /> */}
+      {/* <InsertDataWithAxios /> */}
+      {/* <DeleteDataWithAxios /> */}
+      <UpdateDataWithAxios />
     </div>
   );
 }
