@@ -36,6 +36,8 @@ import GetDataWithAxios from './Session06/GetDataWithAxios';
 import InsertDataWithAxios from './Session06/InsertDataWithAxios';
 import DeleteDataWithAxios from './Session06/DeleteDataWithAxios';
 import UpdateDataWithAxios from './Session06/UpdateDataWithAxios';
+import CallApi from './Session06/Demo/CallApi';
+import InsertCustomer from './Session06/Customers/InsertCustomer';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -130,13 +132,18 @@ function App() {
       {/* <BasicForm /> */}
       {/* <ReactFormHook /> */}
 
+      {/* SESSION 06 */}
+      {/* <CallApi /> */}
+
       {/* <Login /> */}
-      <LoginWithAxios />
-      <hr style={{ marginBlock: 48 }} />
+      {/* <LoginWithAxios /> */}
+      {/* <hr style={{ marginBlock: 48 }} /> */}
       {/* <GetDataWithAxios /> */}
       {/* <InsertDataWithAxios /> */}
       {/* <DeleteDataWithAxios /> */}
-      <UpdateDataWithAxios />
+      {/* <UpdateDataWithAxios /> */}
+
+      <InsertCustomer />
     </div>
   );
 }

@@ -31,6 +31,7 @@ export default function LoginWithAxios() {
       console.log(response.data);
       if (response.data.loggedInUser) {
         alert('LOGIN OK (ASYNC / AWAIT)');
+        // Save token to localStorage
         localStorage.setItem('access_token', response.data.access_token);
       } else {
         alert('LOGIN FAILED (ASYNC / AWAIT)');
@@ -49,20 +50,20 @@ export default function LoginWithAxios() {
         <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 320, gap: 12 }}>
           {/* USERNAME */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <label htmlFor='fullname'>Fullname</label>
-            <input {...register('username')} id='fullname' />
+            <label htmlFor='username'>Username</label>
+            <input {...register('username')} id='username' className='form-control' />
             <span>{errors.username?.message}</span>
           </div>
 
           {/* PASSWORD */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <label htmlFor='password'>Password</label>
-            <input type='password' {...register('password')} id='password' />
+            <input type='password' {...register('password')} id='password' className='form-control' />
             <span>{errors.password?.message}</span>
           </div>
 
           {/* SUBMIT */}
-          <button type='submit' name='Submit'>
+          <button type='submit' name='Submit' className='btn btn-danger'>
             Login
           </button>
         </div>

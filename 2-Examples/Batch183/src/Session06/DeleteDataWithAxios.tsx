@@ -10,9 +10,9 @@ export default function DeleteDataWithAxios() {
 
   const [categories, setCategories] = React.useState([]);
   // Chạy 1 lần duy nhất khi component được render lần đầu tiên
+
   React.useEffect(() => {
     // Async / Await
-
     const getData = async () => {
       try {
         setLoading(true);
@@ -48,7 +48,7 @@ export default function DeleteDataWithAxios() {
     <div>
       {loading && <div>Loading ...</div>}
 
-      <table>
+      <table className='table table-striped'>
         <thead>
           <tr>
             <th>STT</th>
@@ -67,6 +67,7 @@ export default function DeleteDataWithAxios() {
                 <td>{category.description?.slice(0, 100)} ...</td>
                 <td>
                   <button
+                    className='btn btn-danger'
                     type='button'
                     onClick={() => {
                       return window.confirm('Are you sure?') && handleDelete(category.id);

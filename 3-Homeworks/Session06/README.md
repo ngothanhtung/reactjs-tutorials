@@ -9,7 +9,7 @@
 - GET ALL
 - GET BY ID
 - POST
-- PUT / PATCH
+- PATCH (PUT)
 - DELETE
 
 ### Áp dụng cho các data sau

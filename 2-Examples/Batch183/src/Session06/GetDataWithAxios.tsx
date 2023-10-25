@@ -28,7 +28,7 @@ export default function GetDataWithAxios() {
   return (
     <div>
       {loading && <div>Loading ...</div>}
-      <table>
+      <table className='table table-striped'>
         <thead>
           <tr>
             <th>STT</th>

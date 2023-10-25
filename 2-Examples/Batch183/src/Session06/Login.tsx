@@ -25,21 +25,22 @@ export default function Login() {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     try {
+      // DATA: OK
+      console.log(data);
       const url = 'https://server.aptech.io/auth/login';
-      const response = await fetch(url, {
+      const config = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
-      });
-
-      // Xử lý kết quả JSON ở đây
+      };
+      const response = await fetch(url, config);
       const json = await response.json();
+      console.log(json);
+
       if (json.loggedInUser) {
-        alert('LOGIN OK (ASYNC / AWAIT)');
-      } else {
-        alert('LOGIN FAILED (ASYNC / AWAIT)');
+        alert('Login successfully');
       }
     } catch (error) {
       // Nếu có lỗi
@@ -53,20 +54,20 @@ export default function Login() {
         <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 320, gap: 12 }}>
           {/* USERNAME */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <label htmlFor='fullname'>Fullname</label>
-            <input {...register('username')} id='fullname' />
+            <label htmlFor='username'>Username</label>
+            <input {...register('username')} id='username' className='form-control' />
             <span>{errors.username?.message}</span>
           </div>
 
           {/* PASSWORD */}
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <label htmlFor='password'>Password</label>
-            <input type='password' {...register('password')} id='password' />
+            <input type='password' {...register('password')} id='password' className='form-control' />
             <span>{errors.password?.message}</span>
           </div>
 
           {/* SUBMIT */}
-          <button type='submit' name='Submit'>
+          <button type='submit' name='Submit' className='btn btn-primary'>
             Login
           </button>
         </div>
