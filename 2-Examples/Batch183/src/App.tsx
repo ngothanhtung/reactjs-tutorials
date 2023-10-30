@@ -38,6 +38,7 @@ import DeleteDataWithAxios from './Session06/DeleteDataWithAxios';
 import UpdateDataWithAxios from './Session06/UpdateDataWithAxios';
 import CallApi from './Session06/Demo/CallApi';
 import InsertCustomer from './Session06/Customers/InsertCustomer';
+import Antd from './Session07/Antd';
 
 function App() {
   const [show, setShow] = React.useState(true);
@@ -143,7 +144,10 @@ function App() {
       {/* <DeleteDataWithAxios /> */}
       {/* <UpdateDataWithAxios /> */}
 
-      <InsertCustomer />
+      {/* <InsertCustomer /> */}
+
+      {/* SESSION 07 */}
+      <Antd />
     </div>
   );
 }
