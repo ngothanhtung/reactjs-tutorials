@@ -1,6 +1,10 @@
 import './App.css';
 
 import React from 'react';
+
+import 'numeral/locales/vi';
+import numeral from 'numeral';
+
 import { AiFillApple, AiFillFacebook, AiFillGoogleCircle, AiOutlineArrowRight } from 'react-icons/ai';
 import { FaHome } from 'react-icons/fa';
 
@@ -39,6 +43,8 @@ import UpdateDataWithAxios from './Session06/UpdateDataWithAxios';
 import CallApi from './Session06/Demo/CallApi';
 import InsertCustomer from './Session06/Customers/InsertCustomer';
 import Antd from './Session07/Antd';
+
+numeral.locale('vi');
 
 function App() {
   const [show, setShow] = React.useState(true);
