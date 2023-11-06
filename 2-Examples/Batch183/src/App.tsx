@@ -43,6 +43,11 @@ import UpdateDataWithAxios from './Session06/UpdateDataWithAxios';
 import CallApi from './Session06/Demo/CallApi';
 import InsertCustomer from './Session06/Customers/InsertCustomer';
 import Antd from './Session07/Antd';
+import MemoHookExamples from './Session08/memo-hook/MemoHookExamples';
+import CallbackHookExamples from './Session08/useCallback-hook/CallbackHookExamples';
+import UseMemoHookExamples from './Session08/useMemo-hook';
+import UseRefHookExamples from './Session08/useRef-hook/UseRefHookExamples';
+import CallbackFunctionExamples from './Session08/callback-functions/CallbackFunctionExamples';
 
 numeral.locale('vi');
 
@@ -153,7 +158,15 @@ function App() {
       {/* <InsertCustomer /> */}
 
       {/* SESSION 07 */}
-      <Antd />
+      {/* <Antd /> */}
+
+      {/* SESSION 08 */}
+
+      <CallbackFunctionExamples />
+      {/* <MemoHookExamples /> */}
+      {/* <CallbackHookExamples /> */}
+      {/* <UseMemoHookExamples /> */}
+      {/* <UseRefHookExamples /> */}
     </div>
   );
 }
