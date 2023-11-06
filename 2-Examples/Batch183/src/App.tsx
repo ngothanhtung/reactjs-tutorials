@@ -48,6 +48,8 @@ import CallbackHookExamples from './Session08/useCallback-hook/CallbackHookExamp
 import UseMemoHookExamples from './Session08/useMemo-hook';
 import UseRefHookExamples from './Session08/useRef-hook/UseRefHookExamples';
 import CallbackFunctionExamples from './Session08/callback-functions/CallbackFunctionExamples';
+import Categories from './Session08/hooks/Categories';
+import Router from './Session09/Router';
 
 numeral.locale('vi');
 
@@ -148,10 +150,10 @@ function App() {
       {/* <CallApi /> */}
 
       {/* <Login /> */}
-      {/* <LoginWithAxios /> */}
+      <LoginWithAxios />
       {/* <hr style={{ marginBlock: 48 }} /> */}
       {/* <GetDataWithAxios /> */}
-      {/* <InsertDataWithAxios /> */}
+      <InsertDataWithAxios />
       {/* <DeleteDataWithAxios /> */}
       {/* <UpdateDataWithAxios /> */}
 
@@ -162,11 +164,14 @@ function App() {
 
       {/* SESSION 08 */}
 
-      <CallbackFunctionExamples />
+      {/* <CallbackFunctionExamples /> */}
+      {/* <Categories /> */}
       {/* <MemoHookExamples /> */}
-      {/* <CallbackHookExamples /> */}
       {/* <UseMemoHookExamples /> */}
+      {/* <CallbackHookExamples /> */}
+
       {/* <UseRefHookExamples /> */}
+      {/* <Router /> */}
     </div>
   );
 }

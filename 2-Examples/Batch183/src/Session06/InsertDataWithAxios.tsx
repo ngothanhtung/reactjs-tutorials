@@ -4,6 +4,7 @@ import * as yup from 'yup';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import axiosClient from './configs/axiosClient';
+import { message } from 'antd';
 
 interface IFormInput {
   name: string;
@@ -31,9 +32,13 @@ export default function InsertDataWithAxios() {
           Authorization: 'Bearer ' + localStorage.getItem('access_token'),
         },
       });
+      if (response.status === 201) {
+        message.success('Insert successfully');
+      }
       console.log(response);
     } catch (err: any) {
-      console.error(err);
+      // console.error(err.response.data.message[0]);
+      message.error(err.response.data.message[0]);
     }
   };
 

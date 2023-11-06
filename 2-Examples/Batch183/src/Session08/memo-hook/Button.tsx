@@ -13,4 +13,5 @@ function Button({ handleClick, children }: Props) {
     </button>
   );
 }
-export default React.memo(Button);
+export default Button;
+// export default React.memo(Button);

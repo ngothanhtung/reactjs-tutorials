@@ -1,13 +1,15 @@
 import React from 'react';
+import axiosClient from '../Session06/configs/axiosClient';
 
 export default function UseMemoHookExamples() {
   const [count, setCount] = React.useState(0);
   const [todos, setTodos] = React.useState<any[]>([]);
 
+  const [categoryCount, setCategoryCount] = React.useState(0);
+
   const expensiveFunction = (number: number) => {
     console.log('Calculating...');
     const max = 1000000000;
-
     // expensive calculation
     for (let i = 0; i < max; i++) {
       number += 1;
@@ -17,12 +19,12 @@ export default function UseMemoHookExamples() {
   };
 
   // Without React.useMemo(arrow_function)
-  const calculation = expensiveFunction(count);
+  // const calculation = expensiveFunction(count);
 
   // Within React.useMemo((arrow_function))
-  // const calculation = React.useMemo(() => {
-  //   return expensiveFunction(count);
-  // }, [count]);
+  const calculation = React.useMemo(() => {
+    return expensiveFunction(count);
+  }, [count]);
 
   return (
     <div>

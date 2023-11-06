@@ -1,15 +1,15 @@
 import React from 'react';
 
 export default function MusicPlayer() {
-  const ref = React.useRef<HTMLAudioElement>(null);
+  const refAudio = React.useRef<HTMLAudioElement>(null);
 
   return (
     <div>
-      <audio style={{ display: 'none' }} controls src='/assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.mp3' autoPlay={false} preload='auto' ref={ref} />
+      <audio style={{ display: 'none' }} controls src='/assets/Yeu-Mot-Nguoi-Vo-Tam-Bao-Anh.mp3' autoPlay={false} preload='auto' ref={refAudio} />
       <button
         className='btn btn-primary'
         onClick={() => {
-          ref.current?.play();
+          refAudio.current?.play();
         }}
       >
         Play
@@ -17,7 +17,7 @@ export default function MusicPlayer() {
       <button
         className='btn btn-info'
         onClick={() => {
-          ref.current?.pause();
+          refAudio.current?.pause();
         }}
       >
         Pause
@@ -25,8 +25,8 @@ export default function MusicPlayer() {
       <button
         className='btn btn-warning'
         onClick={() => {
-          ref.current?.pause();
-          ref.current?.load();
+          refAudio.current?.pause();
+          refAudio.current?.load();
         }}
       >
         Stop

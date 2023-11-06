@@ -7,22 +7,22 @@ export default function CallbackHookExamples() {
   const [salary, setSalary] = React.useState(1000);
 
   // USE CALLBACK
-  // const increaseAge = React.useCallback(() => {
-  //   setAge((x) => x + 1);
-  // }, []);
+  const increaseAge = React.useCallback(() => {
+    setAge((x) => x + 1);
+  }, []);
 
-  // const increaseSalary = React.useCallback(() => {
-  //   setSalary((x) => x + 100);
-  // }, []);
+  const increaseSalary = React.useCallback(() => {
+    setSalary((x) => x + 100);
+  }, []);
 
   // NOT USE CALLBACK
-  const increaseAge = () => {
-    setAge((x) => x + 1);
-  };
+  // const increaseAge = () => {
+  //   setAge((x) => x + 1);
+  // };
 
-  const increaseSalary = () => {
-    setSalary((x) => x + 100);
-  };
+  // const increaseSalary = () => {
+  //   setSalary((x) => x + 100);
+  // };
 
   return (
     <div>

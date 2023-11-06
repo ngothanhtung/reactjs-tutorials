@@ -19,6 +19,8 @@ export default function MemoHookExamples({}: Props) {
       >
         Increase Count 1
       </button>
+
+      <hr />
       <Counter count={count2} text='Counter 2' />
       <button
         onClick={() => {

@@ -3,7 +3,7 @@ type Props = {
   text: string;
   count: number;
 };
-function Count({ text, count }: Props) {
+function Counter({ text, count }: Props) {
   console.log(`Rendering ${text}`);
   return (
     <div>
@@ -12,5 +12,5 @@ function Count({ text, count }: Props) {
   );
 }
 
-export default Count;
-// export default React.memo(Count);
+// export default Counter;
+export default React.memo(Counter);
