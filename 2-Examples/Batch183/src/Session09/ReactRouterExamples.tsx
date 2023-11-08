@@ -1,20 +1,23 @@
+import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import About from './pages/About';
+import Error from './pages/Error';
 import Home from './pages/Home';
 import NestedRoutes from './pages/NestedRoutes';
+import ResetPassword from './pages/NestedRoutes/pages/ResetPassword';
 import Roles from './pages/NestedRoutes/pages/Roles';
 import Users from './pages/NestedRoutes/pages/Users';
 import Parameters from './pages/Parameters';
 import Search from './pages/Search';
-import Settings from './pages/Settings';
 import Root from './Root';
-import ResetPassword from './pages/NestedRoutes/pages/ResetPassword';
 
+const About = React.lazy(() => import('./pages/About'));
+const Settings = React.lazy(() => import('./pages/Settings'));
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -63,14 +66,14 @@ const router = createBrowserRouter([
   },
 
   //  NO MATCH ROUTE
-  {
-    path: '*',
-    element: (
-      <main style={{ padding: '1rem' }}>
-        <p>404 Page not found 😂😂😂</p>
-      </main>
-    ),
-  },
+  // {
+  //   path: '*',
+  //   element: (
+  //     <main style={{ padding: '1rem' }}>
+  //       <p>404 Page not found 😂😂😂</p>
+  //     </main>
+  //   ),
+  // },
 ]);
 
 type Props = {};
@@ -78,7 +81,9 @@ type Props = {};
 export default function ReactRouterExamples({}: Props) {
   return (
     <div>
-      <RouterProvider router={router} />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </React.Suspense>
     </div>
   );
 }
