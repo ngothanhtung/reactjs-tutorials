@@ -28,7 +28,7 @@ export default function Root({}: Props) {
           <Link to='/nested-routes'>Nested Routes</Link>
         </li>
       </ul>
-      <div style={{ padding: 24 }}>
+      <div style={{ padding: 24, backgroundColor: 'green', minHeight: 400 }}>
         <Outlet />
       </div>
     </div>

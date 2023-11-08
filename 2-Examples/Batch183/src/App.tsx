@@ -51,6 +51,8 @@ import CallbackFunctionExamples from './Session08/callback-functions/CallbackFun
 import Categories from './Session08/hooks/Categories';
 import Router from './Session09/Router';
 import ReactRouterExamples from './Session09/ReactRouterExamples';
+import Demo from './Session09/Demo';
+import OnlineShop from './Session09/OnlineShop';
 
 numeral.locale('vi');
 
@@ -173,7 +175,9 @@ function App() {
 
       {/* <UseRefHookExamples /> */}
       {/* <Router /> */}
-      <ReactRouterExamples />
+      {/* <ReactRouterExamples /> */}
+      {/* <Demo /> */}
+      <OnlineShop />
     </div>
   );
 }

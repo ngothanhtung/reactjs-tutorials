@@ -15,7 +15,7 @@ function NestedRoutes() {
             Roles
           </NavLink>
         </div>
-        <div style={{ flex: 1, backgroundColor: 'pink', height: 'calc(100vh - 12px)', boxSizing: 'border-box', padding: 12 }}>
+        <div style={{ flex: 1, backgroundColor: 'orange', height: 'calc(100vh - 12px)', boxSizing: 'border-box', padding: 12 }}>
           <Outlet />
         </div>
       </div>

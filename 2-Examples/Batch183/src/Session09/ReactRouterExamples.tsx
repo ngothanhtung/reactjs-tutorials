@@ -10,14 +10,19 @@ import Users from './pages/NestedRoutes/pages/Users';
 import Parameters from './pages/Parameters';
 import Search from './pages/Search';
 import Root from './Root';
+import ProductDetails from './pages/ProductDetails';
+import Products from './pages/Products';
+import ChangeEmail from './pages/NestedRoutes/pages/ChangeEmail';
 
+// Lazy loading
 const About = React.lazy(() => import('./pages/About'));
 const Settings = React.lazy(() => import('./pages/Settings'));
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
-    errorElement: <Error />,
+    // errorElement: <Error />,
     children: [
       {
         index: true,
@@ -45,6 +50,16 @@ const router = createBrowserRouter([
     ],
   },
 
+  {
+    path: '/products',
+    element: <Products />,
+  },
+
+  {
+    path: '/product/:id',
+    element: <ProductDetails />,
+  },
+
   // NESTED ROUTES
   {
     path: '/nested-routes',
@@ -59,6 +74,10 @@ const router = createBrowserRouter([
             path: '/nested-routes/users/reset-password',
             element: <ResetPassword />,
           },
+          {
+            path: '/nested-routes/users/change-email',
+            element: <ChangeEmail />,
+          },
         ],
       },
       { path: '/nested-routes/roles', element: <Roles /> },
@@ -66,14 +85,14 @@ const router = createBrowserRouter([
   },
 
   //  NO MATCH ROUTE
-  // {
-  //   path: '*',
-  //   element: (
-  //     <main style={{ padding: '1rem' }}>
-  //       <p>404 Page not found 😂😂😂</p>
-  //     </main>
-  //   ),
-  // },
+  {
+    path: '*',
+    element: (
+      <main style={{ padding: '1rem' }}>
+        <p>404 Page not found 😂😂😂</p>
+      </main>
+    ),
+  },
 ]);
 
 type Props = {};

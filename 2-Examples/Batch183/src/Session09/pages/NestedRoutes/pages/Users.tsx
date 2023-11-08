@@ -18,6 +18,10 @@ function Users() {
       <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to='/nested-routes/users/reset-password'>
         Reset Password
       </NavLink>
+
+      <NavLink className={({ isActive }) => (isActive ? styles.active : '')} to='/nested-routes/users/change-email'>
+        Change Email
+      </NavLink>
       <div>
         <Outlet />
       </div>
