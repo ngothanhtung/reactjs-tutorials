@@ -50,6 +50,7 @@ import UseRefHookExamples from './Session08/useRef-hook/UseRefHookExamples';
 import CallbackFunctionExamples from './Session08/callback-functions/CallbackFunctionExamples';
 import Categories from './Session08/hooks/Categories';
 import Router from './Session09/Router';
+import ReactRouterExamples from './Session09/ReactRouterExamples';
 
 numeral.locale('vi');
 
@@ -58,7 +59,7 @@ function App() {
   const [count, setCount] = React.useState(100);
 
   return (
-    <div style={{ padding: 24 }}>
+    <div>
       {/* <Button text='Submit' color='red' icon={<FaHome />} />
       <Button text='Reset' color='#8e44ad' />
       <Button text='Save' color='#2980b9' /> */}
@@ -150,10 +151,10 @@ function App() {
       {/* <CallApi /> */}
 
       {/* <Login /> */}
-      <LoginWithAxios />
+      {/* <LoginWithAxios /> */}
       {/* <hr style={{ marginBlock: 48 }} /> */}
       {/* <GetDataWithAxios /> */}
-      <InsertDataWithAxios />
+      {/* <InsertDataWithAxios /> */}
       {/* <DeleteDataWithAxios /> */}
       {/* <UpdateDataWithAxios /> */}
 
@@ -172,6 +173,7 @@ function App() {
 
       {/* <UseRefHookExamples /> */}
       {/* <Router /> */}
+      <ReactRouterExamples />
     </div>
   );
 }
