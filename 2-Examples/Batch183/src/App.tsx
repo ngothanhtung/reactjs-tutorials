@@ -54,6 +54,7 @@ import ReactRouterExamples from './Session09/ReactRouterExamples';
 import Demo from './Session09/Demo';
 import OnlineShop from './Session09/OnlineShop';
 import MagicReactRoute from './Session09/MagicReactRoute';
+import ZustandExamples from './Session10/ZustandExamples';
 
 numeral.locale('vi');
 
@@ -179,7 +180,8 @@ function App() {
       {/* <ReactRouterExamples /> */}
       {/* <Demo /> */}
       {/* <OnlineShop /> */}
-      <MagicReactRoute />
+      {/* <MagicReactRoute /> */}
+      <ZustandExamples />
     </div>
   );
 }
