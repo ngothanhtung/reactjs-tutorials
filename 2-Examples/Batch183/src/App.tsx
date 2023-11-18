@@ -55,6 +55,7 @@ import Demo from './Session09/Demo';
 import OnlineShop from './Session09/OnlineShop';
 import MagicReactRoute from './Session09/MagicReactRoute';
 import ZustandExamples from './Session10/ZustandExamples';
+import ReactQueryExamples from './Session11/ReactQueryExamples';
 
 numeral.locale('vi');
 
@@ -181,7 +182,9 @@ function App() {
       {/* <Demo /> */}
       {/* <OnlineShop /> */}
       {/* <MagicReactRoute /> */}
-      <ZustandExamples />
+      {/* <ZustandExamples /> */}
+
+      <ReactQueryExamples />
     </div>
   );
 }

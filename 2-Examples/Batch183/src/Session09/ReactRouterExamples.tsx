@@ -1,18 +1,17 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Error from './pages/Error';
 import Home from './pages/Home';
 import NestedRoutes from './pages/NestedRoutes';
+import ChangeEmail from './pages/NestedRoutes/pages/ChangeEmail';
 import ResetPassword from './pages/NestedRoutes/pages/ResetPassword';
 import Roles from './pages/NestedRoutes/pages/Roles';
 import Users from './pages/NestedRoutes/pages/Users';
 import Parameters from './pages/Parameters';
-import Search from './pages/Search';
-import Root from './Root';
 import ProductDetails from './pages/ProductDetails';
 import Products from './pages/Products';
-import ChangeEmail from './pages/NestedRoutes/pages/ChangeEmail';
+import Search from './pages/Search';
+import Root from './Root';
 
 // Lazy loading
 const About = React.lazy(() => import('./pages/About'));
