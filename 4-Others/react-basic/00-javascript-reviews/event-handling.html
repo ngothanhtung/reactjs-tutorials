@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Event Handling</title>
-  </head>
-  <body>
-    <script>
-      document.getElementById('myButton').addEventListener('click', function () {
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Handling</title>
+</head>
+
+<body>
+  <script>
+    document.getElementById('myButton').addEventListener('click', function () {
+      alert('Button clicked!');
+    });
+
+    // Use addEventListener() to bind an event to an element.
+    // Syntax: element.addEventListener(event, function, useCapture)
+
+    document.getElementById('myButton').addEventListener(
+      'click',
+      function () {
         alert('Button clicked!');
-      });
+      },
+      false,
+    );
 
-      // Use addEventListener() to bind an event to an element.
-      // Syntax: element.addEventListener(event, function, useCapture)
+    document.getElementById('myButton').addEventListener('click', function (event) {
+      console.log(event.target); // Logs the clicked element
+    });
+  </script>
+</body>
 
-      document.getElementById('myButton').addEventListener(
-        'click',
-        function () {
-          alert('Button clicked!');
-        },
-        false,
-      );
-
-      document.getElementById('myButton').addEventListener('click', function (event) {
-        console.log(event.target); // Logs the clicked element
-      });
-    </script>
-  </body>
 </html>

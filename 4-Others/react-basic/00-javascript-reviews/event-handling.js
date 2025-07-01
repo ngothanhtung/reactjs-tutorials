@@ -16,9 +16,9 @@ form.addEventListener('submit', function (event) {
 
 // Removing an Event Listener
 function showMessage() {
-    alert("Event triggered!");
+  alert('Event triggered!');
 }
 
-document.getElementById("myButton").addEventListener("click", showMessage);
+document.getElementById('myButton').addEventListener('click', showMessage);
 // To remove it:
-document.getElementById("myButton").removeEventListener("click", showMessage);
+document.getElementById('myButton').removeEventListener('click', showMessage);
